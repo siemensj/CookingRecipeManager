@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: RecipeRules; singleton:=true
+Export-Package: RecipeRules.api,
+ RecipeRules.api.matches,
+ RecipeRules.api.rules
+Bundle-Name: RecipeRules
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.emoflon.ibex.common,
+ org.emoflon.ibex.gt,
+ org.emoflon.ibex.gt.democles,
+ RecipeLanguage;bundle-version="0.0.1"
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: My Company
+Import-Package: org.apache.log4j,org.apache.commons.logging

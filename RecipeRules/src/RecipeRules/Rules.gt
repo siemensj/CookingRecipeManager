@@ -1,0 +1,5 @@
+import "platform:/resource/RecipeLanguage/model/RecipeLanguage.ecore"
+
+pattern oneCooking() {
+	cooking: Cooking
+}
