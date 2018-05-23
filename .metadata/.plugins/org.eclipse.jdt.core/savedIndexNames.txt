@@ -1,2 +1,0 @@
-INDEX VERSION 1.130+C:\Users\JakobS\Documents\CookingRecipeManager\.metadata\.plugins\org.eclipse.jdt.core
-358724592.index
