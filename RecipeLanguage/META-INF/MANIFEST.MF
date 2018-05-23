@@ -1,5 +1,8 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: RecipeLanguage;singleton:=true
+Export-Package: RecipeLanguage.impl,
+ RecipeLanguage.util,
+ RecipeLanguage
 Bundle-Name: RecipeLanguage
 Bundle-Version: 0.0.1.qualifier
 Require-Bundle: org.eclipse.emf.ecore,

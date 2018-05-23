@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecipeLanguage:Manager
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:RecipeLanguage="platform:/resource/RecipeLanguage/model/RecipeLanguage.ecore">
+  <manages>
+    <ingredients/>
+    <comments/>
+  </manages>
+  <manages/>
+</RecipeLanguage:Manager>
