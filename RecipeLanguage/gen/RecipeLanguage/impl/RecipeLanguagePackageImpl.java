@@ -332,7 +332,7 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getManager_Manages() {
+	public EReference getManager_Verwaltet() {
 		return (EReference) managerEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -392,7 +392,7 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 
 		managerEClass = createEClass(MANAGER);
 		createEReference(managerEClass, MANAGER__MANAGES);
-		createEReference(managerEClass, MANAGER__MANAGES);
+		createEReference(managerEClass, MANAGER__VERWALTET);
 	}
 
 	/**
@@ -475,9 +475,9 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 		initEReference(getManager_Manages(), this.getRecipe(), null, "manages", null, 0, -1, Manager.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getManager_Manages(), this.getUser(), null, "manages", null, 0, -1, Manager.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getManager_Verwaltet(), this.getUser(), null, "verwaltet", null, 0, -1, Manager.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

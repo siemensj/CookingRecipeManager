@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link RecipeLanguage.impl.ManagerImpl#getManages <em>Manages</em>}</li>
- *   <li>{@link RecipeLanguage.impl.ManagerImpl#getManages <em>Manages</em>}</li>
+ *   <li>{@link RecipeLanguage.impl.ManagerImpl#getVerwaltet <em>Verwaltet</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,14 +49,14 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	protected EList<Recipe> manages;
 
 	/**
-	 * The cached value of the '{@link #getManages() <em>Manages</em>}' containment reference list.
+	 * The cached value of the '{@link #getVerwaltet() <em>Verwaltet</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getManages()
+	 * @see #getVerwaltet()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<User> manages;
+	protected EList<User> verwaltet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,11 +94,11 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<User> getManages() {
-		if (manages == null) {
-			manages = new EObjectContainmentEList<User>(User.class, this, RecipeLanguagePackage.MANAGER__MANAGES);
+	public EList<User> getVerwaltet() {
+		if (verwaltet == null) {
+			verwaltet = new EObjectContainmentEList<User>(User.class, this, RecipeLanguagePackage.MANAGER__VERWALTET);
 		}
-		return manages;
+		return verwaltet;
 	}
 
 	/**
@@ -111,8 +111,8 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		switch (featureID) {
 		case RecipeLanguagePackage.MANAGER__MANAGES:
 			return ((InternalEList<?>) getManages()).basicRemove(otherEnd, msgs);
-		case RecipeLanguagePackage.MANAGER__MANAGES:
-			return ((InternalEList<?>) getManages()).basicRemove(otherEnd, msgs);
+		case RecipeLanguagePackage.MANAGER__VERWALTET:
+			return ((InternalEList<?>) getVerwaltet()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -127,8 +127,8 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		switch (featureID) {
 		case RecipeLanguagePackage.MANAGER__MANAGES:
 			return getManages();
-		case RecipeLanguagePackage.MANAGER__MANAGES:
-			return getManages();
+		case RecipeLanguagePackage.MANAGER__VERWALTET:
+			return getVerwaltet();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,9 +146,9 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 			getManages().clear();
 			getManages().addAll((Collection<? extends Recipe>) newValue);
 			return;
-		case RecipeLanguagePackage.MANAGER__MANAGES:
-			getManages().clear();
-			getManages().addAll((Collection<? extends User>) newValue);
+		case RecipeLanguagePackage.MANAGER__VERWALTET:
+			getVerwaltet().clear();
+			getVerwaltet().addAll((Collection<? extends User>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -165,8 +165,8 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		case RecipeLanguagePackage.MANAGER__MANAGES:
 			getManages().clear();
 			return;
-		case RecipeLanguagePackage.MANAGER__MANAGES:
-			getManages().clear();
+		case RecipeLanguagePackage.MANAGER__VERWALTET:
+			getVerwaltet().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -182,8 +182,8 @@ public class ManagerImpl extends EObjectImpl implements Manager {
 		switch (featureID) {
 		case RecipeLanguagePackage.MANAGER__MANAGES:
 			return manages != null && !manages.isEmpty();
-		case RecipeLanguagePackage.MANAGER__MANAGES:
-			return manages != null && !manages.isEmpty();
+		case RecipeLanguagePackage.MANAGER__VERWALTET:
+			return verwaltet != null && !verwaltet.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

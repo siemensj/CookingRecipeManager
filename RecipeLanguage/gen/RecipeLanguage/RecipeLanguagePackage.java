@@ -364,13 +364,13 @@ public interface RecipeLanguagePackage extends EPackage {
 	int MANAGER__MANAGES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Manages</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Verwaltet</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__MANAGES = 1;
+	int MANAGER__VERWALTET = 1;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -615,15 +615,15 @@ public interface RecipeLanguagePackage extends EPackage {
 	EReference getManager_Manages();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link RecipeLanguage.Manager#getManages <em>Manages</em>}'.
+	 * Returns the meta object for the containment reference list '{@link RecipeLanguage.Manager#getVerwaltet <em>Verwaltet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Manages</em>'.
-	 * @see RecipeLanguage.Manager#getManages()
+	 * @return the meta object for the containment reference list '<em>Verwaltet</em>'.
+	 * @see RecipeLanguage.Manager#getVerwaltet()
 	 * @see #getManager()
 	 * @generated
 	 */
-	EReference getManager_Manages();
+	EReference getManager_Verwaltet();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -831,12 +831,12 @@ public interface RecipeLanguagePackage extends EPackage {
 		EReference MANAGER__MANAGES = eINSTANCE.getManager_Manages();
 
 		/**
-		 * The meta object literal for the '<em><b>Manages</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Verwaltet</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MANAGER__MANAGES = eINSTANCE.getManager_Manages();
+		EReference MANAGER__VERWALTET = eINSTANCE.getManager_Verwaltet();
 
 	}
 

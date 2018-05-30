@@ -14,7 +14,7 @@ public class RecipeValidator extends RecipeRulesDemoclesApp {
                         .getParent() + File.separatorChar;
     
     // Add the board as a model to be monitored by the pattern matcher            
-    createModel(URI.createURI("board.xmi"));//TODO
-    resourceSet.getResources().get(0).getContents().add(board);
+    createModel(URI.createURI("Manager2.xmi"));//TODO
+    resourceSet.getResources().get(0).getContents().add(manager);
   }
 }
