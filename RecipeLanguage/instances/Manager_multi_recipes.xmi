@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecipeLanguage:Manager
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:RecipeLanguage="platform:/resource/RecipeLanguage/model/RecipeLanguage.ecore">
+  <manages Name="Chili con Carne">
+    <devices
+        Name="Kochtopf"/>
+    <devices
+        Name="Messer"/>
+    <devices
+        Name="Knoblauchpresse"/>
+    <ingredients
+        Name="Hackfleisch"/>
+    <ingredients
+        Name="Tomaten"/>
+    <ingredients
+        Name="Mais"/>
+    <ingredients
+        Name="Paprika"/>
+    <ingredients
+        Name="Pfeffer"/>
+    <ingredients
+        Name="Salz"/>
+    <ingredients
+        Name="Knoblauch"/>
+    <cookings
+        Time="5.0"
+        uses="//@manages.0/@ingredients.0"
+        Description="Bis es gar ist"/>
+    <cookings
+        Time="10.0"
+        uses="//@manages.0/@ingredients.1 //@manages.0/@ingredients.5 //@manages.0/@ingredients.4 //@manages.0/@ingredients.6"
+        Description="Solange bis Paprika weich ist"/>
+    <cookings
+        Time="5.0"
+        uses="//@manages.0/@ingredients.2"
+        Description="Mais hinzu"/>
+    <Level>3</Level>
+  </manages>
+  <manages Name="Toast mit Erdnussbutter und Nutella">
+    <devices
+        Name="Messer"/>
+    <ingredients
+        Name="Toast"/>
+    <ingredients
+        Name="Erdnussbutter"/>
+    <ingredients
+        Name="Nutella"/>
+    <cookings
+        Time="1.0"
+        uses="//@manages.1/@ingredients.0 //@manages.1/@ingredients.1 //@manages.1/@ingredients.2"
+        Description="Schmiere Erdnussbutter und Nutella auf 2 Toastbrotte und lege sie dann zusammen"/>
+    <Level>0</Level>
+  </manages>
+</RecipeLanguage:Manager>

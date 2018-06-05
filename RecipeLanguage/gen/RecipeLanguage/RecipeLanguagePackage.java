@@ -290,13 +290,22 @@ public interface RecipeLanguagePackage extends EPackage {
 	int COOKING__USES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COOKING__DESCRIPTION = 2;
+
+	/**
 	 * The number of structural features of the '<em>Cooking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COOKING_FEATURE_COUNT = 2;
+	int COOKING_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Cooking</em>' class.
@@ -573,6 +582,17 @@ public interface RecipeLanguagePackage extends EPackage {
 	EReference getCooking_Uses();
 
 	/**
+	 * Returns the meta object for the attribute '{@link RecipeLanguage.Cooking#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see RecipeLanguage.Cooking#getDescription()
+	 * @see #getCooking()
+	 * @generated
+	 */
+	EAttribute getCooking_Description();
+
+	/**
 	 * Returns the meta object for class '{@link RecipeLanguage.Comment <em>Comment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -793,6 +813,14 @@ public interface RecipeLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COOKING__USES = eINSTANCE.getCooking_Uses();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COOKING__DESCRIPTION = eINSTANCE.getCooking_Description();
 
 		/**
 		 * The meta object literal for the '{@link RecipeLanguage.impl.CommentImpl <em>Comment</em>}' class.

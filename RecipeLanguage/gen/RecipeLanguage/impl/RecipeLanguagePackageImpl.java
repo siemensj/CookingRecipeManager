@@ -296,6 +296,15 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCooking_Description() {
+		return (EAttribute) cookingEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComment() {
 		return commentEClass;
 	}
@@ -386,6 +395,7 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 		cookingEClass = createEClass(COOKING);
 		createEAttribute(cookingEClass, COOKING__TIME);
 		createEReference(cookingEClass, COOKING__USES);
+		createEAttribute(cookingEClass, COOKING__DESCRIPTION);
 
 		commentEClass = createEClass(COMMENT);
 		createEAttribute(commentEClass, COMMENT__RATING);
@@ -466,6 +476,8 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 		initEReference(getCooking_Uses(), this.getIngredient(), null, "uses", null, 1, -1, Cooking.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEAttribute(getCooking_Description(), ecorePackage.getEString(), "Description", null, 0, 1, Cooking.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComment_Rating(), ecorePackage.getEInt(), "Rating", null, 0, 5, Comment.class, !IS_TRANSIENT,
