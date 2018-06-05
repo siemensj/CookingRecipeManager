@@ -7,5 +7,7 @@
     <ingredients/>
     <comments/>
   </manages>
-  <manages/>
+  <manages>
+    <cookings/>
+  </manages>
 </RecipeLanguage:Manager>
