@@ -244,13 +244,31 @@ public interface RecipeLanguagePackage extends EPackage {
 	int INGREDIENT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Weight In Gramms</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INGREDIENT__WEIGHT_IN_GRAMMS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Count</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INGREDIENT__COUNT = 2;
+
+	/**
 	 * The number of structural features of the '<em>Ingredient</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INGREDIENT_FEATURE_COUNT = 1;
+	int INGREDIENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Ingredient</em>' class.
@@ -336,13 +354,22 @@ public interface RecipeLanguagePackage extends EPackage {
 	int COMMENT__RATING = 0;
 
 	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__TEXT = 1;
+
+	/**
 	 * The number of structural features of the '<em>Comment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_FEATURE_COUNT = 1;
+	int COMMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Comment</em>' class.
@@ -550,6 +577,28 @@ public interface RecipeLanguagePackage extends EPackage {
 	EAttribute getIngredient_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link RecipeLanguage.Ingredient#getWeightInGramms <em>Weight In Gramms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Weight In Gramms</em>'.
+	 * @see RecipeLanguage.Ingredient#getWeightInGramms()
+	 * @see #getIngredient()
+	 * @generated
+	 */
+	EAttribute getIngredient_WeightInGramms();
+
+	/**
+	 * Returns the meta object for the attribute '{@link RecipeLanguage.Ingredient#getCount <em>Count</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Count</em>'.
+	 * @see RecipeLanguage.Ingredient#getCount()
+	 * @see #getIngredient()
+	 * @generated
+	 */
+	EAttribute getIngredient_Count();
+
+	/**
 	 * Returns the meta object for class '{@link RecipeLanguage.Cooking <em>Cooking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -612,6 +661,17 @@ public interface RecipeLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComment_Rating();
+
+	/**
+	 * Returns the meta object for the attribute '{@link RecipeLanguage.Comment#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see RecipeLanguage.Comment#getText()
+	 * @see #getComment()
+	 * @generated
+	 */
+	EAttribute getComment_Text();
 
 	/**
 	 * Returns the meta object for class '{@link RecipeLanguage.Manager <em>Manager</em>}'.
@@ -789,6 +849,22 @@ public interface RecipeLanguagePackage extends EPackage {
 		EAttribute INGREDIENT__NAME = eINSTANCE.getIngredient_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Weight In Gramms</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INGREDIENT__WEIGHT_IN_GRAMMS = eINSTANCE.getIngredient_WeightInGramms();
+
+		/**
+		 * The meta object literal for the '<em><b>Count</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INGREDIENT__COUNT = eINSTANCE.getIngredient_Count();
+
+		/**
 		 * The meta object literal for the '{@link RecipeLanguage.impl.CookingImpl <em>Cooking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -839,6 +915,14 @@ public interface RecipeLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMMENT__RATING = eINSTANCE.getComment_Rating();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMENT__TEXT = eINSTANCE.getComment_Text();
 
 		/**
 		 * The meta object literal for the '{@link RecipeLanguage.impl.ManagerImpl <em>Manager</em>}' class.

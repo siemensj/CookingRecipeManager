@@ -1,5 +1,22 @@
 import "platform:/resource/RecipeLanguage/model/RecipeLanguage.ecore"
 
 pattern oneCooking() {
-	cooking: Cooking
+	cooking: Cooking{
+		.Description != ""
+		.Time >= 0
+	}
+}
+
+pattern oneIngredient(){
+	ingredient: Ingredient{
+		.Name != ""
+		.Count >= 1
+		.WeightInGramms >= 0.01
+	}
+}
+
+pattern oneDevice(){
+	device: Device{
+		.Name != ""
+	}
 }

@@ -269,6 +269,24 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIngredient_WeightInGramms() {
+		return (EAttribute) ingredientEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIngredient_Count() {
+		return (EAttribute) ingredientEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCooking() {
 		return cookingEClass;
 	}
@@ -316,6 +334,15 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 	 */
 	public EAttribute getComment_Rating() {
 		return (EAttribute) commentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComment_Text() {
+		return (EAttribute) commentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -391,6 +418,8 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 
 		ingredientEClass = createEClass(INGREDIENT);
 		createEAttribute(ingredientEClass, INGREDIENT__NAME);
+		createEAttribute(ingredientEClass, INGREDIENT__WEIGHT_IN_GRAMMS);
+		createEAttribute(ingredientEClass, INGREDIENT__COUNT);
 
 		cookingEClass = createEClass(COOKING);
 		createEAttribute(cookingEClass, COOKING__TIME);
@@ -399,6 +428,7 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 
 		commentEClass = createEClass(COMMENT);
 		createEAttribute(commentEClass, COMMENT__RATING);
+		createEAttribute(commentEClass, COMMENT__TEXT);
 
 		managerEClass = createEClass(MANAGER);
 		createEReference(managerEClass, MANAGER__MANAGES);
@@ -469,6 +499,11 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIngredient_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Ingredient.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIngredient_WeightInGramms(), ecorePackage.getEFloat(), "WeightInGramms", null, 0, 1,
+				Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIngredient_Count(), ecorePackage.getEFloat(), "Count", null, 0, 1, Ingredient.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cookingEClass, Cooking.class, "Cooking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCooking_Time(), ecorePackage.getEFloat(), "Time", null, 0, 1, Cooking.class, !IS_TRANSIENT,
@@ -481,6 +516,8 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComment_Rating(), ecorePackage.getEInt(), "Rating", null, 0, 5, Comment.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComment_Text(), ecorePackage.getEString(), "Text", null, 0, 1, Comment.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(managerEClass, Manager.class, "Manager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

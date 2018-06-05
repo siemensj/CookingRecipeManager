@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link RecipeLanguage.Comment#getRating <em>Rating</em>}</li>
+ *   <li>{@link RecipeLanguage.Comment#getText <em>Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +41,32 @@ public interface Comment extends EObject {
 	 * @generated
 	 */
 	EList<Integer> getRating();
+
+	/**
+	 * Returns the value of the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Text</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Text</em>' attribute.
+	 * @see #setText(String)
+	 * @see RecipeLanguage.RecipeLanguagePackage#getComment_Text()
+	 * @model
+	 * @generated
+	 */
+	String getText();
+
+	/**
+	 * Sets the value of the '{@link RecipeLanguage.Comment#getText <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Text</em>' attribute.
+	 * @see #getText()
+	 * @generated
+	 */
+	void setText(String value);
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->

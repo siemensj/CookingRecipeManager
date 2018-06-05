@@ -7,10 +7,13 @@ import RecipeLanguage.RecipeLanguagePackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
@@ -25,6 +28,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link RecipeLanguage.impl.CommentImpl#getRating <em>Rating</em>}</li>
+ *   <li>{@link RecipeLanguage.impl.CommentImpl#getText <em>Text</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +44,26 @@ public class CommentImpl extends EObjectImpl implements Comment {
 	 * @ordered
 	 */
 	protected EList<Integer> rating;
+
+	/**
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
+	protected String text = TEXT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,11 +101,34 @@ public class CommentImpl extends EObjectImpl implements Comment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getText() {
+		return text;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setText(String newText) {
+		String oldText = text;
+		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecipeLanguagePackage.COMMENT__TEXT, oldText, text));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case RecipeLanguagePackage.COMMENT__RATING:
 			return getRating();
+		case RecipeLanguagePackage.COMMENT__TEXT:
+			return getText();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -99,6 +146,9 @@ public class CommentImpl extends EObjectImpl implements Comment {
 			getRating().clear();
 			getRating().addAll((Collection<? extends Integer>) newValue);
 			return;
+		case RecipeLanguagePackage.COMMENT__TEXT:
+			setText((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -114,6 +164,9 @@ public class CommentImpl extends EObjectImpl implements Comment {
 		case RecipeLanguagePackage.COMMENT__RATING:
 			getRating().clear();
 			return;
+		case RecipeLanguagePackage.COMMENT__TEXT:
+			setText(TEXT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -128,6 +181,8 @@ public class CommentImpl extends EObjectImpl implements Comment {
 		switch (featureID) {
 		case RecipeLanguagePackage.COMMENT__RATING:
 			return rating != null && !rating.isEmpty();
+		case RecipeLanguagePackage.COMMENT__TEXT:
+			return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -145,6 +200,8 @@ public class CommentImpl extends EObjectImpl implements Comment {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (Rating: ");
 		result.append(rating);
+		result.append(", Text: ");
+		result.append(text);
 		result.append(')');
 		return result.toString();
 	}

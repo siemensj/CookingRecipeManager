@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link RecipeLanguage.impl.IngredientImpl#getName <em>Name</em>}</li>
+ *   <li>{@link RecipeLanguage.impl.IngredientImpl#getWeightInGramms <em>Weight In Gramms</em>}</li>
+ *   <li>{@link RecipeLanguage.impl.IngredientImpl#getCount <em>Count</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +49,46 @@ public class IngredientImpl extends EObjectImpl implements Ingredient {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getWeightInGramms() <em>Weight In Gramms</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWeightInGramms()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float WEIGHT_IN_GRAMMS_EDEFAULT = 0.0F;
+
+	/**
+	 * The cached value of the '{@link #getWeightInGramms() <em>Weight In Gramms</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWeightInGramms()
+	 * @generated
+	 * @ordered
+	 */
+	protected float weightInGramms = WEIGHT_IN_GRAMMS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCount() <em>Count</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCount()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float COUNT_EDEFAULT = 0.0F;
+
+	/**
+	 * The cached value of the '{@link #getCount() <em>Count</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCount()
+	 * @generated
+	 * @ordered
+	 */
+	protected float count = COUNT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,11 +136,59 @@ public class IngredientImpl extends EObjectImpl implements Ingredient {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public float getWeightInGramms() {
+		return weightInGramms;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWeightInGramms(float newWeightInGramms) {
+		float oldWeightInGramms = weightInGramms;
+		weightInGramms = newWeightInGramms;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecipeLanguagePackage.INGREDIENT__WEIGHT_IN_GRAMMS,
+					oldWeightInGramms, weightInGramms));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public float getCount() {
+		return count;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCount(float newCount) {
+		float oldCount = count;
+		count = newCount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecipeLanguagePackage.INGREDIENT__COUNT, oldCount,
+					count));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case RecipeLanguagePackage.INGREDIENT__NAME:
 			return getName();
+		case RecipeLanguagePackage.INGREDIENT__WEIGHT_IN_GRAMMS:
+			return getWeightInGramms();
+		case RecipeLanguagePackage.INGREDIENT__COUNT:
+			return getCount();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,6 +203,12 @@ public class IngredientImpl extends EObjectImpl implements Ingredient {
 		switch (featureID) {
 		case RecipeLanguagePackage.INGREDIENT__NAME:
 			setName((String) newValue);
+			return;
+		case RecipeLanguagePackage.INGREDIENT__WEIGHT_IN_GRAMMS:
+			setWeightInGramms((Float) newValue);
+			return;
+		case RecipeLanguagePackage.INGREDIENT__COUNT:
+			setCount((Float) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,6 +225,12 @@ public class IngredientImpl extends EObjectImpl implements Ingredient {
 		case RecipeLanguagePackage.INGREDIENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
+		case RecipeLanguagePackage.INGREDIENT__WEIGHT_IN_GRAMMS:
+			setWeightInGramms(WEIGHT_IN_GRAMMS_EDEFAULT);
+			return;
+		case RecipeLanguagePackage.INGREDIENT__COUNT:
+			setCount(COUNT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,6 +245,10 @@ public class IngredientImpl extends EObjectImpl implements Ingredient {
 		switch (featureID) {
 		case RecipeLanguagePackage.INGREDIENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case RecipeLanguagePackage.INGREDIENT__WEIGHT_IN_GRAMMS:
+			return weightInGramms != WEIGHT_IN_GRAMMS_EDEFAULT;
+		case RecipeLanguagePackage.INGREDIENT__COUNT:
+			return count != COUNT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -160,6 +266,10 @@ public class IngredientImpl extends EObjectImpl implements Ingredient {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (Name: ");
 		result.append(name);
+		result.append(", WeightInGramms: ");
+		result.append(weightInGramms);
+		result.append(", Count: ");
+		result.append(count);
 		result.append(')');
 		return result.toString();
 	}

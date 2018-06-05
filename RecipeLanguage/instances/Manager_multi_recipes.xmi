@@ -36,6 +36,10 @@
         Time="5.0"
         uses="//@manages.0/@ingredients.2"
         Description="Mais hinzu"/>
+    <comments
+        Text="Beste Ever">
+      <Rating>5</Rating>
+    </comments>
     <Level>3</Level>
   </manages>
   <manages Name="Toast mit Erdnussbutter und Nutella">
@@ -51,6 +55,10 @@
         Time="1.0"
         uses="//@manages.1/@ingredients.0 //@manages.1/@ingredients.1 //@manages.1/@ingredients.2"
         Description="Schmiere Erdnussbutter und Nutella auf 2 Toastbrotte und lege sie dann zusammen"/>
+    <comments
+        Text="Geht fast immer">
+      <Rating>4</Rating>
+    </comments>
     <Level>0</Level>
   </manages>
 </RecipeLanguage:Manager>
