@@ -55,6 +55,7 @@
         Time="1.0"
         uses="//@manages.1/@ingredients.0 //@manages.1/@ingredients.1 //@manages.1/@ingredients.2"
         Description="Schmiere Erdnussbutter und Nutella auf 2 Toastbrotte und lege sie dann zusammen"/>
+    <cookings/>
     <comments
         Text="Geht fast immer">
       <Rating>4</Rating>

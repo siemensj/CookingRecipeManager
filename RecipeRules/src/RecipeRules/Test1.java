@@ -15,16 +15,13 @@ public class Test1 extends Testing {
 	}
 
 	@Test
-	public void patternMatching() {
-		//assertEquals("There shoud be two matches", 2, api.kundeMitMindestensZweiUmsaetzen().countMatches());
+	public void atLeastOneIngredient() {
 		assertTrue("There should be at least one Ingredient",api.oneIngredient().hasMatches());
+		
 	}
 
 	@Test
-	public void jedesModellMussEineRezeptBeschreibungHaben() {
+	public void atLeastOneCooking() {
 		assertTrue("There must be at least one Recipe",api.oneCooking().hasMatches());
-		//assertTrue("There must be at least one bank", api.jedesModellMussEineBankHaben().hasMatches());
-		//api.jedesModellMussEineBankHaben().findAnyMatch().ifPresent(m -> EcoreUtil.delete(m.getBank()));
-		//assertFalse("There must be at least one bank", api.jedesModellMussEineBankHaben().hasMatches());
 	}
 }
