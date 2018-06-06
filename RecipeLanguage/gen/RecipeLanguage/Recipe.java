@@ -131,7 +131,7 @@ public interface Recipe extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Level</em>' attribute list.
 	 * @see RecipeLanguage.RecipeLanguagePackage#getRecipe_Level()
-	 * @model upper="5"
+	 * @model required="true" upper="5"
 	 * @generated
 	 */
 	EList<Integer> getLevel();

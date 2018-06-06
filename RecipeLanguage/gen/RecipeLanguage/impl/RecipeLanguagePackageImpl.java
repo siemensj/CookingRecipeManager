@@ -481,7 +481,7 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRecipe_Name(), ecorePackage.getEString(), "Name", null, 1, 1, Recipe.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRecipe_Level(), ecorePackage.getEInt(), "Level", null, 0, 5, Recipe.class, !IS_TRANSIENT,
+		initEAttribute(getRecipe_Level(), ecorePackage.getEInt(), "Level", null, 1, 5, Recipe.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userEClass, User.class, "User", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
