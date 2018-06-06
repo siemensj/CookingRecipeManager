@@ -1,0 +1,9 @@
+grammar org.xtext.example.mydsl.RecipeDSL with org.eclipse.xtext.common.Terminals
+
+generate recipeDSL "http://www.xtext.org/example/mydsl/RecipeDSL"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

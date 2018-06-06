@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecipeLanguage:Recipe
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:RecipeLanguage="platform:/resource/RecipeLanguage/model/RecipeLanguage.ecore"
+    Name="Käse-Lauch-Hackfleisch-Suppe">
+  <devices Name="Kochtopf"/>
+  <ingredients
+      Name="Hackfleisch"/>
+  <ingredients
+      Name="Lauch"/>
+  <ingredients
+      Name="Käse"/>
+  <ingredients
+      Name="Wasser"/>
+  <cookings
+      Time="5.0"
+      uses="//@ingredients.0"/>
+  <cookings
+      Time="5.0"
+      uses="//@ingredients.0 //@ingredients.1"/>
+  <cookings
+      Time="10.0"
+      uses="//@ingredients.0 //@ingredients.1 //@ingredients.2 //@ingredients.3"/>
+  <Level>1</Level>
+</RecipeLanguage:Recipe>
