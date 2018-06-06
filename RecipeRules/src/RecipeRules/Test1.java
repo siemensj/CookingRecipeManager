@@ -17,7 +17,7 @@ public class Test1 extends Testing {
 	@Test
 	public void patternMatching() {
 		//assertEquals("There shoud be two matches", 2, api.kundeMitMindestensZweiUmsaetzen().countMatches());
-		assertEquals("There should be at least one Ingredient",1,api.oneIngredient().countMatches());
+		assertTrue("There should be at least one Ingredient",api.oneIngredient().hasMatches());
 	}
 
 	@Test
