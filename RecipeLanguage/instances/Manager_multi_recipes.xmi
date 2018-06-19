@@ -30,7 +30,7 @@
         Description="Bis es gar ist"/>
     <cookings
         Time="10.0"
-        uses="//@manages.0/@ingredients.1 //@manages.0/@ingredients.5 //@manages.0/@ingredients.4 //@manages.0/@ingredients.6"
+        uses="//@manages.0/@ingredients.6"
         Description="Solange bis Paprika weich ist"/>
     <cookings
         Time="5.0"
@@ -53,7 +53,7 @@
         Name="Nutella"/>
     <cookings
         Time="1.0"
-        uses="//@manages.1/@ingredients.0 //@manages.1/@ingredients.1 //@manages.1/@ingredients.2"
+        uses="//@manages.1/@ingredients.2"
         Description="Schmiere Erdnussbutter und Nutella auf 2 Toastbrotte und lege sie dann zusammen"/>
     <cookings/>
     <comments
@@ -62,4 +62,6 @@
     </comments>
     <Level>0</Level>
   </manages>
+  <manages/>
+  <manages Name="sdf"/>
 </RecipeLanguage:Manager>

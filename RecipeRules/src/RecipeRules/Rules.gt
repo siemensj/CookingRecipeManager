@@ -1,15 +1,61 @@
 import "platform:/resource/RecipeLanguage/model/RecipeLanguage.ecore"
 
 pattern oneCooking() {
-	cooking: Cooking
+	c: Cooking{
+		.Description != ""
+	}
 }
 
 pattern oneIngredient(){
-	ingredient: Ingredient
-}
-
-pattern oneDevice(){
-	device: Device{
+	i: Ingredient{
 		.Name != ""
 	}
 }
+
+pattern oneDevice(){
+	d: Device{
+		.Name != ""
+	}
+}
+
+pattern recWithoutName(){
+	r: Recipe{
+		.Name == ""
+	}
+}
+
+pattern correctRecipe(){
+	r: Recipe{
+		.Name != ""
+		-cookings -> c
+		-devices -> d
+		-ingredients -> i
+	}
+	c: Cooking
+	d: Device
+	i: Ingredient
+}
+
+pattern doubleIngredient{
+	r: Recipe{
+		-ingredients -> i
+		-ingredients -> ii
+	}
+	i: Ingredient{
+		.Name == ii.Name
+	}
+	ii: Ingredient{
+		.Name == i.Name
+	}
+}
+
+pattern recCooDevIng refines correctRecipe, oneCooking, oneDevice, oneIngredient
+
+condition recipeWithoutName = forbid recWithoutName
+//condition recipeWithName = enforce correctRecipe
+
+rule delRecipe{
+	-- r: Recipe{
+		.Name == ""
+	}
+}when recipeWithoutName

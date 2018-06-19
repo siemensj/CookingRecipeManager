@@ -323,6 +323,24 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCooking_Order() {
+		return (EAttribute) cookingEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCooking_Cooks_with() {
+		return (EReference) cookingEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComment() {
 		return commentEClass;
 	}
@@ -425,6 +443,8 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 		createEAttribute(cookingEClass, COOKING__TIME);
 		createEReference(cookingEClass, COOKING__USES);
 		createEAttribute(cookingEClass, COOKING__DESCRIPTION);
+		createEAttribute(cookingEClass, COOKING__ORDER);
+		createEReference(cookingEClass, COOKING__COOKS_WITH);
 
 		commentEClass = createEClass(COMMENT);
 		createEAttribute(commentEClass, COMMENT__RATING);
@@ -508,11 +528,16 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 		initEClass(cookingEClass, Cooking.class, "Cooking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCooking_Time(), ecorePackage.getEFloat(), "Time", null, 0, 1, Cooking.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCooking_Uses(), this.getIngredient(), null, "uses", null, 1, -1, Cooking.class, !IS_TRANSIENT,
+		initEReference(getCooking_Uses(), this.getIngredient(), null, "uses", null, 1, 1, Cooking.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEAttribute(getCooking_Description(), ecorePackage.getEString(), "Description", null, 0, 1, Cooking.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCooking_Order(), ecorePackage.getEInt(), "Order", null, 1, 1, Cooking.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCooking_Cooks_with(), this.getDevice(), null, "cooks_with", null, 1, 1, Cooking.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComment_Rating(), ecorePackage.getEInt(), "Rating", null, 0, 5, Comment.class, !IS_TRANSIENT,

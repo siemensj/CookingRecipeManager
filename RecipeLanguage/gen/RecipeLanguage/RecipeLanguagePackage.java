@@ -299,7 +299,7 @@ public interface RecipeLanguagePackage extends EPackage {
 	int COOKING__TIME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * The feature id for the '<em><b>Uses</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -317,13 +317,31 @@ public interface RecipeLanguagePackage extends EPackage {
 	int COOKING__DESCRIPTION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Order</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COOKING__ORDER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Cooks with</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COOKING__COOKS_WITH = 4;
+
+	/**
 	 * The number of structural features of the '<em>Cooking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COOKING_FEATURE_COUNT = 3;
+	int COOKING_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Cooking</em>' class.
@@ -620,10 +638,10 @@ public interface RecipeLanguagePackage extends EPackage {
 	EAttribute getCooking_Time();
 
 	/**
-	 * Returns the meta object for the reference list '{@link RecipeLanguage.Cooking#getUses <em>Uses</em>}'.
+	 * Returns the meta object for the reference '{@link RecipeLanguage.Cooking#getUses <em>Uses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Uses</em>'.
+	 * @return the meta object for the reference '<em>Uses</em>'.
 	 * @see RecipeLanguage.Cooking#getUses()
 	 * @see #getCooking()
 	 * @generated
@@ -640,6 +658,28 @@ public interface RecipeLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCooking_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link RecipeLanguage.Cooking#getOrder <em>Order</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Order</em>'.
+	 * @see RecipeLanguage.Cooking#getOrder()
+	 * @see #getCooking()
+	 * @generated
+	 */
+	EAttribute getCooking_Order();
+
+	/**
+	 * Returns the meta object for the reference '{@link RecipeLanguage.Cooking#getCooks_with <em>Cooks with</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Cooks with</em>'.
+	 * @see RecipeLanguage.Cooking#getCooks_with()
+	 * @see #getCooking()
+	 * @generated
+	 */
+	EReference getCooking_Cooks_with();
 
 	/**
 	 * Returns the meta object for class '{@link RecipeLanguage.Comment <em>Comment</em>}'.
@@ -883,7 +923,7 @@ public interface RecipeLanguagePackage extends EPackage {
 		EAttribute COOKING__TIME = eINSTANCE.getCooking_Time();
 
 		/**
-		 * The meta object literal for the '<em><b>Uses</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Uses</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -897,6 +937,22 @@ public interface RecipeLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COOKING__DESCRIPTION = eINSTANCE.getCooking_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COOKING__ORDER = eINSTANCE.getCooking_Order();
+
+		/**
+		 * The meta object literal for the '<em><b>Cooks with</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COOKING__COOKS_WITH = eINSTANCE.getCooking_Cooks_with();
 
 		/**
 		 * The meta object literal for the '{@link RecipeLanguage.impl.CommentImpl <em>Comment</em>}' class.
