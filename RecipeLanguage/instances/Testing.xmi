@@ -16,4 +16,5 @@
     <ingredients
         Name="nuss"/>
   </manages>
+  <manages Name=""/>
 </RecipeLanguage:Manager>

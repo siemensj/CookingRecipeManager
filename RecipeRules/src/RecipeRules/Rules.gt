@@ -51,11 +51,18 @@ pattern doubleIngredient{
 
 pattern recCooDevIng refines correctRecipe, oneCooking, oneDevice, oneIngredient
 
-condition recipeWithoutName = forbid recWithoutName
+//condition recipeWithoutName = forbid recWithoutName
 //condition recipeWithName = enforce correctRecipe
+
+rule delDuplicateIng refines doubleIngredient{
+	r: Recipe{
+		-- -ingredients -> ii
+	}
+	-- ii: Ingredient
+}
 
 rule delRecipe{
 	-- r: Recipe{
 		.Name == ""
 	}
-}when recipeWithoutName
+}
