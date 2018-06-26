@@ -21,8 +21,7 @@ public class Test1 extends Testing {
 	}
 	@Test
 	public void atLeastOneIngredient() {
-		assertTrue("There should be at least one Ingredient",api.oneIngredient().hasMatches());
-		
+		assertTrue("There should be at least one Ingredient",api.oneIngredient().hasMatches());	
 	}
 
 	@Test
@@ -35,8 +34,24 @@ public class Test1 extends Testing {
 		assertTrue("There should be at least one Device and it should have a Name",api.oneDevice().hasMatches());	
 	}
 	
+	@Test
 	public void noRecipeWithoutName() {
-		assertFalse("There should be a Name for the Recipe",api.recWithoutName().hasMatches());	
+		assertFalse("There should be a Name for the Recipe",api.recipeWithoutName().hasMatches());	
+	}
+	
+	@Test
+	public void noCookingWithoutName() {
+		assertFalse("There should be a Name for the Recipe",api.cookingWithoutName().hasMatches());	
+	}
+	
+	@Test
+	public void noDeviceWithoutName() {
+		assertFalse("There should be a Name for the Recipe",api.deviceWithoutName().hasMatches());	
+	}
+	
+	@Test
+	public void noIngrdientWithoutName() {
+		assertFalse("There should be a Name for the Recipe",api.ingredientWithoutName().hasMatches());	
 	}
 	
 	@Test
@@ -44,11 +59,11 @@ public class Test1 extends Testing {
 		assertFalse("There should not be duplicate Ingredients",api.doubleIngredient().hasMatches());	
 	}
 	
-	@Test
-	public void testRule() {
-		api.delRecipe().forEachMatch(m -> api.delRecipe().apply(m));
-		//assertTrue(!api.recWithoutName().hasMatches());
-	}
+//	@Test
+//	public void testRule() {
+//		api.delRecipe().forEachMatch(m -> api.delRecipe().apply(m));
+//		//assertTrue(!api.recWithoutName().hasMatches());
+//	}
 	
 	
 	

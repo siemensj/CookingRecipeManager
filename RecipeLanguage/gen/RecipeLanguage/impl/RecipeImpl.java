@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link RecipeLanguage.impl.RecipeImpl#getDevices <em>Devices</em>}</li>
  *   <li>{@link RecipeLanguage.impl.RecipeImpl#getIngredients <em>Ingredients</em>}</li>
  *   <li>{@link RecipeLanguage.impl.RecipeImpl#getCookings <em>Cookings</em>}</li>
- *   <li>{@link RecipeLanguage.impl.RecipeImpl#getComments <em>Comments</em>}</li>
+ *   <li>{@link RecipeLanguage.impl.RecipeImpl#getHas <em>Has</em>}</li>
  *   <li>{@link RecipeLanguage.impl.RecipeImpl#getName <em>Name</em>}</li>
  *   <li>{@link RecipeLanguage.impl.RecipeImpl#getLevel <em>Level</em>}</li>
  * </ul>
@@ -78,14 +78,14 @@ public class RecipeImpl extends EObjectImpl implements Recipe {
 	protected EList<Cooking> cookings;
 
 	/**
-	 * The cached value of the '{@link #getComments() <em>Comments</em>}' containment reference list.
+	 * The cached value of the '{@link #getHas() <em>Has</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComments()
+	 * @see #getHas()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Comment> comments;
+	protected EList<Comment> has;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -179,12 +179,11 @@ public class RecipeImpl extends EObjectImpl implements Recipe {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Comment> getComments() {
-		if (comments == null) {
-			comments = new EObjectContainmentEList<Comment>(Comment.class, this,
-					RecipeLanguagePackage.RECIPE__COMMENTS);
+	public EList<Comment> getHas() {
+		if (has == null) {
+			has = new EObjectContainmentEList<Comment>(Comment.class, this, RecipeLanguagePackage.RECIPE__HAS);
 		}
-		return comments;
+		return has;
 	}
 
 	/**
@@ -234,8 +233,8 @@ public class RecipeImpl extends EObjectImpl implements Recipe {
 			return ((InternalEList<?>) getIngredients()).basicRemove(otherEnd, msgs);
 		case RecipeLanguagePackage.RECIPE__COOKINGS:
 			return ((InternalEList<?>) getCookings()).basicRemove(otherEnd, msgs);
-		case RecipeLanguagePackage.RECIPE__COMMENTS:
-			return ((InternalEList<?>) getComments()).basicRemove(otherEnd, msgs);
+		case RecipeLanguagePackage.RECIPE__HAS:
+			return ((InternalEList<?>) getHas()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -254,8 +253,8 @@ public class RecipeImpl extends EObjectImpl implements Recipe {
 			return getIngredients();
 		case RecipeLanguagePackage.RECIPE__COOKINGS:
 			return getCookings();
-		case RecipeLanguagePackage.RECIPE__COMMENTS:
-			return getComments();
+		case RecipeLanguagePackage.RECIPE__HAS:
+			return getHas();
 		case RecipeLanguagePackage.RECIPE__NAME:
 			return getName();
 		case RecipeLanguagePackage.RECIPE__LEVEL:
@@ -285,9 +284,9 @@ public class RecipeImpl extends EObjectImpl implements Recipe {
 			getCookings().clear();
 			getCookings().addAll((Collection<? extends Cooking>) newValue);
 			return;
-		case RecipeLanguagePackage.RECIPE__COMMENTS:
-			getComments().clear();
-			getComments().addAll((Collection<? extends Comment>) newValue);
+		case RecipeLanguagePackage.RECIPE__HAS:
+			getHas().clear();
+			getHas().addAll((Collection<? extends Comment>) newValue);
 			return;
 		case RecipeLanguagePackage.RECIPE__NAME:
 			setName((String) newValue);
@@ -317,8 +316,8 @@ public class RecipeImpl extends EObjectImpl implements Recipe {
 		case RecipeLanguagePackage.RECIPE__COOKINGS:
 			getCookings().clear();
 			return;
-		case RecipeLanguagePackage.RECIPE__COMMENTS:
-			getComments().clear();
+		case RecipeLanguagePackage.RECIPE__HAS:
+			getHas().clear();
 			return;
 		case RecipeLanguagePackage.RECIPE__NAME:
 			setName(NAME_EDEFAULT);
@@ -344,8 +343,8 @@ public class RecipeImpl extends EObjectImpl implements Recipe {
 			return ingredients != null && !ingredients.isEmpty();
 		case RecipeLanguagePackage.RECIPE__COOKINGS:
 			return cookings != null && !cookings.isEmpty();
-		case RecipeLanguagePackage.RECIPE__COMMENTS:
-			return comments != null && !comments.isEmpty();
+		case RecipeLanguagePackage.RECIPE__HAS:
+			return has != null && !has.isEmpty();
 		case RecipeLanguagePackage.RECIPE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case RecipeLanguagePackage.RECIPE__LEVEL:

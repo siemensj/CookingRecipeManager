@@ -10,11 +10,12 @@
         Name="nuss"/>
     <cookings
         Description="do this"/>
-    <comments/>
+    <has/>
   </manages>
   <manages Name="Test">
     <ingredients
         Name="nuss"/>
+    <cookings/>
   </manages>
   <manages Name=""/>
 </RecipeLanguage:Manager>

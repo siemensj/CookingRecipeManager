@@ -3,7 +3,44 @@ grammar org.xtext.example.mydsl.RecipeDSL with org.eclipse.xtext.common.Terminal
 generate recipeDSL "http://www.xtext.org/example/mydsl/RecipeDSL"
 
 Model:
-	greetings+=Greeting*;
+	(recipes+=Recipe)*;
 	
-Greeting:
-	'Hello' name=ID '!';
+Recipe:
+	"Recipe" name=ID 
+		(ingredient+=Ingredient)+
+		(device+=Device)+
+		(cooking+=Cooking)+
+;
+
+Ingredient:
+	'Ingredient' name=ID "amount" measure=Measure
+;
+
+Measure:
+	Weight | Count
+;
+
+Weight:
+	"Weight" gramms=STRING
+;
+
+Count:
+	"Count" count=INT
+;
+
+Device:
+	"Device" name=ID
+;
+
+Cooking:
+	"Cooking" order=ID
+	(time=Time step+=Step)*
+;
+
+Time:
+	"For" time=STRING
+;
+
+Step:
+	"Use" d=Device "with" i=Ingredient
+;

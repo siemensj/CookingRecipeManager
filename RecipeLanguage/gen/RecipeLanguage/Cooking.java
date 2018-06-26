@@ -2,6 +2,8 @@
  */
 package RecipeLanguage;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 // <-- [user defined imports]
 // [user defined imports] -->
@@ -17,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link RecipeLanguage.Cooking#getTime <em>Time</em>}</li>
  *   <li>{@link RecipeLanguage.Cooking#getUses <em>Uses</em>}</li>
  *   <li>{@link RecipeLanguage.Cooking#getDescription <em>Description</em>}</li>
- *   <li>{@link RecipeLanguage.Cooking#getOrder <em>Order</em>}</li>
  *   <li>{@link RecipeLanguage.Cooking#getCooks_with <em>Cooks with</em>}</li>
  * </ul>
  * </p>
@@ -54,30 +55,20 @@ public interface Cooking extends EObject {
 	void setTime(float value);
 
 	/**
-	 * Returns the value of the '<em><b>Uses</b></em>' reference.
+	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
+	 * The list contents are of type {@link RecipeLanguage.Ingredient}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Uses</em>' reference isn't clear,
+	 * If the meaning of the '<em>Uses</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uses</em>' reference.
-	 * @see #setUses(Ingredient)
+	 * @return the value of the '<em>Uses</em>' reference list.
 	 * @see RecipeLanguage.RecipeLanguagePackage#getCooking_Uses()
 	 * @model required="true"
 	 * @generated
 	 */
-	Ingredient getUses();
-
-	/**
-	 * Sets the value of the '{@link RecipeLanguage.Cooking#getUses <em>Uses</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uses</em>' reference.
-	 * @see #getUses()
-	 * @generated
-	 */
-	void setUses(Ingredient value);
+	EList<Ingredient> getUses();
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
@@ -106,56 +97,20 @@ public interface Cooking extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Order</b></em>' attribute.
+	 * Returns the value of the '<em><b>Cooks with</b></em>' reference list.
+	 * The list contents are of type {@link RecipeLanguage.Device}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Order</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Cooks with</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Order</em>' attribute.
-	 * @see #setOrder(int)
-	 * @see RecipeLanguage.RecipeLanguagePackage#getCooking_Order()
-	 * @model required="true"
-	 * @generated
-	 */
-	int getOrder();
-
-	/**
-	 * Sets the value of the '{@link RecipeLanguage.Cooking#getOrder <em>Order</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Order</em>' attribute.
-	 * @see #getOrder()
-	 * @generated
-	 */
-	void setOrder(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Cooks with</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cooks with</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cooks with</em>' reference.
-	 * @see #setCooks_with(Device)
+	 * @return the value of the '<em>Cooks with</em>' reference list.
 	 * @see RecipeLanguage.RecipeLanguagePackage#getCooking_Cooks_with()
 	 * @model required="true"
 	 * @generated
 	 */
-	Device getCooks_with();
-
-	/**
-	 * Sets the value of the '{@link RecipeLanguage.Cooking#getCooks_with <em>Cooks with</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cooks with</em>' reference.
-	 * @see #getCooks_with()
-	 * @generated
-	 */
-	void setCooks_with(Device value);
+	EList<Device> getCooks_with();
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->

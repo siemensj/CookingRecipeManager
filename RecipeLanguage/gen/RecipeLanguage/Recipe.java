@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link RecipeLanguage.Recipe#getDevices <em>Devices</em>}</li>
  *   <li>{@link RecipeLanguage.Recipe#getIngredients <em>Ingredients</em>}</li>
  *   <li>{@link RecipeLanguage.Recipe#getCookings <em>Cookings</em>}</li>
- *   <li>{@link RecipeLanguage.Recipe#getComments <em>Comments</em>}</li>
+ *   <li>{@link RecipeLanguage.Recipe#getHas <em>Has</em>}</li>
  *   <li>{@link RecipeLanguage.Recipe#getName <em>Name</em>}</li>
  *   <li>{@link RecipeLanguage.Recipe#getLevel <em>Level</em>}</li>
  * </ul>
@@ -79,20 +79,20 @@ public interface Recipe extends EObject {
 	EList<Cooking> getCookings();
 
 	/**
-	 * Returns the value of the '<em><b>Comments</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Has</b></em>' containment reference list.
 	 * The list contents are of type {@link RecipeLanguage.Comment}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Comments</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Has</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Comments</em>' containment reference list.
-	 * @see RecipeLanguage.RecipeLanguagePackage#getRecipe_Comments()
+	 * @return the value of the '<em>Has</em>' containment reference list.
+	 * @see RecipeLanguage.RecipeLanguagePackage#getRecipe_Has()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Comment> getComments();
+	EList<Comment> getHas();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

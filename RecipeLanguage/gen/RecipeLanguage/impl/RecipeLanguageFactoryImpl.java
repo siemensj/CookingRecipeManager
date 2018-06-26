@@ -70,6 +70,8 @@ public class RecipeLanguageFactoryImpl extends EFactoryImpl implements RecipeLan
 			return createComment();
 		case RecipeLanguagePackage.MANAGER:
 			return createManager();
+		case RecipeLanguagePackage.STEP:
+			return createStep();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -143,6 +145,16 @@ public class RecipeLanguageFactoryImpl extends EFactoryImpl implements RecipeLan
 	public Manager createManager() {
 		ManagerImpl manager = new ManagerImpl();
 		return manager;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Step createStep() {
+		StepImpl step = new StepImpl();
+		return step;
 	}
 
 	/**
