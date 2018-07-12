@@ -3,7 +3,7 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:RecipeLanguage="platform:/resource/RecipeLanguage/model/RecipeLanguage.ecore">
-  <manages Name="Salat">
+  <recipes Name="Salat">
     <devices
         Name="Messer"/>
     <ingredients
@@ -11,11 +11,11 @@
     <cookings
         Description="do this"/>
     <has/>
-  </manages>
-  <manages Name="Test">
+  </recipes>
+  <recipes Name="Test">
     <ingredients
         Name="nuss"/>
     <cookings/>
-  </manages>
-  <manages Name=""/>
+  </recipes>
+  <recipes Name=""/>
 </RecipeLanguage:Manager>

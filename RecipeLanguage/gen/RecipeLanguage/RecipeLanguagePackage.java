@@ -317,13 +317,22 @@ public interface RecipeLanguagePackage extends EPackage {
 	int COOKING__DESCRIPTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Cooks with</b></em>' reference list.
+	 * The feature id for the '<em><b>Use device</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COOKING__COOKS_WITH = 3;
+	int COOKING__USE_DEVICE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Step</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COOKING__STEP = 4;
 
 	/**
 	 * The number of structural features of the '<em>Cooking</em>' class.
@@ -332,7 +341,7 @@ public interface RecipeLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOKING_FEATURE_COUNT = 4;
+	int COOKING_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Cooking</em>' class.
@@ -400,22 +409,22 @@ public interface RecipeLanguagePackage extends EPackage {
 	int MANAGER = 6;
 
 	/**
-	 * The feature id for the '<em><b>Manages</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Recipes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__MANAGES = 0;
+	int MANAGER__RECIPES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Verwaltet</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Users</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__VERWALTET = 1;
+	int MANAGER__USERS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -434,79 +443,6 @@ public interface RecipeLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int MANAGER_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link RecipeLanguage.impl.StepImpl <em>Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see RecipeLanguage.impl.StepImpl
-	 * @see RecipeLanguage.impl.RecipeLanguagePackageImpl#getStep()
-	 * @generated
-	 */
-	int STEP = 7;
-
-	/**
-	 * The feature id for the '<em><b>Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__TIME = COOKING__TIME;
-
-	/**
-	 * The feature id for the '<em><b>Uses</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__USES = COOKING__USES;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__DESCRIPTION = COOKING__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Cooks with</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__COOKS_WITH = COOKING__COOKS_WITH;
-
-	/**
-	 * The feature id for the '<em><b>Order</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__ORDER = COOKING_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP_FEATURE_COUNT = COOKING_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP_OPERATION_COUNT = COOKING_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link RecipeLanguage.Recipe <em>Recipe</em>}'.
@@ -724,15 +660,26 @@ public interface RecipeLanguagePackage extends EPackage {
 	EAttribute getCooking_Description();
 
 	/**
-	 * Returns the meta object for the reference list '{@link RecipeLanguage.Cooking#getCooks_with <em>Cooks with</em>}'.
+	 * Returns the meta object for the reference list '{@link RecipeLanguage.Cooking#getUse_device <em>Use device</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Cooks with</em>'.
-	 * @see RecipeLanguage.Cooking#getCooks_with()
+	 * @return the meta object for the reference list '<em>Use device</em>'.
+	 * @see RecipeLanguage.Cooking#getUse_device()
 	 * @see #getCooking()
 	 * @generated
 	 */
-	EReference getCooking_Cooks_with();
+	EReference getCooking_Use_device();
+
+	/**
+	 * Returns the meta object for the attribute '{@link RecipeLanguage.Cooking#getStep <em>Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Step</em>'.
+	 * @see RecipeLanguage.Cooking#getStep()
+	 * @see #getCooking()
+	 * @generated
+	 */
+	EAttribute getCooking_Step();
 
 	/**
 	 * Returns the meta object for class '{@link RecipeLanguage.Comment <em>Comment</em>}'.
@@ -777,47 +724,26 @@ public interface RecipeLanguagePackage extends EPackage {
 	EClass getManager();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link RecipeLanguage.Manager#getManages <em>Manages</em>}'.
+	 * Returns the meta object for the containment reference list '{@link RecipeLanguage.Manager#getRecipes <em>Recipes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Manages</em>'.
-	 * @see RecipeLanguage.Manager#getManages()
+	 * @return the meta object for the containment reference list '<em>Recipes</em>'.
+	 * @see RecipeLanguage.Manager#getRecipes()
 	 * @see #getManager()
 	 * @generated
 	 */
-	EReference getManager_Manages();
+	EReference getManager_Recipes();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link RecipeLanguage.Manager#getVerwaltet <em>Verwaltet</em>}'.
+	 * Returns the meta object for the containment reference list '{@link RecipeLanguage.Manager#getUsers <em>Users</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Verwaltet</em>'.
-	 * @see RecipeLanguage.Manager#getVerwaltet()
+	 * @return the meta object for the containment reference list '<em>Users</em>'.
+	 * @see RecipeLanguage.Manager#getUsers()
 	 * @see #getManager()
 	 * @generated
 	 */
-	EReference getManager_Verwaltet();
-
-	/**
-	 * Returns the meta object for class '{@link RecipeLanguage.Step <em>Step</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Step</em>'.
-	 * @see RecipeLanguage.Step
-	 * @generated
-	 */
-	EClass getStep();
-
-	/**
-	 * Returns the meta object for the attribute '{@link RecipeLanguage.Step#getOrder <em>Order</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Order</em>'.
-	 * @see RecipeLanguage.Step#getOrder()
-	 * @see #getStep()
-	 * @generated
-	 */
-	EAttribute getStep_Order();
+	EReference getManager_Users();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1013,12 +939,20 @@ public interface RecipeLanguagePackage extends EPackage {
 		EAttribute COOKING__DESCRIPTION = eINSTANCE.getCooking_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Cooks with</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Use device</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COOKING__COOKS_WITH = eINSTANCE.getCooking_Cooks_with();
+		EReference COOKING__USE_DEVICE = eINSTANCE.getCooking_Use_device();
+
+		/**
+		 * The meta object literal for the '<em><b>Step</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COOKING__STEP = eINSTANCE.getCooking_Step();
 
 		/**
 		 * The meta object literal for the '{@link RecipeLanguage.impl.CommentImpl <em>Comment</em>}' class.
@@ -1057,38 +991,20 @@ public interface RecipeLanguagePackage extends EPackage {
 		EClass MANAGER = eINSTANCE.getManager();
 
 		/**
-		 * The meta object literal for the '<em><b>Manages</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Recipes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MANAGER__MANAGES = eINSTANCE.getManager_Manages();
+		EReference MANAGER__RECIPES = eINSTANCE.getManager_Recipes();
 
 		/**
-		 * The meta object literal for the '<em><b>Verwaltet</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Users</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MANAGER__VERWALTET = eINSTANCE.getManager_Verwaltet();
-
-		/**
-		 * The meta object literal for the '{@link RecipeLanguage.impl.StepImpl <em>Step</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see RecipeLanguage.impl.StepImpl
-		 * @see RecipeLanguage.impl.RecipeLanguagePackageImpl#getStep()
-		 * @generated
-		 */
-		EClass STEP = eINSTANCE.getStep();
-
-		/**
-		 * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STEP__ORDER = eINSTANCE.getStep_Order();
+		EReference MANAGER__USERS = eINSTANCE.getManager_Users();
 
 	}
 

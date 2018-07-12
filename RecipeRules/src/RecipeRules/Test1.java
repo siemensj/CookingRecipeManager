@@ -1,6 +1,6 @@
 package RecipeRules;
 
-import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -24,10 +24,10 @@ public class Test1 extends Testing {
 		assertTrue("There should be at least one Ingredient",api.oneIngredient().hasMatches());	
 	}
 
-	@Test
-	public void atLeastOneCooking() {
-		assertTrue("There must be at least one Description",api.oneCooking().hasMatches());
-	}
+//	@Test
+//	public void atLeastOneCooking() {
+//		assertTrue("There must be at least one Description",api.oneRecipe().forEachMatch(m -> api.oneCooking().hasMatches()));
+//	}
 	
 	@Test
 	public void atLeastOneDevice() {

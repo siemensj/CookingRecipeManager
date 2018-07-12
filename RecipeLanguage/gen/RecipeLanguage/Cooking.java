@@ -19,7 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link RecipeLanguage.Cooking#getTime <em>Time</em>}</li>
  *   <li>{@link RecipeLanguage.Cooking#getUses <em>Uses</em>}</li>
  *   <li>{@link RecipeLanguage.Cooking#getDescription <em>Description</em>}</li>
- *   <li>{@link RecipeLanguage.Cooking#getCooks_with <em>Cooks with</em>}</li>
+ *   <li>{@link RecipeLanguage.Cooking#getUse_device <em>Use device</em>}</li>
+ *   <li>{@link RecipeLanguage.Cooking#getStep <em>Step</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,20 +98,46 @@ public interface Cooking extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Cooks with</b></em>' reference list.
+	 * Returns the value of the '<em><b>Use device</b></em>' reference list.
 	 * The list contents are of type {@link RecipeLanguage.Device}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Cooks with</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Use device</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cooks with</em>' reference list.
-	 * @see RecipeLanguage.RecipeLanguagePackage#getCooking_Cooks_with()
+	 * @return the value of the '<em>Use device</em>' reference list.
+	 * @see RecipeLanguage.RecipeLanguagePackage#getCooking_Use_device()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Device> getCooks_with();
+	EList<Device> getUse_device();
+
+	/**
+	 * Returns the value of the '<em><b>Step</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Step</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Step</em>' attribute.
+	 * @see #setStep(int)
+	 * @see RecipeLanguage.RecipeLanguagePackage#getCooking_Step()
+	 * @model
+	 * @generated
+	 */
+	int getStep();
+
+	/**
+	 * Sets the value of the '{@link RecipeLanguage.Cooking#getStep <em>Step</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Step</em>' attribute.
+	 * @see #getStep()
+	 * @generated
+	 */
+	void setStep(int value);
 	// <-- [user code injected with eMoflon]
 
 	// [user code injected with eMoflon] -->

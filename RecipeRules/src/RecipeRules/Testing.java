@@ -16,7 +16,7 @@ abstract public class Testing extends RecipeRulesDemoclesApp {
 		resourceSet = engine.createAndPrepareResourceSet(workspacePath);
 
 		loadModels();
-		api = initAPI(engine);
+		api = initAPI();
 	}
 
 	abstract protected void loadModels();

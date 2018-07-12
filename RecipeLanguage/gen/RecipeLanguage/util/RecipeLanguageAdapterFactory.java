@@ -102,11 +102,6 @@ public class RecipeLanguageAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseStep(Step object) {
-			return createStepAdapter();
-		}
-
-		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -220,20 +215,6 @@ public class RecipeLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createManagerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link RecipeLanguage.Step <em>Step</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see RecipeLanguage.Step
-	 * @generated
-	 */
-	public Adapter createStepAdapter() {
 		return null;
 	}
 

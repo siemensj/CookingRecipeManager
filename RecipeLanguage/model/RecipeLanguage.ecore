@@ -36,8 +36,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" lowerBound="1" upperBound="-1"
         eType="#//Ingredient"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cooks_with" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="use_device" lowerBound="1"
         upperBound="-1" eType="#//Device"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Step" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Rating" upperBound="5"
@@ -45,12 +46,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Manager">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="manages" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recipes" upperBound="-1"
         eType="#//Recipe" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="verwaltet" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="users" upperBound="-1"
         eType="#//User" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//Cooking">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Order" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

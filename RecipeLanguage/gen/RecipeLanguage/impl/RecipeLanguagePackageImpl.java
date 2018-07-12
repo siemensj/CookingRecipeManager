@@ -10,7 +10,6 @@ import RecipeLanguage.Manager;
 import RecipeLanguage.Recipe;
 import RecipeLanguage.RecipeLanguageFactory;
 import RecipeLanguage.RecipeLanguagePackage;
-import RecipeLanguage.Step;
 import RecipeLanguage.User;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -75,13 +74,6 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 	 * @generated
 	 */
 	private EClass managerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stepEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -331,8 +323,17 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCooking_Cooks_with() {
+	public EReference getCooking_Use_device() {
 		return (EReference) cookingEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCooking_Step() {
+		return (EAttribute) cookingEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -376,7 +377,7 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getManager_Manages() {
+	public EReference getManager_Recipes() {
 		return (EReference) managerEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -385,26 +386,8 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getManager_Verwaltet() {
+	public EReference getManager_Users() {
 		return (EReference) managerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStep() {
-		return stepEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStep_Order() {
-		return (EAttribute) stepEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -460,18 +443,16 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 		createEAttribute(cookingEClass, COOKING__TIME);
 		createEReference(cookingEClass, COOKING__USES);
 		createEAttribute(cookingEClass, COOKING__DESCRIPTION);
-		createEReference(cookingEClass, COOKING__COOKS_WITH);
+		createEReference(cookingEClass, COOKING__USE_DEVICE);
+		createEAttribute(cookingEClass, COOKING__STEP);
 
 		commentEClass = createEClass(COMMENT);
 		createEAttribute(commentEClass, COMMENT__RATING);
 		createEAttribute(commentEClass, COMMENT__TEXT);
 
 		managerEClass = createEClass(MANAGER);
-		createEReference(managerEClass, MANAGER__MANAGES);
-		createEReference(managerEClass, MANAGER__VERWALTET);
-
-		stepEClass = createEClass(STEP);
-		createEAttribute(stepEClass, STEP__ORDER);
+		createEReference(managerEClass, MANAGER__RECIPES);
+		createEReference(managerEClass, MANAGER__USERS);
 	}
 
 	/**
@@ -503,7 +484,6 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		stepEClass.getESuperTypes().add(this.getCooking());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(recipeEClass, Recipe.class, "Recipe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -553,9 +533,11 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 				IS_ORDERED);
 		initEAttribute(getCooking_Description(), ecorePackage.getEString(), "Description", null, 0, 1, Cooking.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCooking_Cooks_with(), this.getDevice(), null, "cooks_with", null, 1, -1, Cooking.class,
+		initEReference(getCooking_Use_device(), this.getDevice(), null, "use_device", null, 1, -1, Cooking.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCooking_Step(), ecorePackage.getEInt(), "Step", null, 0, 1, Cooking.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComment_Rating(), ecorePackage.getEInt(), "Rating", null, 0, 5, Comment.class, !IS_TRANSIENT,
@@ -564,16 +546,12 @@ public class RecipeLanguagePackageImpl extends EPackageImpl implements RecipeLan
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(managerEClass, Manager.class, "Manager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getManager_Manages(), this.getRecipe(), null, "manages", null, 0, -1, Manager.class,
+		initEReference(getManager_Recipes(), this.getRecipe(), null, "recipes", null, 0, -1, Manager.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getManager_Verwaltet(), this.getUser(), null, "verwaltet", null, 0, -1, Manager.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStep_Order(), ecorePackage.getEInt(), "Order", null, 1, 1, Step.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getManager_Users(), this.getUser(), null, "users", null, 0, -1, Manager.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

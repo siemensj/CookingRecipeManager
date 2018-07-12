@@ -32,7 +32,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link RecipeLanguage.impl.CookingImpl#getTime <em>Time</em>}</li>
  *   <li>{@link RecipeLanguage.impl.CookingImpl#getUses <em>Uses</em>}</li>
  *   <li>{@link RecipeLanguage.impl.CookingImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link RecipeLanguage.impl.CookingImpl#getCooks_with <em>Cooks with</em>}</li>
+ *   <li>{@link RecipeLanguage.impl.CookingImpl#getUse_device <em>Use device</em>}</li>
+ *   <li>{@link RecipeLanguage.impl.CookingImpl#getStep <em>Step</em>}</li>
  * </ul>
  * </p>
  *
@@ -90,14 +91,34 @@ public class CookingImpl extends EObjectImpl implements Cooking {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCooks_with() <em>Cooks with</em>}' reference list.
+	 * The cached value of the '{@link #getUse_device() <em>Use device</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCooks_with()
+	 * @see #getUse_device()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Device> cooks_with;
+	protected EList<Device> use_device;
+
+	/**
+	 * The default value of the '{@link #getStep() <em>Step</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStep()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int STEP_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getStep() <em>Step</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStep()
+	 * @generated
+	 * @ordered
+	 */
+	protected int step = STEP_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,12 +199,33 @@ public class CookingImpl extends EObjectImpl implements Cooking {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Device> getCooks_with() {
-		if (cooks_with == null) {
-			cooks_with = new EObjectResolvingEList<Device>(Device.class, this,
-					RecipeLanguagePackage.COOKING__COOKS_WITH);
+	public EList<Device> getUse_device() {
+		if (use_device == null) {
+			use_device = new EObjectResolvingEList<Device>(Device.class, this,
+					RecipeLanguagePackage.COOKING__USE_DEVICE);
 		}
-		return cooks_with;
+		return use_device;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getStep() {
+		return step;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStep(int newStep) {
+		int oldStep = step;
+		step = newStep;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RecipeLanguagePackage.COOKING__STEP, oldStep, step));
 	}
 
 	/**
@@ -200,8 +242,10 @@ public class CookingImpl extends EObjectImpl implements Cooking {
 			return getUses();
 		case RecipeLanguagePackage.COOKING__DESCRIPTION:
 			return getDescription();
-		case RecipeLanguagePackage.COOKING__COOKS_WITH:
-			return getCooks_with();
+		case RecipeLanguagePackage.COOKING__USE_DEVICE:
+			return getUse_device();
+		case RecipeLanguagePackage.COOKING__STEP:
+			return getStep();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,9 +269,12 @@ public class CookingImpl extends EObjectImpl implements Cooking {
 		case RecipeLanguagePackage.COOKING__DESCRIPTION:
 			setDescription((String) newValue);
 			return;
-		case RecipeLanguagePackage.COOKING__COOKS_WITH:
-			getCooks_with().clear();
-			getCooks_with().addAll((Collection<? extends Device>) newValue);
+		case RecipeLanguagePackage.COOKING__USE_DEVICE:
+			getUse_device().clear();
+			getUse_device().addAll((Collection<? extends Device>) newValue);
+			return;
+		case RecipeLanguagePackage.COOKING__STEP:
+			setStep((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -250,8 +297,11 @@ public class CookingImpl extends EObjectImpl implements Cooking {
 		case RecipeLanguagePackage.COOKING__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
-		case RecipeLanguagePackage.COOKING__COOKS_WITH:
-			getCooks_with().clear();
+		case RecipeLanguagePackage.COOKING__USE_DEVICE:
+			getUse_device().clear();
+			return;
+		case RecipeLanguagePackage.COOKING__STEP:
+			setStep(STEP_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -271,8 +321,10 @@ public class CookingImpl extends EObjectImpl implements Cooking {
 			return uses != null && !uses.isEmpty();
 		case RecipeLanguagePackage.COOKING__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		case RecipeLanguagePackage.COOKING__COOKS_WITH:
-			return cooks_with != null && !cooks_with.isEmpty();
+		case RecipeLanguagePackage.COOKING__USE_DEVICE:
+			return use_device != null && !use_device.isEmpty();
+		case RecipeLanguagePackage.COOKING__STEP:
+			return step != STEP_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -292,6 +344,8 @@ public class CookingImpl extends EObjectImpl implements Cooking {
 		result.append(time);
 		result.append(", Description: ");
 		result.append(description);
+		result.append(", Step: ");
+		result.append(step);
 		result.append(')');
 		return result.toString();
 	}

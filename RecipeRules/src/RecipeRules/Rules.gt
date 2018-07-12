@@ -72,6 +72,7 @@ pattern doubleIngredient{
 	}
 }
 
+
 pattern recCooDevIng refines correctRecipe, oneCooking, oneDevice, oneIngredient
 
 //condition recipeWithoutName = forbid recWithoutName
