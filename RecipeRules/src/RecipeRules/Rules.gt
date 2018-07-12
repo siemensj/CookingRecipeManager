@@ -37,9 +37,11 @@ pattern recipeWithoutName{
 	}
 }
 
-pattern cookingWithoutDevice(){
-	c: Cooking
-	d:Device
+pattern cookingWithDevice(){
+	c: Cooking{
+		-use_device->d
+	}
+	d: Device
 }
 
 pattern cookingWithoutIngredient(){

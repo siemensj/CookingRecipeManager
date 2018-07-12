@@ -4,8 +4,12 @@ package RecipeRules;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.util.URI;
 import org.junit.Test;
+
+import RecipeRules.api.matches.OneCookingMatch;
 
 public class Test1 extends Testing {
 
@@ -24,10 +28,21 @@ public class Test1 extends Testing {
 		assertTrue("There should be at least one Ingredient",api.oneIngredient().hasMatches());	
 	}
 
-//	@Test
-//	public void atLeastOneCooking() {
-//		assertTrue("There must be at least one Description",api.oneRecipe().forEachMatch(m -> api.oneCooking().hasMatches()));
-//	}
+	@Test
+	public void atLeastOneDevForCooking() {
+		assertTrue("There must be at least one Device for a Cooking",CookingWithDev());
+	}
+	
+	public boolean CookingWithDev() {
+		Collection<OneCookingMatch> m = api.oneCooking().findMatches();
+		for (OneCookingMatch x : m) {
+			if (x.getC().getUse_device().isEmpty()){
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	
 	@Test
 	public void atLeastOneDevice() {

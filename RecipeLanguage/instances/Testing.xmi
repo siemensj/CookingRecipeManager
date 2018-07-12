@@ -9,7 +9,8 @@
     <ingredients
         Name="nuss"/>
     <cookings
-        Description="do this"/>
+        Description="do this"
+        use_device="//@recipes.0/@devices.0"/>
     <has/>
   </recipes>
   <recipes Name="Test">
