@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.URI;
 import org.junit.Test;
 
 import RecipeRules.api.matches.OneCookingMatch;
+import RecipeRules.api.matches.OneRecipeMatch;
 
 public class Test1 extends Testing {
 
@@ -19,7 +20,7 @@ public class Test1 extends Testing {
 		loadModel(URI.createPlatformResourceURI(INSTANCES + "/Testing.xmi",true));
 	}
 		
-	// richtige Pattern (f�r unseren Fall)
+	// richtige Pattern (fuer unseren Fall)
 
 	@Test
 	public void noDoubleIng() {
@@ -53,10 +54,53 @@ public class Test1 extends Testing {
 	
 	@Test
 	public void atLeastOneIngForCooking() {
-		assertTrue("There must be at least one Device for a Cooking",CookingWithIng());
+		assertTrue("There must be at least one Ingredient for a Cooking",CookingWithIng());
 	}
 	
-	// Test von Patterns
+	public boolean RecipeWithIng() {
+		Collection<OneRecipeMatch> m = api.oneRecipe().findMatches();
+		for (OneRecipeMatch x : m) {
+			if (x.getR().getIngredients().isEmpty()) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	@Test
+	public void atLeastOneIngForRecipe() {
+		assertTrue("There must be at least one Ingredient for a Recipe",RecipeWithIng());
+	}
+	
+	public boolean RecipeWithDev() {
+		Collection<OneRecipeMatch> m = api.oneRecipe().findMatches();
+		for (OneRecipeMatch x : m) {
+			if (x.getR().getDevices().isEmpty()) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	@Test
+	public void atLeastOneDevForRecipe() {
+		assertTrue("There must be at least one Device for a Recipe",RecipeWithDev());
+	}
+	
+	public boolean RecipeWithCooking() {
+		Collection<OneRecipeMatch> m = api.oneRecipe().findMatches();
+		for (OneRecipeMatch x : m) {
+			if (x.getR().getCookings().isEmpty()) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	@Test
+	public void atLeastOneCookingForRecipe() {
+		assertTrue("There must be at least one Cooking for a Device",RecipeWithCooking());
+	}
 	
 	@Test
 	public void noDeviceFromOtherRecipe(){
@@ -67,4 +111,32 @@ public class Test1 extends Testing {
 	public void noIngredientFromOtherRecipe(){
 		assertFalse("An Ingredient From another Recipe should not be used",api.noIngFromOtherRecipe().hasMatches());
 	}
+	
+	@Test
+	public void noRecipeWithoutName() {
+		assertFalse("An Recipe has no Name",api.recipeWithoutName().hasMatches());
+	}
+	
+	@Test
+	public void noCookingWithoutName() {
+		assertFalse("An Recipe has no Name",api.cookingWithoutName().hasMatches());
+	}
+	
+	@Test
+	public void noDeviceWithoutName() {
+		assertFalse("An Recipe has no Name",api.deviceWithoutName().hasMatches());
+	}
+	
+	@Test
+	public void noIngredientWithoutName() {
+		assertFalse("An Recipe has no Name",api.ingredientWithoutName().hasMatches());
+	}
+	
+	@Test
+	public void noCookingWithoutTime() {
+		assertFalse("An Cooking has no Time",api.cookingWithoutTime().hasMatches());
+	}
+	
+	// Test von Patterns
+	
 }
