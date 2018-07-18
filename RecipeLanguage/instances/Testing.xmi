@@ -17,11 +17,13 @@
     <has/>
   </recipes>
   <recipes Name="Test">
-    <devices/>
+    <devices
+        Name="Schale"/>
     <ingredients
-        Name="nuss"/>
+        Name="je"/>
     <cookings
-        uses="//@recipes.1/@ingredients.0 //@recipes.0/@ingredients.1"
-        use_device="//@recipes.0/@devices.0"/>
+        uses="//@recipes.1/@ingredients.0"
+        Description="d"
+        use_device="//@recipes.1/@devices.0"/>
   </recipes>
 </RecipeLanguage:Manager>

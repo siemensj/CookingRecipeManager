@@ -112,8 +112,28 @@ public class Test1 extends Testing {
 		assertFalse("An Ingredient From another Recipe should not be used",api.noIngFromOtherRecipe().hasMatches());
 	}
 	
+	@Test
+	public void noRecipeWithoutName() {
+		assertFalse("An Recipe has no Name",api.recipeWithoutName().hasMatches());
+	}
+	
+	@Test
+	public void noCookingWithoutName() {
+		assertFalse("An Recipe has no Name",api.cookingWithoutName().hasMatches());
+	}
+	
+	@Test
+	public void noDeviceWithoutName() {
+		assertFalse("An Recipe has no Name",api.deviceWithoutName().hasMatches());
+	}
+	
+	@Test
+	public void noIngredientWithoutName() {
+		assertFalse("An Recipe has no Name",api.ingredientWithoutName().hasMatches());
+	}
+	
 	// Test von Patterns
 	
-	
+
 	
 }
