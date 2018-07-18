@@ -132,8 +132,11 @@ public class Test1 extends Testing {
 		assertFalse("An Recipe has no Name",api.ingredientWithoutName().hasMatches());
 	}
 	
-	// Test von Patterns
+	@Test
+	public void noCookingWithoutTime() {
+		assertFalse("An Cooking has no Time",api.cookingWithoutTime().hasMatches());
+	}
 	
-
+	// Test von Patterns
 	
 }

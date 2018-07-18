@@ -7,13 +7,15 @@
     <devices
         Name="Messer"/>
     <ingredients
-        Name="nuss"/>
-    <ingredients
-        Name="blatt"/>
+        Name="nuss"
+        WeightInGramms="1.0"
+        Count="1.0"/>
     <cookings
+        Time="10.0"
         uses="//@recipes.0/@ingredients.0"
         Description="do this"
-        use_device="//@recipes.0/@devices.0"/>
+        use_device="//@recipes.0/@devices.0"
+        Step="1"/>
     <has/>
   </recipes>
   <recipes Name="Test">
@@ -22,6 +24,7 @@
     <ingredients
         Name="je"/>
     <cookings
+        Time="1.0"
         uses="//@recipes.1/@ingredients.0"
         Description="d"
         use_device="//@recipes.1/@devices.0"/>
