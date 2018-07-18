@@ -1,15 +1,33 @@
 grammar org.xtext.example.mydsl.RecipeDSL with org.eclipse.xtext.common.Terminals
 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+
 generate recipeDSL "http://www.xtext.org/example/mydsl/RecipeDSL"
 
 Model:
-	(recipes+=Recipe)*;
+	(mgr=Manager);
+	
+Manager:
+	"Rezeptbuch" name=ID 
+		"von" (user+=User) ("," user+=User)*
+		(recipes+=Recipe)
+;
+
+User:
+	Name=EString
+;	
 	
 Recipe:
-	"Recipe" name=ID 
+	"Recipe" name=ID
+		(level=Level) 
 		(ingredient+=Ingredient)+
 		(device+=Device)+
 		(cooking+=Cooking)+
+;
+
+Level:
+	"Level" ("1"|"2"|"3"|"4"|"5")
 ;
 
 Ingredient:
@@ -44,3 +62,12 @@ Time:
 Step:
 	"Use" d=Device "with" i=Ingredient
 ;
+
+EString returns ecore::EString:
+	STRING | ID;
+
+EInt returns ecore::EInt:
+	'-'? INT;
+
+EFloat returns ecore::EFloat:
+	'-'? INT? '.' INT (('E'|'e') '-'? INT)?;

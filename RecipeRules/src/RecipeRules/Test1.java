@@ -19,7 +19,7 @@ public class Test1 extends Testing {
 		loadModel(URI.createPlatformResourceURI(INSTANCES + "/Testing.xmi",true));
 	}
 		
-	// richtige Pattern (für unseren Fall)
+	// richtige Pattern (fï¿½r unseren Fall)
 
 	@Test
 	public void noDoubleIng() {
@@ -59,49 +59,12 @@ public class Test1 extends Testing {
 	// Test von Patterns
 	
 	@Test
-	public void recipeWithCooDevIng() {
-		assertTrue("A recipe should have a Cooking,Device and Ingredient(Everything should also have a name)",api.correctRecipe().hasMatches());	
+	public void noDeviceFromOtherRecipe(){
+		assertFalse("A Device From another Recipe should not be used",api.noDevFromOtherRecipe().hasMatches());
 	}
 	
 	@Test
-	public void atLeastOneIngredient() {
-		assertTrue("There should be at least one Ingredient",api.oneIngredient().hasMatches());	
+	public void noIngredientFromOtherRecipe(){
+		assertFalse("An Ingredient From another Recipe should not be used",api.noIngFromOtherRecipe().hasMatches());
 	}
-
-	
-	@Test
-	public void atLeastOneDevice() {
-		assertTrue("There should be at least one Device and it should have a Name",api.oneDevice().hasMatches());	
-	}
-	
-	@Test
-	public void noRecipeWithoutName() {
-		assertFalse("There should be a Name for the Recipe",api.recipeWithoutName().hasMatches());	
-	}
-	
-	@Test
-	public void noCookingWithoutName() {
-		assertFalse("There should be a Name for the Recipe",api.cookingWithoutName().hasMatches());	
-	}
-	
-	@Test
-	public void noDeviceWithoutName() {
-		assertFalse("There should be a Name for the Recipe",api.deviceWithoutName().hasMatches());	
-	}
-	
-	@Test
-	public void noIngrdientWithoutName() {
-		assertFalse("There should be a Name for the Recipe",api.ingredientWithoutName().hasMatches());	
-	}
-	
-
-	
-//	@Test
-//	public void testRule() {
-//		api.delRecipe().forEachMatch(m -> api.delRecipe().apply(m));
-//		//assertTrue(!api.recWithoutName().hasMatches());
-//	}
-	
-	
-	
 }

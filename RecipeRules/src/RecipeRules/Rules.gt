@@ -49,16 +49,34 @@ pattern cookingWithoutIngredient(){
 	i: Ingredient
 }
 
-pattern correctRecipe(){
+pattern noDevFromOtherRecipe{
 	r: Recipe{
-		.Name != ""
-		-cookings -> c
 		-devices -> d
-		-ingredients -> i
+		-cookings->c
 	}
-	c: Cooking
-	d: Device
-	i: Ingredient
+	r2:Recipe{
+		-devices-> d2
+	}
+	d:Device
+	d2:Device
+	c:Cooking{
+		-use_device->d2
+	}
+}
+
+pattern noIngFromOtherRecipe{
+	r: Recipe{
+		-ingredients -> d
+		-cookings->c
+	}
+	r2:Recipe{
+		-ingredients-> d2
+	}
+	d:Ingredient
+	d2:Ingredient
+	c:Cooking{
+		-uses->d2
+	}
 }
 
 pattern doubleIngredient{
@@ -73,20 +91,3 @@ pattern doubleIngredient{
 		.Name == i.Name
 	}
 }
-
-
-pattern recCooDevIng refines correctRecipe, oneCooking, oneDevice, oneIngredient
-
-//condition recipeWithoutName = forbid recWithoutName
-//condition recipeWithName = enforce correctRecipe
-
-//rule delDuplicateIng refines doubleIngredient{
-//	r: Recipe{
-//		-- -ingredients -> ii
-//	}
-//	-- ii: Ingredient
-//}
-
-//rule delRecipe refines recWithoutName{
-//	-- r:Recipe
-//}
