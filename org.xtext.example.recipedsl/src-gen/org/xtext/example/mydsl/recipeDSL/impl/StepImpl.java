@@ -3,14 +3,15 @@
  */
 package org.xtext.example.mydsl.recipeDSL.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.example.mydsl.recipeDSL.Device;
 import org.xtext.example.mydsl.recipeDSL.Ingredient;
@@ -25,8 +26,10 @@ import org.xtext.example.mydsl.recipeDSL.Step;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.StepImpl#getD <em>D</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.StepImpl#getI <em>I</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.StepImpl#getDev <em>Dev</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.StepImpl#getDev2 <em>Dev2</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.StepImpl#getIng <em>Ing</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.StepImpl#getIng2 <em>Ing2</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,24 +37,44 @@ import org.xtext.example.mydsl.recipeDSL.Step;
 public class StepImpl extends MinimalEObjectImpl.Container implements Step
 {
   /**
-   * The cached value of the '{@link #getD() <em>D</em>}' containment reference.
+   * The cached value of the '{@link #getDev() <em>Dev</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getD()
+   * @see #getDev()
    * @generated
    * @ordered
    */
-  protected Device d;
+  protected EList<Device> dev;
 
   /**
-   * The cached value of the '{@link #getI() <em>I</em>}' containment reference.
+   * The cached value of the '{@link #getDev2() <em>Dev2</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getI()
+   * @see #getDev2()
    * @generated
    * @ordered
    */
-  protected Ingredient i;
+  protected EList<Device> dev2;
+
+  /**
+   * The cached value of the '{@link #getIng() <em>Ing</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIng()
+   * @generated
+   * @ordered
+   */
+  protected EList<Ingredient> ing;
+
+  /**
+   * The cached value of the '{@link #getIng2() <em>Ing2</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIng2()
+   * @generated
+   * @ordered
+   */
+  protected EList<Ingredient> ing2;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,26 +102,13 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  public Device getD()
+  public EList<Device> getDev()
   {
-    return d;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetD(Device newD, NotificationChain msgs)
-  {
-    Device oldD = d;
-    d = newD;
-    if (eNotificationRequired())
+    if (dev == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.STEP__D, oldD, newD);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      dev = new EObjectResolvingEList<Device>(Device.class, this, RecipeDSLPackage.STEP__DEV);
     }
-    return msgs;
+    return dev;
   }
 
   /**
@@ -106,20 +116,13 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setD(Device newD)
+  public EList<Device> getDev2()
   {
-    if (newD != d)
+    if (dev2 == null)
     {
-      NotificationChain msgs = null;
-      if (d != null)
-        msgs = ((InternalEObject)d).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RecipeDSLPackage.STEP__D, null, msgs);
-      if (newD != null)
-        msgs = ((InternalEObject)newD).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RecipeDSLPackage.STEP__D, null, msgs);
-      msgs = basicSetD(newD, msgs);
-      if (msgs != null) msgs.dispatch();
+      dev2 = new EObjectResolvingEList<Device>(Device.class, this, RecipeDSLPackage.STEP__DEV2);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.STEP__D, newD, newD));
+    return dev2;
   }
 
   /**
@@ -127,26 +130,13 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  public Ingredient getI()
+  public EList<Ingredient> getIng()
   {
-    return i;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetI(Ingredient newI, NotificationChain msgs)
-  {
-    Ingredient oldI = i;
-    i = newI;
-    if (eNotificationRequired())
+    if (ing == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.STEP__I, oldI, newI);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ing = new EObjectResolvingEList<Ingredient>(Ingredient.class, this, RecipeDSLPackage.STEP__ING);
     }
-    return msgs;
+    return ing;
   }
 
   /**
@@ -154,38 +144,13 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setI(Ingredient newI)
+  public EList<Ingredient> getIng2()
   {
-    if (newI != i)
+    if (ing2 == null)
     {
-      NotificationChain msgs = null;
-      if (i != null)
-        msgs = ((InternalEObject)i).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RecipeDSLPackage.STEP__I, null, msgs);
-      if (newI != null)
-        msgs = ((InternalEObject)newI).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RecipeDSLPackage.STEP__I, null, msgs);
-      msgs = basicSetI(newI, msgs);
-      if (msgs != null) msgs.dispatch();
+      ing2 = new EObjectResolvingEList<Ingredient>(Ingredient.class, this, RecipeDSLPackage.STEP__ING2);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.STEP__I, newI, newI));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case RecipeDSLPackage.STEP__D:
-        return basicSetD(null, msgs);
-      case RecipeDSLPackage.STEP__I:
-        return basicSetI(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return ing2;
   }
 
   /**
@@ -198,10 +163,14 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.STEP__D:
-        return getD();
-      case RecipeDSLPackage.STEP__I:
-        return getI();
+      case RecipeDSLPackage.STEP__DEV:
+        return getDev();
+      case RecipeDSLPackage.STEP__DEV2:
+        return getDev2();
+      case RecipeDSLPackage.STEP__ING:
+        return getIng();
+      case RecipeDSLPackage.STEP__ING2:
+        return getIng2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -211,16 +180,27 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.STEP__D:
-        setD((Device)newValue);
+      case RecipeDSLPackage.STEP__DEV:
+        getDev().clear();
+        getDev().addAll((Collection<? extends Device>)newValue);
         return;
-      case RecipeDSLPackage.STEP__I:
-        setI((Ingredient)newValue);
+      case RecipeDSLPackage.STEP__DEV2:
+        getDev2().clear();
+        getDev2().addAll((Collection<? extends Device>)newValue);
+        return;
+      case RecipeDSLPackage.STEP__ING:
+        getIng().clear();
+        getIng().addAll((Collection<? extends Ingredient>)newValue);
+        return;
+      case RecipeDSLPackage.STEP__ING2:
+        getIng2().clear();
+        getIng2().addAll((Collection<? extends Ingredient>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -236,11 +216,17 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.STEP__D:
-        setD((Device)null);
+      case RecipeDSLPackage.STEP__DEV:
+        getDev().clear();
         return;
-      case RecipeDSLPackage.STEP__I:
-        setI((Ingredient)null);
+      case RecipeDSLPackage.STEP__DEV2:
+        getDev2().clear();
+        return;
+      case RecipeDSLPackage.STEP__ING:
+        getIng().clear();
+        return;
+      case RecipeDSLPackage.STEP__ING2:
+        getIng2().clear();
         return;
     }
     super.eUnset(featureID);
@@ -256,10 +242,14 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.STEP__D:
-        return d != null;
-      case RecipeDSLPackage.STEP__I:
-        return i != null;
+      case RecipeDSLPackage.STEP__DEV:
+        return dev != null && !dev.isEmpty();
+      case RecipeDSLPackage.STEP__DEV2:
+        return dev2 != null && !dev2.isEmpty();
+      case RecipeDSLPackage.STEP__ING:
+        return ing != null && !ing.isEmpty();
+      case RecipeDSLPackage.STEP__ING2:
+        return ing2 != null && !ing2.isEmpty();
     }
     return super.eIsSet(featureID);
   }

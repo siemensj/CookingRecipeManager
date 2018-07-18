@@ -33,6 +33,24 @@ public interface RecipeDSLFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Manager</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Manager</em>'.
+   * @generated
+   */
+  Manager createManager();
+
+  /**
+   * Returns a new object of class '<em>User</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>User</em>'.
+   * @generated
+   */
+  User createUser();
+
+  /**
    * Returns a new object of class '<em>Recipe</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -42,6 +60,15 @@ public interface RecipeDSLFactory extends EFactory
   Recipe createRecipe();
 
   /**
+   * Returns a new object of class '<em>Level</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Level</em>'.
+   * @generated
+   */
+  Level createLevel();
+
+  /**
    * Returns a new object of class '<em>Ingredient</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -49,15 +76,6 @@ public interface RecipeDSLFactory extends EFactory
    * @generated
    */
   Ingredient createIngredient();
-
-  /**
-   * Returns a new object of class '<em>Measure</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Measure</em>'.
-   * @generated
-   */
-  Measure createMeasure();
 
   /**
    * Returns a new object of class '<em>Weight</em>'.

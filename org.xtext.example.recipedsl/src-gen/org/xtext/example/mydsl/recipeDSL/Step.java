@@ -3,6 +3,8 @@
  */
 package org.xtext.example.mydsl.recipeDSL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,8 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.Step#getD <em>D</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.Step#getI <em>I</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.Step#getDev <em>Dev</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.Step#getDev2 <em>Dev2</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.Step#getIng <em>Ing</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.Step#getIng2 <em>Ing2</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getStep()
@@ -25,55 +29,67 @@ import org.eclipse.emf.ecore.EObject;
 public interface Step extends EObject
 {
   /**
-   * Returns the value of the '<em><b>D</b></em>' containment reference.
+   * Returns the value of the '<em><b>Dev</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.recipeDSL.Device}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>D</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Dev</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>D</em>' containment reference.
-   * @see #setD(Device)
-   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getStep_D()
-   * @model containment="true"
+   * @return the value of the '<em>Dev</em>' reference list.
+   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getStep_Dev()
+   * @model
    * @generated
    */
-  Device getD();
+  EList<Device> getDev();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.recipeDSL.Step#getD <em>D</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>D</em>' containment reference.
-   * @see #getD()
-   * @generated
-   */
-  void setD(Device value);
-
-  /**
-   * Returns the value of the '<em><b>I</b></em>' containment reference.
+   * Returns the value of the '<em><b>Dev2</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.recipeDSL.Device}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>I</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Dev2</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>I</em>' containment reference.
-   * @see #setI(Ingredient)
-   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getStep_I()
-   * @model containment="true"
+   * @return the value of the '<em>Dev2</em>' reference list.
+   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getStep_Dev2()
+   * @model
    * @generated
    */
-  Ingredient getI();
+  EList<Device> getDev2();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.recipeDSL.Step#getI <em>I</em>}' containment reference.
+   * Returns the value of the '<em><b>Ing</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.recipeDSL.Ingredient}.
    * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ing</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>I</em>' containment reference.
-   * @see #getI()
+   * @return the value of the '<em>Ing</em>' reference list.
+   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getStep_Ing()
+   * @model
    * @generated
    */
-  void setI(Ingredient value);
+  EList<Ingredient> getIng();
+
+  /**
+   * Returns the value of the '<em><b>Ing2</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.recipeDSL.Ingredient}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ing2</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ing2</em>' reference list.
+   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getStep_Ing2()
+   * @model
+   * @generated
+   */
+  EList<Ingredient> getIng2();
 
 } // Step

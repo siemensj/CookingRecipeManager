@@ -81,19 +81,29 @@ public class RecipeDSLAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseManager(Manager object)
+      {
+        return createManagerAdapter();
+      }
+      @Override
+      public Adapter caseUser(User object)
+      {
+        return createUserAdapter();
+      }
+      @Override
       public Adapter caseRecipe(Recipe object)
       {
         return createRecipeAdapter();
       }
       @Override
+      public Adapter caseLevel(Level object)
+      {
+        return createLevelAdapter();
+      }
+      @Override
       public Adapter caseIngredient(Ingredient object)
       {
         return createIngredientAdapter();
-      }
-      @Override
-      public Adapter caseMeasure(Measure object)
-      {
-        return createMeasureAdapter();
       }
       @Override
       public Adapter caseWeight(Weight object)
@@ -163,6 +173,36 @@ public class RecipeDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.recipeDSL.Manager <em>Manager</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.recipeDSL.Manager
+   * @generated
+   */
+  public Adapter createManagerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.recipeDSL.User <em>User</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.recipeDSL.User
+   * @generated
+   */
+  public Adapter createUserAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.recipeDSL.Recipe <em>Recipe</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -178,6 +218,21 @@ public class RecipeDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.recipeDSL.Level <em>Level</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.recipeDSL.Level
+   * @generated
+   */
+  public Adapter createLevelAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.recipeDSL.Ingredient <em>Ingredient</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -188,21 +243,6 @@ public class RecipeDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIngredientAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.recipeDSL.Measure <em>Measure</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.recipeDSL.Measure
-   * @generated
-   */
-  public Adapter createMeasureAdapter()
   {
     return null;
   }

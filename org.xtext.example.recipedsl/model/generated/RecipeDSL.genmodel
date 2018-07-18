@@ -7,30 +7,41 @@
   <genPackages prefix="RecipeDSL" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
       fileExtensions="RecipeDSL" ecorePackage="RecipeDSL.ecore#/">
     <genClasses ecoreClass="RecipeDSL.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Model/recipes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Model/mgr"/>
+    </genClasses>
+    <genClasses ecoreClass="RecipeDSL.ecore#//Manager">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Manager/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Manager/user"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Manager/recipes"/>
+    </genClasses>
+    <genClasses ecoreClass="RecipeDSL.ecore#//User">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//User/name"/>
     </genClasses>
     <genClasses ecoreClass="RecipeDSL.ecore#//Recipe">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Recipe/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Recipe/level"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Recipe/ingredient"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Recipe/device"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Recipe/cooking"/>
+    </genClasses>
+    <genClasses ecoreClass="RecipeDSL.ecore#//Level">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Level/name"/>
     </genClasses>
     <genClasses ecoreClass="RecipeDSL.ecore#//Ingredient">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Ingredient/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Ingredient/measure"/>
     </genClasses>
-    <genClasses ecoreClass="RecipeDSL.ecore#//Measure"/>
     <genClasses ecoreClass="RecipeDSL.ecore#//Weight">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Weight/gramms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Weight/weight"/>
     </genClasses>
     <genClasses ecoreClass="RecipeDSL.ecore#//Count">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Count/count"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Count/c"/>
     </genClasses>
     <genClasses ecoreClass="RecipeDSL.ecore#//Device">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Device/name"/>
     </genClasses>
     <genClasses ecoreClass="RecipeDSL.ecore#//Cooking">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Cooking/order"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Cooking/s"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Cooking/time"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Cooking/step"/>
     </genClasses>
@@ -38,8 +49,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Time/time"/>
     </genClasses>
     <genClasses ecoreClass="RecipeDSL.ecore#//Step">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Step/d"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Step/i"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Step/dev"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Step/dev2"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Step/ing"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Step/ing2"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

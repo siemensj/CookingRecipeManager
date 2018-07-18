@@ -66,9 +66,11 @@ public class RecipeDSLFactoryImpl extends EFactoryImpl implements RecipeDSLFacto
     switch (eClass.getClassifierID())
     {
       case RecipeDSLPackage.MODEL: return createModel();
+      case RecipeDSLPackage.MANAGER: return createManager();
+      case RecipeDSLPackage.USER: return createUser();
       case RecipeDSLPackage.RECIPE: return createRecipe();
+      case RecipeDSLPackage.LEVEL: return createLevel();
       case RecipeDSLPackage.INGREDIENT: return createIngredient();
-      case RecipeDSLPackage.MEASURE: return createMeasure();
       case RecipeDSLPackage.WEIGHT: return createWeight();
       case RecipeDSLPackage.COUNT: return createCount();
       case RecipeDSLPackage.DEVICE: return createDevice();
@@ -96,6 +98,28 @@ public class RecipeDSLFactoryImpl extends EFactoryImpl implements RecipeDSLFacto
    * <!-- end-user-doc -->
    * @generated
    */
+  public Manager createManager()
+  {
+    ManagerImpl manager = new ManagerImpl();
+    return manager;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public User createUser()
+  {
+    UserImpl user = new UserImpl();
+    return user;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Recipe createRecipe()
   {
     RecipeImpl recipe = new RecipeImpl();
@@ -107,10 +131,10 @@ public class RecipeDSLFactoryImpl extends EFactoryImpl implements RecipeDSLFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public Ingredient createIngredient()
+  public Level createLevel()
   {
-    IngredientImpl ingredient = new IngredientImpl();
-    return ingredient;
+    LevelImpl level = new LevelImpl();
+    return level;
   }
 
   /**
@@ -118,10 +142,10 @@ public class RecipeDSLFactoryImpl extends EFactoryImpl implements RecipeDSLFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public Measure createMeasure()
+  public Ingredient createIngredient()
   {
-    MeasureImpl measure = new MeasureImpl();
-    return measure;
+    IngredientImpl ingredient = new IngredientImpl();
+    return ingredient;
   }
 
   /**

@@ -36,7 +36,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time
    * @generated
    * @ordered
    */
-  protected static final String TIME_EDEFAULT = null;
+  protected static final int TIME_EDEFAULT = 0;
 
   /**
    * The cached value of the '{@link #getTime() <em>Time</em>}' attribute.
@@ -46,7 +46,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time
    * @generated
    * @ordered
    */
-  protected String time = TIME_EDEFAULT;
+  protected int time = TIME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTime()
+  public int getTime()
   {
     return time;
   }
@@ -84,9 +84,9 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTime(String newTime)
+  public void setTime(int newTime)
   {
-    String oldTime = time;
+    int oldTime = time;
     time = newTime;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.TIME__TIME, oldTime, time));
@@ -119,7 +119,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time
     switch (featureID)
     {
       case RecipeDSLPackage.TIME__TIME:
-        setTime((String)newValue);
+        setTime((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -153,7 +153,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time
     switch (featureID)
     {
       case RecipeDSLPackage.TIME__TIME:
-        return TIME_EDEFAULT == null ? time != null : !TIME_EDEFAULT.equals(time);
+        return time != TIME_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

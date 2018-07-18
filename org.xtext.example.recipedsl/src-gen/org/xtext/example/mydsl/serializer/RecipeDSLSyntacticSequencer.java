@@ -10,6 +10,9 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.example.mydsl.services.RecipeDSLGrammarAccess;
@@ -18,10 +21,14 @@ import org.xtext.example.mydsl.services.RecipeDSLGrammarAccess;
 public class RecipeDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected RecipeDSLGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Time_DKeyword_2_3_or_HKeyword_2_2_or_MinKeyword_2_1_or_SecKeyword_2_0;
+	protected AbstractElementAlias match_Weight_GKeyword_1_1_or_KgKeyword_1_2_or_MgKeyword_1_0_or_TKeyword_1_3;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (RecipeDSLGrammarAccess) access;
+		match_Time_DKeyword_2_3_or_HKeyword_2_2_or_MinKeyword_2_1_or_SecKeyword_2_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTimeAccess().getDKeyword_2_3()), new TokenAlias(false, false, grammarAccess.getTimeAccess().getHKeyword_2_2()), new TokenAlias(false, false, grammarAccess.getTimeAccess().getMinKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getTimeAccess().getSecKeyword_2_0()));
+		match_Weight_GKeyword_1_1_or_KgKeyword_1_2_or_MgKeyword_1_0_or_TKeyword_1_3 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getWeightAccess().getGKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getWeightAccess().getKgKeyword_1_2()), new TokenAlias(false, false, grammarAccess.getWeightAccess().getMgKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getWeightAccess().getTKeyword_1_3()));
 	}
 	
 	@Override
@@ -36,8 +43,34 @@ public class RecipeDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_Time_DKeyword_2_3_or_HKeyword_2_2_or_MinKeyword_2_1_or_SecKeyword_2_0.equals(syntax))
+				emit_Time_DKeyword_2_3_or_HKeyword_2_2_or_MinKeyword_2_1_or_SecKeyword_2_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Weight_GKeyword_1_1_or_KgKeyword_1_2_or_MgKeyword_1_0_or_TKeyword_1_3.equals(syntax))
+				emit_Weight_GKeyword_1_1_or_KgKeyword_1_2_or_MgKeyword_1_0_or_TKeyword_1_3(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'sec' | 'min' | 'h' | 'd'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     time=INT (ambiguity) (rule end)
+	 */
+	protected void emit_Time_DKeyword_2_3_or_HKeyword_2_2_or_MinKeyword_2_1_or_SecKeyword_2_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'mg' | 'g' | 'kg' | 't'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     weight+=EFloat (ambiguity) (rule end)
+	 */
+	protected void emit_Weight_GKeyword_1_1_or_KgKeyword_1_2_or_MgKeyword_1_0_or_TKeyword_1_3(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

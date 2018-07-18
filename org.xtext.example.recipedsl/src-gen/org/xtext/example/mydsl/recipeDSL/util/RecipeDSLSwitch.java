@@ -80,10 +80,31 @@ public class RecipeDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RecipeDSLPackage.MANAGER:
+      {
+        Manager manager = (Manager)theEObject;
+        T result = caseManager(manager);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RecipeDSLPackage.USER:
+      {
+        User user = (User)theEObject;
+        T result = caseUser(user);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case RecipeDSLPackage.RECIPE:
       {
         Recipe recipe = (Recipe)theEObject;
         T result = caseRecipe(recipe);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RecipeDSLPackage.LEVEL:
+      {
+        Level level = (Level)theEObject;
+        T result = caseLevel(level);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -94,18 +115,10 @@ public class RecipeDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RecipeDSLPackage.MEASURE:
-      {
-        Measure measure = (Measure)theEObject;
-        T result = caseMeasure(measure);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case RecipeDSLPackage.WEIGHT:
       {
         Weight weight = (Weight)theEObject;
         T result = caseWeight(weight);
-        if (result == null) result = caseMeasure(weight);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -113,7 +126,7 @@ public class RecipeDSLSwitch<T> extends Switch<T>
       {
         Count count = (Count)theEObject;
         T result = caseCount(count);
-        if (result == null) result = caseMeasure(count);
+        if (result == null) result = caseIngredient(count);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -166,6 +179,38 @@ public class RecipeDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Manager</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Manager</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseManager(Manager object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>User</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>User</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUser(User object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Recipe</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -182,6 +227,22 @@ public class RecipeDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Level</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Level</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLevel(Level object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Ingredient</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -193,22 +254,6 @@ public class RecipeDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIngredient(Ingredient object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Measure</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Measure</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMeasure(Measure object)
   {
     return null;
   }

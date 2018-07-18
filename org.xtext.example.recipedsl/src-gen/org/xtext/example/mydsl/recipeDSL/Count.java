@@ -13,39 +13,39 @@ package org.xtext.example.mydsl.recipeDSL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.Count#getCount <em>Count</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.Count#getC <em>C</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getCount()
  * @model
  * @generated
  */
-public interface Count extends Measure
+public interface Count extends Ingredient
 {
   /**
-   * Returns the value of the '<em><b>Count</b></em>' attribute.
+   * Returns the value of the '<em><b>C</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Count</em>' attribute isn't clear,
+   * If the meaning of the '<em>C</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Count</em>' attribute.
-   * @see #setCount(int)
-   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getCount_Count()
+   * @return the value of the '<em>C</em>' attribute.
+   * @see #setC(int)
+   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getCount_C()
    * @model
    * @generated
    */
-  int getCount();
+  int getC();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.recipeDSL.Count#getCount <em>Count</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.recipeDSL.Count#getC <em>C</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Count</em>' attribute.
-   * @see #getCount()
+   * @param value the new value of the '<em>C</em>' attribute.
+   * @see #getC()
    * @generated
    */
-  void setCount(int value);
+  void setC(int value);
 
 } // Count

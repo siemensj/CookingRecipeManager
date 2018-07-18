@@ -3,22 +3,17 @@
  */
 package org.xtext.example.mydsl.recipeDSL.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
+import org.xtext.example.mydsl.recipeDSL.Manager;
 import org.xtext.example.mydsl.recipeDSL.Model;
-import org.xtext.example.mydsl.recipeDSL.Recipe;
 import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
 
 /**
@@ -29,7 +24,7 @@ import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.ModelImpl#getRecipes <em>Recipes</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.ModelImpl#getMgr <em>Mgr</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +32,14 @@ import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getRecipes() <em>Recipes</em>}' containment reference list.
+   * The cached value of the '{@link #getMgr() <em>Mgr</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRecipes()
+   * @see #getMgr()
    * @generated
    * @ordered
    */
-  protected EList<Recipe> recipes;
+  protected Manager mgr;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +67,47 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Recipe> getRecipes()
+  public Manager getMgr()
   {
-    if (recipes == null)
+    return mgr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetMgr(Manager newMgr, NotificationChain msgs)
+  {
+    Manager oldMgr = mgr;
+    mgr = newMgr;
+    if (eNotificationRequired())
     {
-      recipes = new EObjectContainmentEList<Recipe>(Recipe.class, this, RecipeDSLPackage.MODEL__RECIPES);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.MODEL__MGR, oldMgr, newMgr);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return recipes;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMgr(Manager newMgr)
+  {
+    if (newMgr != mgr)
+    {
+      NotificationChain msgs = null;
+      if (mgr != null)
+        msgs = ((InternalEObject)mgr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RecipeDSLPackage.MODEL__MGR, null, msgs);
+      if (newMgr != null)
+        msgs = ((InternalEObject)newMgr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RecipeDSLPackage.MODEL__MGR, null, msgs);
+      msgs = basicSetMgr(newMgr, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.MODEL__MGR, newMgr, newMgr));
   }
 
   /**
@@ -91,8 +120,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.MODEL__RECIPES:
-        return ((InternalEList<?>)getRecipes()).basicRemove(otherEnd, msgs);
+      case RecipeDSLPackage.MODEL__MGR:
+        return basicSetMgr(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +136,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.MODEL__RECIPES:
-        return getRecipes();
+      case RecipeDSLPackage.MODEL__MGR:
+        return getMgr();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,15 +147,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.MODEL__RECIPES:
-        getRecipes().clear();
-        getRecipes().addAll((Collection<? extends Recipe>)newValue);
+      case RecipeDSLPackage.MODEL__MGR:
+        setMgr((Manager)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +169,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.MODEL__RECIPES:
-        getRecipes().clear();
+      case RecipeDSLPackage.MODEL__MGR:
+        setMgr((Manager)null);
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +186,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.MODEL__RECIPES:
-        return recipes != null && !recipes.isEmpty();
+      case RecipeDSLPackage.MODEL__MGR:
+        return mgr != null;
     }
     return super.eIsSet(featureID);
   }

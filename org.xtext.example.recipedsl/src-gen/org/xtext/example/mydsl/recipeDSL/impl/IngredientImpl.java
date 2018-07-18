@@ -3,8 +3,12 @@
  */
 package org.xtext.example.mydsl.recipeDSL.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -12,9 +16,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.xtext.example.mydsl.recipeDSL.Ingredient;
-import org.xtext.example.mydsl.recipeDSL.Measure;
 import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
+import org.xtext.example.mydsl.recipeDSL.Weight;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,14 +60,14 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getMeasure() <em>Measure</em>}' containment reference.
+   * The cached value of the '{@link #getMeasure() <em>Measure</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMeasure()
    * @generated
    * @ordered
    */
-  protected Measure measure;
+  protected EList<Weight> measure;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,47 +118,13 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Measure getMeasure()
+  public EList<Weight> getMeasure()
   {
+    if (measure == null)
+    {
+      measure = new EObjectContainmentEList<Weight>(Weight.class, this, RecipeDSLPackage.INGREDIENT__MEASURE);
+    }
     return measure;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetMeasure(Measure newMeasure, NotificationChain msgs)
-  {
-    Measure oldMeasure = measure;
-    measure = newMeasure;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.INGREDIENT__MEASURE, oldMeasure, newMeasure);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMeasure(Measure newMeasure)
-  {
-    if (newMeasure != measure)
-    {
-      NotificationChain msgs = null;
-      if (measure != null)
-        msgs = ((InternalEObject)measure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RecipeDSLPackage.INGREDIENT__MEASURE, null, msgs);
-      if (newMeasure != null)
-        msgs = ((InternalEObject)newMeasure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RecipeDSLPackage.INGREDIENT__MEASURE, null, msgs);
-      msgs = basicSetMeasure(newMeasure, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.INGREDIENT__MEASURE, newMeasure, newMeasure));
   }
 
   /**
@@ -165,7 +138,7 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
     switch (featureID)
     {
       case RecipeDSLPackage.INGREDIENT__MEASURE:
-        return basicSetMeasure(null, msgs);
+        return ((InternalEList<?>)getMeasure()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -193,6 +166,7 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -202,7 +176,8 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
         setName((String)newValue);
         return;
       case RecipeDSLPackage.INGREDIENT__MEASURE:
-        setMeasure((Measure)newValue);
+        getMeasure().clear();
+        getMeasure().addAll((Collection<? extends Weight>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -222,7 +197,7 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
         setName(NAME_EDEFAULT);
         return;
       case RecipeDSLPackage.INGREDIENT__MEASURE:
-        setMeasure((Measure)null);
+        getMeasure().clear();
         return;
     }
     super.eUnset(featureID);
@@ -241,7 +216,7 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
       case RecipeDSLPackage.INGREDIENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case RecipeDSLPackage.INGREDIENT__MEASURE:
-        return measure != null;
+        return measure != null && !measure.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -32,12 +32,12 @@ public interface Time extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Time</em>' attribute.
-   * @see #setTime(String)
+   * @see #setTime(int)
    * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getTime_Time()
    * @model
    * @generated
    */
-  String getTime();
+  int getTime();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl.recipeDSL.Time#getTime <em>Time</em>}' attribute.
@@ -47,6 +47,6 @@ public interface Time extends EObject
    * @see #getTime()
    * @generated
    */
-  void setTime(String value);
+  void setTime(int value);
 
 } // Time

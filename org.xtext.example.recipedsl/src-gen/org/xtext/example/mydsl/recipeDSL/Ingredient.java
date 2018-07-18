@@ -3,6 +3,8 @@
  */
 package org.xtext.example.mydsl.recipeDSL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -51,29 +53,19 @@ public interface Ingredient extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Measure</b></em>' containment reference.
+   * Returns the value of the '<em><b>Measure</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.recipeDSL.Weight}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Measure</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Measure</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Measure</em>' containment reference.
-   * @see #setMeasure(Measure)
+   * @return the value of the '<em>Measure</em>' containment reference list.
    * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getIngredient_Measure()
    * @model containment="true"
    * @generated
    */
-  Measure getMeasure();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.recipeDSL.Ingredient#getMeasure <em>Measure</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Measure</em>' containment reference.
-   * @see #getMeasure()
-   * @generated
-   */
-  void setMeasure(Measure value);
+  EList<Weight> getMeasure();
 
 } // Ingredient

@@ -18,11 +18,14 @@ import org.xtext.example.mydsl.recipeDSL.Cooking;
 import org.xtext.example.mydsl.recipeDSL.Count;
 import org.xtext.example.mydsl.recipeDSL.Device;
 import org.xtext.example.mydsl.recipeDSL.Ingredient;
+import org.xtext.example.mydsl.recipeDSL.Level;
+import org.xtext.example.mydsl.recipeDSL.Manager;
 import org.xtext.example.mydsl.recipeDSL.Model;
 import org.xtext.example.mydsl.recipeDSL.Recipe;
 import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
 import org.xtext.example.mydsl.recipeDSL.Step;
 import org.xtext.example.mydsl.recipeDSL.Time;
+import org.xtext.example.mydsl.recipeDSL.User;
 import org.xtext.example.mydsl.recipeDSL.Weight;
 import org.xtext.example.mydsl.services.RecipeDSLGrammarAccess;
 
@@ -52,6 +55,12 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case RecipeDSLPackage.INGREDIENT:
 				sequence_Ingredient(context, (Ingredient) semanticObject); 
 				return; 
+			case RecipeDSLPackage.LEVEL:
+				sequence_Level(context, (Level) semanticObject); 
+				return; 
+			case RecipeDSLPackage.MANAGER:
+				sequence_Manager(context, (Manager) semanticObject); 
+				return; 
 			case RecipeDSLPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
@@ -63,6 +72,9 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case RecipeDSLPackage.TIME:
 				sequence_Time(context, (Time) semanticObject); 
+				return; 
+			case RecipeDSLPackage.USER:
+				sequence_User(context, (User) semanticObject); 
 				return; 
 			case RecipeDSLPackage.WEIGHT:
 				sequence_Weight(context, (Weight) semanticObject); 
@@ -77,7 +89,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Cooking returns Cooking
 	 *
 	 * Constraint:
-	 *     (order=ID (time=Time step+=Step)*)
+	 *     (s+=INT time+=Time step+=Step)
 	 */
 	protected void sequence_Cooking(ISerializationContext context, Cooking semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -86,19 +98,19 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
-	 *     Measure returns Count
+	 *     Ingredient returns Count
 	 *     Count returns Count
 	 *
 	 * Constraint:
-	 *     count=INT
+	 *     c=INT
 	 */
 	protected void sequence_Count(ISerializationContext context, Count semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.COUNT__COUNT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.COUNT__COUNT));
+			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.COUNT__C) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.COUNT__C));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCountAccess().getCountINTTerminalRuleCall_1_0(), semanticObject.getCount());
+		feeder.accept(grammarAccess.getCountAccess().getCINTTerminalRuleCall_0_0(), semanticObject.getC());
 		feeder.finish();
 	}
 	
@@ -126,19 +138,34 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Ingredient returns Ingredient
 	 *
 	 * Constraint:
-	 *     (name=ID measure=Measure)
+	 *     (name=ID measure+=Weight)
 	 */
 	protected void sequence_Ingredient(ISerializationContext context, Ingredient semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.INGREDIENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.INGREDIENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.INGREDIENT__MEASURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.INGREDIENT__MEASURE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIngredientAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getIngredientAccess().getMeasureMeasureParserRuleCall_3_0(), semanticObject.getMeasure());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Level returns Level
+	 *
+	 * Constraint:
+	 *     (name='1' | name='2' | name='3' | name='4' | name='5')
+	 */
+	protected void sequence_Level(ISerializationContext context, Level semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Manager returns Manager
+	 *
+	 * Constraint:
+	 *     (name=ID user+=User user+=User* recipes+=Recipe*)
+	 */
+	protected void sequence_Manager(ISerializationContext context, Manager semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -147,10 +174,16 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     recipes+=Recipe+
+	 *     mgr=Manager
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.MODEL__MGR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.MODEL__MGR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModelAccess().getMgrManagerParserRuleCall_0(), semanticObject.getMgr());
+		feeder.finish();
 	}
 	
 	
@@ -159,7 +192,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Recipe returns Recipe
 	 *
 	 * Constraint:
-	 *     (name=ID ingredient+=Ingredient+ device+=Device+ cooking+=Cooking+)
+	 *     (name=ID level+=Level ingredient+=Ingredient+ device+=Device+ cooking+=Cooking+)
 	 */
 	protected void sequence_Recipe(ISerializationContext context, Recipe semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -171,19 +204,10 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Step returns Step
 	 *
 	 * Constraint:
-	 *     (d=Device i=Ingredient)
+	 *     (dev+=[Device|ID] dev2+=[Device|ID]* ing+=[Ingredient|ID] ing2+=[Ingredient|ID]*)
 	 */
 	protected void sequence_Step(ISerializationContext context, Step semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.STEP__D) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.STEP__D));
-			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.STEP__I) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.STEP__I));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStepAccess().getDDeviceParserRuleCall_1_0(), semanticObject.getD());
-		feeder.accept(grammarAccess.getStepAccess().getIIngredientParserRuleCall_3_0(), semanticObject.getI());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -192,7 +216,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Time returns Time
 	 *
 	 * Constraint:
-	 *     time=STRING
+	 *     time=INT
 	 */
 	protected void sequence_Time(ISerializationContext context, Time semanticObject) {
 		if (errorAcceptor != null) {
@@ -200,27 +224,38 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.TIME__TIME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTimeAccess().getTimeSTRINGTerminalRuleCall_1_0(), semanticObject.getTime());
+		feeder.accept(grammarAccess.getTimeAccess().getTimeINTTerminalRuleCall_1_0(), semanticObject.getTime());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Measure returns Weight
+	 *     User returns User
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_User(ISerializationContext context, User semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.USER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.USER__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getUserAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Weight returns Weight
 	 *
 	 * Constraint:
-	 *     gramms=STRING
+	 *     weight+=EFloat
 	 */
 	protected void sequence_Weight(ISerializationContext context, Weight semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.WEIGHT__GRAMMS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.WEIGHT__GRAMMS));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWeightAccess().getGrammsSTRINGTerminalRuleCall_1_0(), semanticObject.getGramms());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

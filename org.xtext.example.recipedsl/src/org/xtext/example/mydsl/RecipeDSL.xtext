@@ -9,41 +9,37 @@ Model:
 	(mgr=Manager);
 	
 Manager:
-	"Rezeptbuch" name=ID 
-		"von" (user+=User) ("," user+=User)*
-		(recipes+=Recipe)
+	"Recipebook" name=ID 
+		"from" (user+=User) ("," user+=User)*
+		(recipes+=Recipe)*
 ;
 
 User:
-	Name=EString
+	name=ID
 ;	
 	
 Recipe:
 	"Recipe" name=ID
-		(level=Level) 
+		(level+=Level) 
 		(ingredient+=Ingredient)+
 		(device+=Device)+
 		(cooking+=Cooking)+
 ;
 
-Level:
-	"Level" ("1"|"2"|"3"|"4"|"5")
+Level: 
+"Level" name=("1"|"2"|"3"|"4"|"5")
 ;
 
 Ingredient:
-	'Ingredient' name=ID "amount" measure=Measure
-;
-
-Measure:
-	Weight | Count
+	'Ingredient' name=ID "amount" measure+=Weight|Count
 ;
 
 Weight:
-	"Weight" gramms=STRING
+	weight+=(EFloat) ("mg"|"g"|"kg"|"t")
 ;
 
 Count:
-	"Count" count=INT
+	c=INT "pieces"
 ;
 
 Device:
@@ -51,16 +47,16 @@ Device:
 ;
 
 Cooking:
-	"Cooking" order=ID
-	(time=Time step+=Step)*
+	"Step" s+=INT
+	(time+=Time "," step+=Step)
 ;
 
 Time:
-	"For" time=STRING
+	"For" time=INT ("sec"|"min"|"h"|"d")
 ;
 
 Step:
-	"Use" d=Device "with" i=Ingredient
+	"Use" dev+=[Device]("," dev2+=[Device])* "with" ( ing+=[Ingredient])("," ing2+=[Ingredient])*
 ;
 
 EString returns ecore::EString:

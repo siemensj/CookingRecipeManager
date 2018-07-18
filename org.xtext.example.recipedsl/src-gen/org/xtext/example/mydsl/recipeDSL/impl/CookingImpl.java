@@ -5,7 +5,6 @@ package org.xtext.example.mydsl.recipeDSL.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,9 +12,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,7 +31,7 @@ import org.xtext.example.mydsl.recipeDSL.Time;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.CookingImpl#getOrder <em>Order</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.CookingImpl#getS <em>S</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.CookingImpl#getTime <em>Time</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.CookingImpl#getStep <em>Step</em>}</li>
  * </ul>
@@ -42,34 +41,24 @@ import org.xtext.example.mydsl.recipeDSL.Time;
 public class CookingImpl extends MinimalEObjectImpl.Container implements Cooking
 {
   /**
-   * The default value of the '{@link #getOrder() <em>Order</em>}' attribute.
+   * The cached value of the '{@link #getS() <em>S</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOrder()
+   * @see #getS()
    * @generated
    * @ordered
    */
-  protected static final String ORDER_EDEFAULT = null;
+  protected EList<Integer> s;
 
   /**
-   * The cached value of the '{@link #getOrder() <em>Order</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOrder()
-   * @generated
-   * @ordered
-   */
-  protected String order = ORDER_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getTime() <em>Time</em>}' containment reference.
+   * The cached value of the '{@link #getTime() <em>Time</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTime()
    * @generated
    * @ordered
    */
-  protected Time time;
+  protected EList<Time> time;
 
   /**
    * The cached value of the '{@link #getStep() <em>Step</em>}' containment reference list.
@@ -107,9 +96,13 @@ public class CookingImpl extends MinimalEObjectImpl.Container implements Cooking
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOrder()
+  public EList<Integer> getS()
   {
-    return order;
+    if (s == null)
+    {
+      s = new EDataTypeEList<Integer>(Integer.class, this, RecipeDSLPackage.COOKING__S);
+    }
+    return s;
   }
 
   /**
@@ -117,60 +110,13 @@ public class CookingImpl extends MinimalEObjectImpl.Container implements Cooking
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOrder(String newOrder)
+  public EList<Time> getTime()
   {
-    String oldOrder = order;
-    order = newOrder;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.COOKING__ORDER, oldOrder, order));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Time getTime()
-  {
+    if (time == null)
+    {
+      time = new EObjectContainmentEList<Time>(Time.class, this, RecipeDSLPackage.COOKING__TIME);
+    }
     return time;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTime(Time newTime, NotificationChain msgs)
-  {
-    Time oldTime = time;
-    time = newTime;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.COOKING__TIME, oldTime, newTime);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTime(Time newTime)
-  {
-    if (newTime != time)
-    {
-      NotificationChain msgs = null;
-      if (time != null)
-        msgs = ((InternalEObject)time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RecipeDSLPackage.COOKING__TIME, null, msgs);
-      if (newTime != null)
-        msgs = ((InternalEObject)newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RecipeDSLPackage.COOKING__TIME, null, msgs);
-      msgs = basicSetTime(newTime, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.COOKING__TIME, newTime, newTime));
   }
 
   /**
@@ -198,7 +144,7 @@ public class CookingImpl extends MinimalEObjectImpl.Container implements Cooking
     switch (featureID)
     {
       case RecipeDSLPackage.COOKING__TIME:
-        return basicSetTime(null, msgs);
+        return ((InternalEList<?>)getTime()).basicRemove(otherEnd, msgs);
       case RecipeDSLPackage.COOKING__STEP:
         return ((InternalEList<?>)getStep()).basicRemove(otherEnd, msgs);
     }
@@ -215,8 +161,8 @@ public class CookingImpl extends MinimalEObjectImpl.Container implements Cooking
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COOKING__ORDER:
-        return getOrder();
+      case RecipeDSLPackage.COOKING__S:
+        return getS();
       case RecipeDSLPackage.COOKING__TIME:
         return getTime();
       case RecipeDSLPackage.COOKING__STEP:
@@ -236,11 +182,13 @@ public class CookingImpl extends MinimalEObjectImpl.Container implements Cooking
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COOKING__ORDER:
-        setOrder((String)newValue);
+      case RecipeDSLPackage.COOKING__S:
+        getS().clear();
+        getS().addAll((Collection<? extends Integer>)newValue);
         return;
       case RecipeDSLPackage.COOKING__TIME:
-        setTime((Time)newValue);
+        getTime().clear();
+        getTime().addAll((Collection<? extends Time>)newValue);
         return;
       case RecipeDSLPackage.COOKING__STEP:
         getStep().clear();
@@ -260,11 +208,11 @@ public class CookingImpl extends MinimalEObjectImpl.Container implements Cooking
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COOKING__ORDER:
-        setOrder(ORDER_EDEFAULT);
+      case RecipeDSLPackage.COOKING__S:
+        getS().clear();
         return;
       case RecipeDSLPackage.COOKING__TIME:
-        setTime((Time)null);
+        getTime().clear();
         return;
       case RecipeDSLPackage.COOKING__STEP:
         getStep().clear();
@@ -283,10 +231,10 @@ public class CookingImpl extends MinimalEObjectImpl.Container implements Cooking
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COOKING__ORDER:
-        return ORDER_EDEFAULT == null ? order != null : !ORDER_EDEFAULT.equals(order);
+      case RecipeDSLPackage.COOKING__S:
+        return s != null && !s.isEmpty();
       case RecipeDSLPackage.COOKING__TIME:
-        return time != null;
+        return time != null && !time.isEmpty();
       case RecipeDSLPackage.COOKING__STEP:
         return step != null && !step.isEmpty();
     }
@@ -304,8 +252,8 @@ public class CookingImpl extends MinimalEObjectImpl.Container implements Cooking
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (order: ");
-    result.append(order);
+    result.append(" (s: ");
+    result.append(s);
     result.append(')');
     return result.toString();
   }

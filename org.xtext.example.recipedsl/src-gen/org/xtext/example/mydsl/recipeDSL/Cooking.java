@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.Cooking#getOrder <em>Order</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.Cooking#getS <em>S</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.Cooking#getTime <em>Time</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.Cooking#getStep <em>Step</em>}</li>
  * </ul>
@@ -28,56 +28,36 @@ import org.eclipse.emf.ecore.EObject;
 public interface Cooking extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Order</b></em>' attribute.
+   * Returns the value of the '<em><b>S</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.Integer}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Order</em>' attribute isn't clear,
+   * If the meaning of the '<em>S</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Order</em>' attribute.
-   * @see #setOrder(String)
-   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getCooking_Order()
-   * @model
+   * @return the value of the '<em>S</em>' attribute list.
+   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getCooking_S()
+   * @model unique="false"
    * @generated
    */
-  String getOrder();
+  EList<Integer> getS();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.recipeDSL.Cooking#getOrder <em>Order</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Order</em>' attribute.
-   * @see #getOrder()
-   * @generated
-   */
-  void setOrder(String value);
-
-  /**
-   * Returns the value of the '<em><b>Time</b></em>' containment reference.
+   * Returns the value of the '<em><b>Time</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.recipeDSL.Time}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Time</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Time</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Time</em>' containment reference.
-   * @see #setTime(Time)
+   * @return the value of the '<em>Time</em>' containment reference list.
    * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getCooking_Time()
    * @model containment="true"
    * @generated
    */
-  Time getTime();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.recipeDSL.Cooking#getTime <em>Time</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Time</em>' containment reference.
-   * @see #getTime()
-   * @generated
-   */
-  void setTime(Time value);
+  EList<Time> getTime();
 
   /**
    * Returns the value of the '<em><b>Step</b></em>' containment reference list.

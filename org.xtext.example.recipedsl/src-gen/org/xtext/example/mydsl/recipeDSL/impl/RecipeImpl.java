@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.xtext.example.mydsl.recipeDSL.Cooking;
 import org.xtext.example.mydsl.recipeDSL.Device;
 import org.xtext.example.mydsl.recipeDSL.Ingredient;
+import org.xtext.example.mydsl.recipeDSL.Level;
 import org.xtext.example.mydsl.recipeDSL.Recipe;
 import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
 
@@ -34,6 +35,7 @@ import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.RecipeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.RecipeImpl#getLevel <em>Level</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.RecipeImpl#getIngredient <em>Ingredient</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.RecipeImpl#getDevice <em>Device</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.RecipeImpl#getCooking <em>Cooking</em>}</li>
@@ -62,6 +64,16 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getLevel() <em>Level</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLevel()
+   * @generated
+   * @ordered
+   */
+  protected EList<Level> level;
 
   /**
    * The cached value of the '{@link #getIngredient() <em>Ingredient</em>}' containment reference list.
@@ -142,6 +154,20 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Level> getLevel()
+  {
+    if (level == null)
+    {
+      level = new EObjectContainmentEList<Level>(Level.class, this, RecipeDSLPackage.RECIPE__LEVEL);
+    }
+    return level;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Ingredient> getIngredient()
   {
     if (ingredient == null)
@@ -189,6 +215,8 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
   {
     switch (featureID)
     {
+      case RecipeDSLPackage.RECIPE__LEVEL:
+        return ((InternalEList<?>)getLevel()).basicRemove(otherEnd, msgs);
       case RecipeDSLPackage.RECIPE__INGREDIENT:
         return ((InternalEList<?>)getIngredient()).basicRemove(otherEnd, msgs);
       case RecipeDSLPackage.RECIPE__DEVICE:
@@ -211,6 +239,8 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
     {
       case RecipeDSLPackage.RECIPE__NAME:
         return getName();
+      case RecipeDSLPackage.RECIPE__LEVEL:
+        return getLevel();
       case RecipeDSLPackage.RECIPE__INGREDIENT:
         return getIngredient();
       case RecipeDSLPackage.RECIPE__DEVICE:
@@ -234,6 +264,10 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
     {
       case RecipeDSLPackage.RECIPE__NAME:
         setName((String)newValue);
+        return;
+      case RecipeDSLPackage.RECIPE__LEVEL:
+        getLevel().clear();
+        getLevel().addAll((Collection<? extends Level>)newValue);
         return;
       case RecipeDSLPackage.RECIPE__INGREDIENT:
         getIngredient().clear();
@@ -264,6 +298,9 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
       case RecipeDSLPackage.RECIPE__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case RecipeDSLPackage.RECIPE__LEVEL:
+        getLevel().clear();
+        return;
       case RecipeDSLPackage.RECIPE__INGREDIENT:
         getIngredient().clear();
         return;
@@ -289,6 +326,8 @@ public class RecipeImpl extends MinimalEObjectImpl.Container implements Recipe
     {
       case RecipeDSLPackage.RECIPE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case RecipeDSLPackage.RECIPE__LEVEL:
+        return level != null && !level.isEmpty();
       case RecipeDSLPackage.RECIPE__INGREDIENT:
         return ingredient != null && !ingredient.isEmpty();
       case RecipeDSLPackage.RECIPE__DEVICE:

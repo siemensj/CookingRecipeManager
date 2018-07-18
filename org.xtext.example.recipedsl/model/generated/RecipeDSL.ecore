@@ -3,11 +3,23 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="recipeDSL" nsURI="http://www.xtext.org/example/mydsl/RecipeDSL"
     nsPrefix="recipeDSL">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mgr" eType="#//Manager"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Manager">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="user" upperBound="-1" eType="#//User"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="recipes" upperBound="-1"
         eType="#//Recipe" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Recipe">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="level" upperBound="-1"
+        eType="#//Level" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ingredient" upperBound="-1"
         eType="#//Ingredient" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="device" upperBound="-1"
@@ -15,33 +27,43 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="cooking" upperBound="-1"
         eType="#//Cooking" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Level">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ingredient">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="measure" eType="#//Measure"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measure" upperBound="-1"
+        eType="#//Weight" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Measure"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Weight" eSuperTypes="#//Measure">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gramms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Weight">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Count" eSuperTypes="#//Measure">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Count" eSuperTypes="#//Ingredient">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="c" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Device">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cooking">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="#//Time" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="s" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" upperBound="-1" eType="#//Time"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Time">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Step">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="d" eType="#//Device" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="i" eType="#//Ingredient"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dev" unique="false" upperBound="-1"
+        eType="#//Device"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dev2" unique="false" upperBound="-1"
+        eType="#//Device"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ing" unique="false" upperBound="-1"
+        eType="#//Ingredient"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ing2" unique="false" upperBound="-1"
+        eType="#//Ingredient"/>
   </eClassifiers>
 </ecore:EPackage>

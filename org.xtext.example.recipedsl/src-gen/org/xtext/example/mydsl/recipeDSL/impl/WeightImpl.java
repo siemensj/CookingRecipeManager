@@ -3,11 +3,15 @@
  */
 package org.xtext.example.mydsl.recipeDSL.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
 import org.xtext.example.mydsl.recipeDSL.Weight;
@@ -20,32 +24,22 @@ import org.xtext.example.mydsl.recipeDSL.Weight;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.WeightImpl#getGramms <em>Gramms</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.WeightImpl#getWeight <em>Weight</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WeightImpl extends MeasureImpl implements Weight
+public class WeightImpl extends MinimalEObjectImpl.Container implements Weight
 {
   /**
-   * The default value of the '{@link #getGramms() <em>Gramms</em>}' attribute.
+   * The cached value of the '{@link #getWeight() <em>Weight</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGramms()
+   * @see #getWeight()
    * @generated
    * @ordered
    */
-  protected static final String GRAMMS_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getGramms() <em>Gramms</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getGramms()
-   * @generated
-   * @ordered
-   */
-  protected String gramms = GRAMMS_EDEFAULT;
+  protected EList<Float> weight;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,22 +67,13 @@ public class WeightImpl extends MeasureImpl implements Weight
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getGramms()
+  public EList<Float> getWeight()
   {
-    return gramms;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setGramms(String newGramms)
-  {
-    String oldGramms = gramms;
-    gramms = newGramms;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.WEIGHT__GRAMMS, oldGramms, gramms));
+    if (weight == null)
+    {
+      weight = new EDataTypeEList<Float>(Float.class, this, RecipeDSLPackage.WEIGHT__WEIGHT);
+    }
+    return weight;
   }
 
   /**
@@ -101,8 +86,8 @@ public class WeightImpl extends MeasureImpl implements Weight
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.WEIGHT__GRAMMS:
-        return getGramms();
+      case RecipeDSLPackage.WEIGHT__WEIGHT:
+        return getWeight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -112,13 +97,15 @@ public class WeightImpl extends MeasureImpl implements Weight
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.WEIGHT__GRAMMS:
-        setGramms((String)newValue);
+      case RecipeDSLPackage.WEIGHT__WEIGHT:
+        getWeight().clear();
+        getWeight().addAll((Collection<? extends Float>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +121,8 @@ public class WeightImpl extends MeasureImpl implements Weight
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.WEIGHT__GRAMMS:
-        setGramms(GRAMMS_EDEFAULT);
+      case RecipeDSLPackage.WEIGHT__WEIGHT:
+        getWeight().clear();
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +138,8 @@ public class WeightImpl extends MeasureImpl implements Weight
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.WEIGHT__GRAMMS:
-        return GRAMMS_EDEFAULT == null ? gramms != null : !GRAMMS_EDEFAULT.equals(gramms);
+      case RecipeDSLPackage.WEIGHT__WEIGHT:
+        return weight != null && !weight.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +155,8 @@ public class WeightImpl extends MeasureImpl implements Weight
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (gramms: ");
-    result.append(gramms);
+    result.append(" (weight: ");
+    result.append(weight);
     result.append(')');
     return result.toString();
   }

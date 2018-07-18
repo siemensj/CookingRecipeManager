@@ -3,8 +3,6 @@
  */
 package org.xtext.example.mydsl.recipeDSL;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.Model#getRecipes <em>Recipes</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.Model#getMgr <em>Mgr</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getModel()
@@ -26,19 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Recipes</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.recipeDSL.Recipe}.
+   * Returns the value of the '<em><b>Mgr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Recipes</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Mgr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Recipes</em>' containment reference list.
-   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getModel_Recipes()
+   * @return the value of the '<em>Mgr</em>' containment reference.
+   * @see #setMgr(Manager)
+   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getModel_Mgr()
    * @model containment="true"
    * @generated
    */
-  EList<Recipe> getRecipes();
+  Manager getMgr();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.recipeDSL.Model#getMgr <em>Mgr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Mgr</em>' containment reference.
+   * @see #getMgr()
+   * @generated
+   */
+  void setMgr(Manager value);
 
 } // Model

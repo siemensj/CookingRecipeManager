@@ -68,13 +68,13 @@ public interface RecipeDSLPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Recipes</b></em>' containment reference list.
+   * The feature id for the '<em><b>Mgr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__RECIPES = 0;
+  int MODEL__MGR = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -86,6 +86,80 @@ public interface RecipeDSLPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.recipeDSL.impl.ManagerImpl <em>Manager</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.recipeDSL.impl.ManagerImpl
+   * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getManager()
+   * @generated
+   */
+  int MANAGER = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MANAGER__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>User</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MANAGER__USER = 1;
+
+  /**
+   * The feature id for the '<em><b>Recipes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MANAGER__RECIPES = 2;
+
+  /**
+   * The number of structural features of the '<em>Manager</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MANAGER_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.recipeDSL.impl.UserImpl <em>User</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.recipeDSL.impl.UserImpl
+   * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getUser()
+   * @generated
+   */
+  int USER = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USER__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>User</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USER_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.recipeDSL.impl.RecipeImpl <em>Recipe</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -93,7 +167,7 @@ public interface RecipeDSLPackage extends EPackage
    * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getRecipe()
    * @generated
    */
-  int RECIPE = 1;
+  int RECIPE = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -105,13 +179,22 @@ public interface RecipeDSLPackage extends EPackage
   int RECIPE__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Level</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECIPE__LEVEL = 1;
+
+  /**
    * The feature id for the '<em><b>Ingredient</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECIPE__INGREDIENT = 1;
+  int RECIPE__INGREDIENT = 2;
 
   /**
    * The feature id for the '<em><b>Device</b></em>' containment reference list.
@@ -120,7 +203,7 @@ public interface RecipeDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECIPE__DEVICE = 2;
+  int RECIPE__DEVICE = 3;
 
   /**
    * The feature id for the '<em><b>Cooking</b></em>' containment reference list.
@@ -129,7 +212,7 @@ public interface RecipeDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECIPE__COOKING = 3;
+  int RECIPE__COOKING = 4;
 
   /**
    * The number of structural features of the '<em>Recipe</em>' class.
@@ -138,7 +221,35 @@ public interface RecipeDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RECIPE_FEATURE_COUNT = 4;
+  int RECIPE_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.recipeDSL.impl.LevelImpl <em>Level</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.recipeDSL.impl.LevelImpl
+   * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getLevel()
+   * @generated
+   */
+  int LEVEL = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LEVEL__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Level</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LEVEL_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.recipeDSL.impl.IngredientImpl <em>Ingredient</em>}' class.
@@ -148,7 +259,7 @@ public interface RecipeDSLPackage extends EPackage
    * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getIngredient()
    * @generated
    */
-  int INGREDIENT = 2;
+  int INGREDIENT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -160,7 +271,7 @@ public interface RecipeDSLPackage extends EPackage
   int INGREDIENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Measure</b></em>' containment reference.
+   * The feature id for the '<em><b>Measure</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -178,25 +289,6 @@ public interface RecipeDSLPackage extends EPackage
   int INGREDIENT_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.recipeDSL.impl.MeasureImpl <em>Measure</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.recipeDSL.impl.MeasureImpl
-   * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getMeasure()
-   * @generated
-   */
-  int MEASURE = 3;
-
-  /**
-   * The number of structural features of the '<em>Measure</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MEASURE_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.recipeDSL.impl.WeightImpl <em>Weight</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -204,16 +296,16 @@ public interface RecipeDSLPackage extends EPackage
    * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getWeight()
    * @generated
    */
-  int WEIGHT = 4;
+  int WEIGHT = 6;
 
   /**
-   * The feature id for the '<em><b>Gramms</b></em>' attribute.
+   * The feature id for the '<em><b>Weight</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WEIGHT__GRAMMS = MEASURE_FEATURE_COUNT + 0;
+  int WEIGHT__WEIGHT = 0;
 
   /**
    * The number of structural features of the '<em>Weight</em>' class.
@@ -222,7 +314,7 @@ public interface RecipeDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WEIGHT_FEATURE_COUNT = MEASURE_FEATURE_COUNT + 1;
+  int WEIGHT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.recipeDSL.impl.CountImpl <em>Count</em>}' class.
@@ -232,16 +324,34 @@ public interface RecipeDSLPackage extends EPackage
    * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getCount()
    * @generated
    */
-  int COUNT = 5;
+  int COUNT = 7;
 
   /**
-   * The feature id for the '<em><b>Count</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COUNT__COUNT = MEASURE_FEATURE_COUNT + 0;
+  int COUNT__NAME = INGREDIENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Measure</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COUNT__MEASURE = INGREDIENT__MEASURE;
+
+  /**
+   * The feature id for the '<em><b>C</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COUNT__C = INGREDIENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Count</em>' class.
@@ -250,7 +360,7 @@ public interface RecipeDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COUNT_FEATURE_COUNT = MEASURE_FEATURE_COUNT + 1;
+  int COUNT_FEATURE_COUNT = INGREDIENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.recipeDSL.impl.DeviceImpl <em>Device</em>}' class.
@@ -260,7 +370,7 @@ public interface RecipeDSLPackage extends EPackage
    * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getDevice()
    * @generated
    */
-  int DEVICE = 6;
+  int DEVICE = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -288,19 +398,19 @@ public interface RecipeDSLPackage extends EPackage
    * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getCooking()
    * @generated
    */
-  int COOKING = 7;
+  int COOKING = 9;
 
   /**
-   * The feature id for the '<em><b>Order</b></em>' attribute.
+   * The feature id for the '<em><b>S</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COOKING__ORDER = 0;
+  int COOKING__S = 0;
 
   /**
-   * The feature id for the '<em><b>Time</b></em>' containment reference.
+   * The feature id for the '<em><b>Time</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -334,7 +444,7 @@ public interface RecipeDSLPackage extends EPackage
    * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getTime()
    * @generated
    */
-  int TIME = 8;
+  int TIME = 10;
 
   /**
    * The feature id for the '<em><b>Time</b></em>' attribute.
@@ -362,25 +472,43 @@ public interface RecipeDSLPackage extends EPackage
    * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getStep()
    * @generated
    */
-  int STEP = 9;
+  int STEP = 11;
 
   /**
-   * The feature id for the '<em><b>D</b></em>' containment reference.
+   * The feature id for the '<em><b>Dev</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STEP__D = 0;
+  int STEP__DEV = 0;
 
   /**
-   * The feature id for the '<em><b>I</b></em>' containment reference.
+   * The feature id for the '<em><b>Dev2</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STEP__I = 1;
+  int STEP__DEV2 = 1;
+
+  /**
+   * The feature id for the '<em><b>Ing</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP__ING = 2;
+
+  /**
+   * The feature id for the '<em><b>Ing2</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP__ING2 = 3;
 
   /**
    * The number of structural features of the '<em>Step</em>' class.
@@ -389,7 +517,7 @@ public interface RecipeDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STEP_FEATURE_COUNT = 2;
+  int STEP_FEATURE_COUNT = 4;
 
 
   /**
@@ -403,15 +531,79 @@ public interface RecipeDSLPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.recipeDSL.Model#getRecipes <em>Recipes</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.recipeDSL.Model#getMgr <em>Mgr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Recipes</em>'.
-   * @see org.xtext.example.mydsl.recipeDSL.Model#getRecipes()
+   * @return the meta object for the containment reference '<em>Mgr</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Model#getMgr()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Recipes();
+  EReference getModel_Mgr();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.Manager <em>Manager</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Manager</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Manager
+   * @generated
+   */
+  EClass getManager();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.Manager#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Manager#getName()
+   * @see #getManager()
+   * @generated
+   */
+  EAttribute getManager_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.recipeDSL.Manager#getUser <em>User</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>User</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Manager#getUser()
+   * @see #getManager()
+   * @generated
+   */
+  EReference getManager_User();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.recipeDSL.Manager#getRecipes <em>Recipes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Recipes</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Manager#getRecipes()
+   * @see #getManager()
+   * @generated
+   */
+  EReference getManager_Recipes();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.User <em>User</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>User</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.User
+   * @generated
+   */
+  EClass getUser();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.User#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.User#getName()
+   * @see #getUser()
+   * @generated
+   */
+  EAttribute getUser_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.Recipe <em>Recipe</em>}'.
@@ -433,6 +625,17 @@ public interface RecipeDSLPackage extends EPackage
    * @generated
    */
   EAttribute getRecipe_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.recipeDSL.Recipe#getLevel <em>Level</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Level</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Recipe#getLevel()
+   * @see #getRecipe()
+   * @generated
+   */
+  EReference getRecipe_Level();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.recipeDSL.Recipe#getIngredient <em>Ingredient</em>}'.
@@ -468,6 +671,27 @@ public interface RecipeDSLPackage extends EPackage
   EReference getRecipe_Cooking();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.Level <em>Level</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Level</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Level
+   * @generated
+   */
+  EClass getLevel();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.Level#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Level#getName()
+   * @see #getLevel()
+   * @generated
+   */
+  EAttribute getLevel_Name();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.Ingredient <em>Ingredient</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -489,25 +713,15 @@ public interface RecipeDSLPackage extends EPackage
   EAttribute getIngredient_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.recipeDSL.Ingredient#getMeasure <em>Measure</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.recipeDSL.Ingredient#getMeasure <em>Measure</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Measure</em>'.
+   * @return the meta object for the containment reference list '<em>Measure</em>'.
    * @see org.xtext.example.mydsl.recipeDSL.Ingredient#getMeasure()
    * @see #getIngredient()
    * @generated
    */
   EReference getIngredient_Measure();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.Measure <em>Measure</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Measure</em>'.
-   * @see org.xtext.example.mydsl.recipeDSL.Measure
-   * @generated
-   */
-  EClass getMeasure();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.Weight <em>Weight</em>}'.
@@ -520,15 +734,15 @@ public interface RecipeDSLPackage extends EPackage
   EClass getWeight();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.Weight#getGramms <em>Gramms</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl.recipeDSL.Weight#getWeight <em>Weight</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Gramms</em>'.
-   * @see org.xtext.example.mydsl.recipeDSL.Weight#getGramms()
+   * @return the meta object for the attribute list '<em>Weight</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Weight#getWeight()
    * @see #getWeight()
    * @generated
    */
-  EAttribute getWeight_Gramms();
+  EAttribute getWeight_Weight();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.Count <em>Count</em>}'.
@@ -541,15 +755,15 @@ public interface RecipeDSLPackage extends EPackage
   EClass getCount();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.Count#getCount <em>Count</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.Count#getC <em>C</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Count</em>'.
-   * @see org.xtext.example.mydsl.recipeDSL.Count#getCount()
+   * @return the meta object for the attribute '<em>C</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Count#getC()
    * @see #getCount()
    * @generated
    */
-  EAttribute getCount_Count();
+  EAttribute getCount_C();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.Device <em>Device</em>}'.
@@ -583,21 +797,21 @@ public interface RecipeDSLPackage extends EPackage
   EClass getCooking();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.Cooking#getOrder <em>Order</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl.recipeDSL.Cooking#getS <em>S</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Order</em>'.
-   * @see org.xtext.example.mydsl.recipeDSL.Cooking#getOrder()
+   * @return the meta object for the attribute list '<em>S</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Cooking#getS()
    * @see #getCooking()
    * @generated
    */
-  EAttribute getCooking_Order();
+  EAttribute getCooking_S();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.recipeDSL.Cooking#getTime <em>Time</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.recipeDSL.Cooking#getTime <em>Time</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Time</em>'.
+   * @return the meta object for the containment reference list '<em>Time</em>'.
    * @see org.xtext.example.mydsl.recipeDSL.Cooking#getTime()
    * @see #getCooking()
    * @generated
@@ -647,26 +861,48 @@ public interface RecipeDSLPackage extends EPackage
   EClass getStep();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.recipeDSL.Step#getD <em>D</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.example.mydsl.recipeDSL.Step#getDev <em>Dev</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>D</em>'.
-   * @see org.xtext.example.mydsl.recipeDSL.Step#getD()
+   * @return the meta object for the reference list '<em>Dev</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Step#getDev()
    * @see #getStep()
    * @generated
    */
-  EReference getStep_D();
+  EReference getStep_Dev();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.recipeDSL.Step#getI <em>I</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.example.mydsl.recipeDSL.Step#getDev2 <em>Dev2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>I</em>'.
-   * @see org.xtext.example.mydsl.recipeDSL.Step#getI()
+   * @return the meta object for the reference list '<em>Dev2</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Step#getDev2()
    * @see #getStep()
    * @generated
    */
-  EReference getStep_I();
+  EReference getStep_Dev2();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.xtext.example.mydsl.recipeDSL.Step#getIng <em>Ing</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Ing</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Step#getIng()
+   * @see #getStep()
+   * @generated
+   */
+  EReference getStep_Ing();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.xtext.example.mydsl.recipeDSL.Step#getIng2 <em>Ing2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Ing2</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Step#getIng2()
+   * @see #getStep()
+   * @generated
+   */
+  EReference getStep_Ing2();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -702,12 +938,64 @@ public interface RecipeDSLPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
+     * The meta object literal for the '<em><b>Mgr</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__MGR = eINSTANCE.getModel_Mgr();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.ManagerImpl <em>Manager</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.recipeDSL.impl.ManagerImpl
+     * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getManager()
+     * @generated
+     */
+    EClass MANAGER = eINSTANCE.getManager();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MANAGER__NAME = eINSTANCE.getManager_Name();
+
+    /**
+     * The meta object literal for the '<em><b>User</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MANAGER__USER = eINSTANCE.getManager_User();
+
+    /**
      * The meta object literal for the '<em><b>Recipes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__RECIPES = eINSTANCE.getModel_Recipes();
+    EReference MANAGER__RECIPES = eINSTANCE.getManager_Recipes();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.UserImpl <em>User</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.recipeDSL.impl.UserImpl
+     * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getUser()
+     * @generated
+     */
+    EClass USER = eINSTANCE.getUser();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute USER__NAME = eINSTANCE.getUser_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.RecipeImpl <em>Recipe</em>}' class.
@@ -726,6 +1014,14 @@ public interface RecipeDSLPackage extends EPackage
      * @generated
      */
     EAttribute RECIPE__NAME = eINSTANCE.getRecipe_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Level</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECIPE__LEVEL = eINSTANCE.getRecipe_Level();
 
     /**
      * The meta object literal for the '<em><b>Ingredient</b></em>' containment reference list feature.
@@ -752,6 +1048,24 @@ public interface RecipeDSLPackage extends EPackage
     EReference RECIPE__COOKING = eINSTANCE.getRecipe_Cooking();
 
     /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.LevelImpl <em>Level</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.recipeDSL.impl.LevelImpl
+     * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getLevel()
+     * @generated
+     */
+    EClass LEVEL = eINSTANCE.getLevel();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LEVEL__NAME = eINSTANCE.getLevel_Name();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.IngredientImpl <em>Ingredient</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -770,22 +1084,12 @@ public interface RecipeDSLPackage extends EPackage
     EAttribute INGREDIENT__NAME = eINSTANCE.getIngredient_Name();
 
     /**
-     * The meta object literal for the '<em><b>Measure</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Measure</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference INGREDIENT__MEASURE = eINSTANCE.getIngredient_Measure();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.MeasureImpl <em>Measure</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.recipeDSL.impl.MeasureImpl
-     * @see org.xtext.example.mydsl.recipeDSL.impl.RecipeDSLPackageImpl#getMeasure()
-     * @generated
-     */
-    EClass MEASURE = eINSTANCE.getMeasure();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.WeightImpl <em>Weight</em>}' class.
@@ -798,12 +1102,12 @@ public interface RecipeDSLPackage extends EPackage
     EClass WEIGHT = eINSTANCE.getWeight();
 
     /**
-     * The meta object literal for the '<em><b>Gramms</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Weight</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WEIGHT__GRAMMS = eINSTANCE.getWeight_Gramms();
+    EAttribute WEIGHT__WEIGHT = eINSTANCE.getWeight_Weight();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.CountImpl <em>Count</em>}' class.
@@ -816,12 +1120,12 @@ public interface RecipeDSLPackage extends EPackage
     EClass COUNT = eINSTANCE.getCount();
 
     /**
-     * The meta object literal for the '<em><b>Count</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>C</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COUNT__COUNT = eINSTANCE.getCount_Count();
+    EAttribute COUNT__C = eINSTANCE.getCount_C();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.DeviceImpl <em>Device</em>}' class.
@@ -852,15 +1156,15 @@ public interface RecipeDSLPackage extends EPackage
     EClass COOKING = eINSTANCE.getCooking();
 
     /**
-     * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>S</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COOKING__ORDER = eINSTANCE.getCooking_Order();
+    EAttribute COOKING__S = eINSTANCE.getCooking_S();
 
     /**
-     * The meta object literal for the '<em><b>Time</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Time</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -904,20 +1208,36 @@ public interface RecipeDSLPackage extends EPackage
     EClass STEP = eINSTANCE.getStep();
 
     /**
-     * The meta object literal for the '<em><b>D</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Dev</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STEP__D = eINSTANCE.getStep_D();
+    EReference STEP__DEV = eINSTANCE.getStep_Dev();
 
     /**
-     * The meta object literal for the '<em><b>I</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Dev2</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STEP__I = eINSTANCE.getStep_I();
+    EReference STEP__DEV2 = eINSTANCE.getStep_Dev2();
+
+    /**
+     * The meta object literal for the '<em><b>Ing</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STEP__ING = eINSTANCE.getStep_Ing();
+
+    /**
+     * The meta object literal for the '<em><b>Ing2</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STEP__ING2 = eINSTANCE.getStep_Ing2();
 
   }
 

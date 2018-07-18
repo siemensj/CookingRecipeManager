@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.Recipe#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.Recipe#getLevel <em>Level</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.Recipe#getIngredient <em>Ingredient</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.Recipe#getDevice <em>Device</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.recipeDSL.Recipe#getCooking <em>Cooking</em>}</li>
@@ -53,6 +54,22 @@ public interface Recipe extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Level</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.recipeDSL.Level}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Level</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Level</em>' containment reference list.
+   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getRecipe_Level()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Level> getLevel();
 
   /**
    * Returns the value of the '<em><b>Ingredient</b></em>' containment reference list.

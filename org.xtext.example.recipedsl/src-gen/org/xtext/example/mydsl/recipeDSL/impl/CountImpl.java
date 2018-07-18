@@ -20,32 +20,32 @@ import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.CountImpl#getCount <em>Count</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.CountImpl#getC <em>C</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CountImpl extends MeasureImpl implements Count
+public class CountImpl extends IngredientImpl implements Count
 {
   /**
-   * The default value of the '{@link #getCount() <em>Count</em>}' attribute.
+   * The default value of the '{@link #getC() <em>C</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCount()
+   * @see #getC()
    * @generated
    * @ordered
    */
-  protected static final int COUNT_EDEFAULT = 0;
+  protected static final int C_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getCount() <em>Count</em>}' attribute.
+   * The cached value of the '{@link #getC() <em>C</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCount()
+   * @see #getC()
    * @generated
    * @ordered
    */
-  protected int count = COUNT_EDEFAULT;
+  protected int c = C_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +73,9 @@ public class CountImpl extends MeasureImpl implements Count
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getCount()
+  public int getC()
   {
-    return count;
+    return c;
   }
 
   /**
@@ -83,12 +83,12 @@ public class CountImpl extends MeasureImpl implements Count
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCount(int newCount)
+  public void setC(int newC)
   {
-    int oldCount = count;
-    count = newCount;
+    int oldC = c;
+    c = newC;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.COUNT__COUNT, oldCount, count));
+      eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.COUNT__C, oldC, c));
   }
 
   /**
@@ -101,8 +101,8 @@ public class CountImpl extends MeasureImpl implements Count
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COUNT__COUNT:
-        return getCount();
+      case RecipeDSLPackage.COUNT__C:
+        return getC();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +117,8 @@ public class CountImpl extends MeasureImpl implements Count
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COUNT__COUNT:
-        setCount((Integer)newValue);
+      case RecipeDSLPackage.COUNT__C:
+        setC((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class CountImpl extends MeasureImpl implements Count
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COUNT__COUNT:
-        setCount(COUNT_EDEFAULT);
+      case RecipeDSLPackage.COUNT__C:
+        setC(C_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class CountImpl extends MeasureImpl implements Count
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COUNT__COUNT:
-        return count != COUNT_EDEFAULT;
+      case RecipeDSLPackage.COUNT__C:
+        return c != C_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +168,8 @@ public class CountImpl extends MeasureImpl implements Count
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (count: ");
-    result.append(count);
+    result.append(" (c: ");
+    result.append(c);
     result.append(')');
     return result.toString();
   }

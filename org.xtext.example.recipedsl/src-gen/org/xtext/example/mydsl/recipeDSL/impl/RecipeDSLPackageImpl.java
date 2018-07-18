@@ -14,13 +14,15 @@ import org.xtext.example.mydsl.recipeDSL.Cooking;
 import org.xtext.example.mydsl.recipeDSL.Count;
 import org.xtext.example.mydsl.recipeDSL.Device;
 import org.xtext.example.mydsl.recipeDSL.Ingredient;
-import org.xtext.example.mydsl.recipeDSL.Measure;
+import org.xtext.example.mydsl.recipeDSL.Level;
+import org.xtext.example.mydsl.recipeDSL.Manager;
 import org.xtext.example.mydsl.recipeDSL.Model;
 import org.xtext.example.mydsl.recipeDSL.Recipe;
 import org.xtext.example.mydsl.recipeDSL.RecipeDSLFactory;
 import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
 import org.xtext.example.mydsl.recipeDSL.Step;
 import org.xtext.example.mydsl.recipeDSL.Time;
+import org.xtext.example.mydsl.recipeDSL.User;
 import org.xtext.example.mydsl.recipeDSL.Weight;
 
 /**
@@ -43,6 +45,20 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass managerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass userEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass recipeEClass = null;
 
   /**
@@ -50,14 +66,14 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass ingredientEClass = null;
+  private EClass levelEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass measureEClass = null;
+  private EClass ingredientEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -179,9 +195,69 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Recipes()
+  public EReference getModel_Mgr()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getManager()
+  {
+    return managerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getManager_Name()
+  {
+    return (EAttribute)managerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getManager_User()
+  {
+    return (EReference)managerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getManager_Recipes()
+  {
+    return (EReference)managerEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUser()
+  {
+    return userEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getUser_Name()
+  {
+    return (EAttribute)userEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -209,7 +285,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRecipe_Ingredient()
+  public EReference getRecipe_Level()
   {
     return (EReference)recipeEClass.getEStructuralFeatures().get(1);
   }
@@ -219,7 +295,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRecipe_Device()
+  public EReference getRecipe_Ingredient()
   {
     return (EReference)recipeEClass.getEStructuralFeatures().get(2);
   }
@@ -229,9 +305,39 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRecipe_Cooking()
+  public EReference getRecipe_Device()
   {
     return (EReference)recipeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecipe_Cooking()
+  {
+    return (EReference)recipeEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLevel()
+  {
+    return levelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLevel_Name()
+  {
+    return (EAttribute)levelEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -269,16 +375,6 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMeasure()
-  {
-    return measureEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getWeight()
   {
     return weightEClass;
@@ -289,7 +385,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWeight_Gramms()
+  public EAttribute getWeight_Weight()
   {
     return (EAttribute)weightEClass.getEStructuralFeatures().get(0);
   }
@@ -309,7 +405,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCount_Count()
+  public EAttribute getCount_C()
   {
     return (EAttribute)countEClass.getEStructuralFeatures().get(0);
   }
@@ -349,7 +445,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCooking_Order()
+  public EAttribute getCooking_S()
   {
     return (EAttribute)cookingEClass.getEStructuralFeatures().get(0);
   }
@@ -409,7 +505,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStep_D()
+  public EReference getStep_Dev()
   {
     return (EReference)stepEClass.getEStructuralFeatures().get(0);
   }
@@ -419,9 +515,29 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStep_I()
+  public EReference getStep_Dev2()
   {
     return (EReference)stepEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStep_Ing()
+  {
+    return (EReference)stepEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStep_Ing2()
+  {
+    return (EReference)stepEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -455,31 +571,41 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__RECIPES);
+    createEReference(modelEClass, MODEL__MGR);
+
+    managerEClass = createEClass(MANAGER);
+    createEAttribute(managerEClass, MANAGER__NAME);
+    createEReference(managerEClass, MANAGER__USER);
+    createEReference(managerEClass, MANAGER__RECIPES);
+
+    userEClass = createEClass(USER);
+    createEAttribute(userEClass, USER__NAME);
 
     recipeEClass = createEClass(RECIPE);
     createEAttribute(recipeEClass, RECIPE__NAME);
+    createEReference(recipeEClass, RECIPE__LEVEL);
     createEReference(recipeEClass, RECIPE__INGREDIENT);
     createEReference(recipeEClass, RECIPE__DEVICE);
     createEReference(recipeEClass, RECIPE__COOKING);
+
+    levelEClass = createEClass(LEVEL);
+    createEAttribute(levelEClass, LEVEL__NAME);
 
     ingredientEClass = createEClass(INGREDIENT);
     createEAttribute(ingredientEClass, INGREDIENT__NAME);
     createEReference(ingredientEClass, INGREDIENT__MEASURE);
 
-    measureEClass = createEClass(MEASURE);
-
     weightEClass = createEClass(WEIGHT);
-    createEAttribute(weightEClass, WEIGHT__GRAMMS);
+    createEAttribute(weightEClass, WEIGHT__WEIGHT);
 
     countEClass = createEClass(COUNT);
-    createEAttribute(countEClass, COUNT__COUNT);
+    createEAttribute(countEClass, COUNT__C);
 
     deviceEClass = createEClass(DEVICE);
     createEAttribute(deviceEClass, DEVICE__NAME);
 
     cookingEClass = createEClass(COOKING);
-    createEAttribute(cookingEClass, COOKING__ORDER);
+    createEAttribute(cookingEClass, COOKING__S);
     createEReference(cookingEClass, COOKING__TIME);
     createEReference(cookingEClass, COOKING__STEP);
 
@@ -487,8 +613,10 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
     createEAttribute(timeEClass, TIME__TIME);
 
     stepEClass = createEClass(STEP);
-    createEReference(stepEClass, STEP__D);
-    createEReference(stepEClass, STEP__I);
+    createEReference(stepEClass, STEP__DEV);
+    createEReference(stepEClass, STEP__DEV2);
+    createEReference(stepEClass, STEP__ING);
+    createEReference(stepEClass, STEP__ING2);
   }
 
   /**
@@ -520,45 +648,56 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    weightEClass.getESuperTypes().add(this.getMeasure());
-    countEClass.getESuperTypes().add(this.getMeasure());
+    countEClass.getESuperTypes().add(this.getIngredient());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Recipes(), this.getRecipe(), null, "recipes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Mgr(), this.getManager(), null, "mgr", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(managerEClass, Manager.class, "Manager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getManager_Name(), ecorePackage.getEString(), "name", null, 0, 1, Manager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getManager_User(), this.getUser(), null, "user", null, 0, -1, Manager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getManager_Recipes(), this.getRecipe(), null, "recipes", null, 0, -1, Manager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(userEClass, User.class, "User", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUser_Name(), ecorePackage.getEString(), "name", null, 0, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(recipeEClass, Recipe.class, "Recipe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRecipe_Name(), ecorePackage.getEString(), "name", null, 0, 1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecipe_Level(), this.getLevel(), null, "level", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecipe_Ingredient(), this.getIngredient(), null, "ingredient", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecipe_Device(), this.getDevice(), null, "device", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecipe_Cooking(), this.getCooking(), null, "cooking", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(levelEClass, Level.class, "Level", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLevel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Level.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(ingredientEClass, Ingredient.class, "Ingredient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIngredient_Name(), ecorePackage.getEString(), "name", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIngredient_Measure(), this.getMeasure(), null, "measure", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(measureEClass, Measure.class, "Measure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIngredient_Measure(), this.getWeight(), null, "measure", null, 0, -1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(weightEClass, Weight.class, "Weight", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWeight_Gramms(), ecorePackage.getEString(), "gramms", null, 0, 1, Weight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWeight_Weight(), ecorePackage.getEFloat(), "weight", null, 0, -1, Weight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(countEClass, Count.class, "Count", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCount_Count(), ecorePackage.getEInt(), "count", null, 0, 1, Count.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCount_C(), ecorePackage.getEInt(), "c", null, 0, 1, Count.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDevice_Name(), ecorePackage.getEString(), "name", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(cookingEClass, Cooking.class, "Cooking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCooking_Order(), ecorePackage.getEString(), "order", null, 0, 1, Cooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCooking_Time(), this.getTime(), null, "time", null, 0, 1, Cooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCooking_S(), ecorePackage.getEInt(), "s", null, 0, -1, Cooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCooking_Time(), this.getTime(), null, "time", null, 0, -1, Cooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCooking_Step(), this.getStep(), null, "step", null, 0, -1, Cooking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(timeEClass, Time.class, "Time", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTime_Time(), ecorePackage.getEString(), "time", null, 0, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTime_Time(), ecorePackage.getEInt(), "time", null, 0, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStep_D(), this.getDevice(), null, "d", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStep_I(), this.getIngredient(), null, "i", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStep_Dev(), this.getDevice(), null, "dev", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStep_Dev2(), this.getDevice(), null, "dev2", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStep_Ing(), this.getIngredient(), null, "ing", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStep_Ing2(), this.getIngredient(), null, "ing2", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
