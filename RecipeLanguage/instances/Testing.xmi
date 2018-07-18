@@ -9,14 +9,17 @@
     <ingredients
         Name="nuss"/>
     <cookings
+        uses="//@recipes.0/@ingredients.0"
         Description="do this"
         use_device="//@recipes.0/@devices.0"/>
     <has/>
   </recipes>
   <recipes Name="Test">
+    <devices/>
     <ingredients
         Name="nuss"/>
-    <cookings/>
+    <cookings
+        uses="//@recipes.1/@ingredients.0"
+        use_device="//@recipes.0/@devices.0"/>
   </recipes>
-  <recipes Name=""/>
 </RecipeLanguage:Manager>

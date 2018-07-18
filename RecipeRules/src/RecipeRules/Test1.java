@@ -18,19 +18,12 @@ public class Test1 extends Testing {
 		//loadModel(URI.createPlatformResourceURI(INSTANCES + "/Manager_multi_recipes.xmi",true));
 		loadModel(URI.createPlatformResourceURI(INSTANCES + "/Testing.xmi",true));
 	}
+		
+	// richtige Pattern (für unseren Fall)
 
 	@Test
-	public void recipeWithCooDevIng() {
-		assertTrue("A recipe should have a Cooking,Device and Ingredient(Everything should also have a name)",api.correctRecipe().hasMatches());	
-	}
-	@Test
-	public void atLeastOneIngredient() {
-		assertTrue("There should be at least one Ingredient",api.oneIngredient().hasMatches());	
-	}
-
-	@Test
-	public void atLeastOneDevForCooking() {
-		assertTrue("There must be at least one Device for a Cooking",CookingWithDev());
+	public void noDoubleIng() {
+		assertFalse("There should not be duplicate Ingredients",api.doubleIngredient().hasMatches());	
 	}
 	
 	public boolean CookingWithDev() {
@@ -43,6 +36,38 @@ public class Test1 extends Testing {
 		return true;
 	}
 	
+	@Test
+	public void atLeastOneDevForCooking() {
+		assertTrue("There must be at least one Device for a Cooking",CookingWithDev());
+	}	
+		
+	public boolean CookingWithIng() {
+		Collection<OneCookingMatch> m = api.oneCooking().findMatches();
+		for (OneCookingMatch x : m) {
+			if (x.getC().getUses().isEmpty()) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	@Test
+	public void atLeastOneIngForCooking() {
+		assertTrue("There must be at least one Device for a Cooking",CookingWithIng());
+	}
+	
+	// Test von Patterns
+	
+	@Test
+	public void recipeWithCooDevIng() {
+		assertTrue("A recipe should have a Cooking,Device and Ingredient(Everything should also have a name)",api.correctRecipe().hasMatches());	
+	}
+	
+	@Test
+	public void atLeastOneIngredient() {
+		assertTrue("There should be at least one Ingredient",api.oneIngredient().hasMatches());	
+	}
+
 	
 	@Test
 	public void atLeastOneDevice() {
@@ -69,10 +94,7 @@ public class Test1 extends Testing {
 		assertFalse("There should be a Name for the Recipe",api.ingredientWithoutName().hasMatches());	
 	}
 	
-	@Test
-	public void noDoubleIng() {
-		assertFalse("There should not be duplicate Ingredients",api.doubleIngredient().hasMatches());	
-	}
+
 	
 //	@Test
 //	public void testRule() {
