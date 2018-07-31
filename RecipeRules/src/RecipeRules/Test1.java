@@ -9,7 +9,9 @@ import java.util.Collection;
 import org.eclipse.emf.common.util.URI;
 import org.junit.Test;
 
+import RecipeLanguage.Ingredient;
 import RecipeRules.api.matches.OneCookingMatch;
+import RecipeRules.api.matches.OneIngredientMatch;
 import RecipeRules.api.matches.OneRecipeMatch;
 
 public class Test1 extends Testing {
@@ -136,6 +138,28 @@ public class Test1 extends Testing {
 	public void noCookingWithoutTime() {
 		assertFalse("An Cooking has no Time",api.cookingWithoutTime().hasMatches());
 	}
+	
+	@Test
+	public void noDoubleWeightOrCount() {
+		assertTrue("There must be at least one Cooking for a Device",IngeredientDoubleWeightOrCount());
+	}
+		
+	
+	public boolean IngeredientDoubleWeightOrCount() {
+		Collection<OneRecipeMatch> m = api.oneRecipe().findMatches();
+		
+		
+		for (OneRecipeMatch x : m) {
+			for (Ingredient i:x.getR().getIngredients()) {
+				if( (i.getWeightInGramms() == 0.0 && i.getCount()==0.0) || (i.getWeightInGramms() != 0.0 && i.getCount()!=0.0)) {
+						return false;
+				}
+			}
+		}
+		return true;
+	}
+	
+	
 	
 	// Test von Patterns
 	

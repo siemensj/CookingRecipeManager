@@ -8,8 +8,7 @@
         Name="Messer"/>
     <ingredients
         Name="nuss"
-        WeightInGramms="1.0"
-        Count="1.0"/>
+        Count="2.0"/>
     <cookings
         Time="10.0"
         uses="//@recipes.0/@ingredients.0"
@@ -22,7 +21,9 @@
     <devices
         Name="Schale"/>
     <ingredients
-        Name="je"/>
+        Name="je"
+        WeightInGramms="1.0"
+        Count="1.0"/>
     <cookings
         Time="1.0"
         uses="//@recipes.1/@ingredients.0"
