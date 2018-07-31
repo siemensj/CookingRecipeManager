@@ -150,10 +150,16 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Level returns Level
 	 *
 	 * Constraint:
-	 *     (name='1' | name='2' | name='3' | name='4' | name='5')
+	 *     rating=RATING
 	 */
 	protected void sequence_Level(ISerializationContext context, Level semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.LEVEL__RATING) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.LEVEL__RATING));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLevelAccess().getRatingRATINGTerminalRuleCall_1_0(), semanticObject.getRating());
+		feeder.finish();
 	}
 	
 	

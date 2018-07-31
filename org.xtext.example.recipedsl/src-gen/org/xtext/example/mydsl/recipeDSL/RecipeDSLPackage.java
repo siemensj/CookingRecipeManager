@@ -234,13 +234,13 @@ public interface RecipeDSLPackage extends EPackage
   int LEVEL = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Rating</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LEVEL__NAME = 0;
+  int LEVEL__RATING = 0;
 
   /**
    * The number of structural features of the '<em>Level</em>' class.
@@ -681,15 +681,15 @@ public interface RecipeDSLPackage extends EPackage
   EClass getLevel();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.Level#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.Level#getRating <em>Rating</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.mydsl.recipeDSL.Level#getName()
+   * @return the meta object for the attribute '<em>Rating</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Level#getRating()
    * @see #getLevel()
    * @generated
    */
-  EAttribute getLevel_Name();
+  EAttribute getLevel_Rating();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.Ingredient <em>Ingredient</em>}'.
@@ -1058,12 +1058,12 @@ public interface RecipeDSLPackage extends EPackage
     EClass LEVEL = eINSTANCE.getLevel();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Rating</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LEVEL__NAME = eINSTANCE.getLevel_Name();
+    EAttribute LEVEL__RATING = eINSTANCE.getLevel_Rating();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.IngredientImpl <em>Ingredient</em>}' class.

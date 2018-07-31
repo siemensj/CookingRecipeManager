@@ -31,7 +31,6 @@ public class RecipeDSLParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getLevelAccess().getNameAlternatives_1_0(), "rule__Level__NameAlternatives_1_0");
 					put(grammarAccess.getIngredientAccess().getAlternatives(), "rule__Ingredient__Alternatives");
 					put(grammarAccess.getWeightAccess().getAlternatives_1(), "rule__Weight__Alternatives_1");
 					put(grammarAccess.getTimeAccess().getAlternatives_2(), "rule__Time__Alternatives_2");
@@ -65,7 +64,7 @@ public class RecipeDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRecipeAccess().getIngredientAssignment_3(), "rule__Recipe__IngredientAssignment_3");
 					put(grammarAccess.getRecipeAccess().getDeviceAssignment_4(), "rule__Recipe__DeviceAssignment_4");
 					put(grammarAccess.getRecipeAccess().getCookingAssignment_5(), "rule__Recipe__CookingAssignment_5");
-					put(grammarAccess.getLevelAccess().getNameAssignment_1(), "rule__Level__NameAssignment_1");
+					put(grammarAccess.getLevelAccess().getRatingAssignment_1(), "rule__Level__RatingAssignment_1");
 					put(grammarAccess.getIngredientAccess().getNameAssignment_0_1(), "rule__Ingredient__NameAssignment_0_1");
 					put(grammarAccess.getIngredientAccess().getMeasureAssignment_0_3(), "rule__Ingredient__MeasureAssignment_0_3");
 					put(grammarAccess.getWeightAccess().getWeightAssignment_0(), "rule__Weight__WeightAssignment_0");

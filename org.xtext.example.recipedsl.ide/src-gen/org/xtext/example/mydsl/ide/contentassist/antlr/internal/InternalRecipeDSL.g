@@ -374,45 +374,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Level__NameAlternatives_1_0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getLevelAccess().getName1Keyword_1_0_0()); }
-		'1'
-		{ after(grammarAccess.getLevelAccess().getName1Keyword_1_0_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getLevelAccess().getName2Keyword_1_0_1()); }
-		'2'
-		{ after(grammarAccess.getLevelAccess().getName2Keyword_1_0_1()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getLevelAccess().getName3Keyword_1_0_2()); }
-		'3'
-		{ after(grammarAccess.getLevelAccess().getName3Keyword_1_0_2()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getLevelAccess().getName4Keyword_1_0_3()); }
-		'4'
-		{ after(grammarAccess.getLevelAccess().getName4Keyword_1_0_3()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getLevelAccess().getName5Keyword_1_0_4()); }
-		'5'
-		{ after(grammarAccess.getLevelAccess().getName5Keyword_1_0_4()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__Ingredient__Alternatives
 	@init {
 		int stackSize = keepStackSize();
@@ -964,9 +925,9 @@ rule__Level__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getLevelAccess().getNameAssignment_1()); }
-	(rule__Level__NameAssignment_1)
-	{ after(grammarAccess.getLevelAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getLevelAccess().getRatingAssignment_1()); }
+	(rule__Level__RatingAssignment_1)
+	{ after(grammarAccess.getLevelAccess().getRatingAssignment_1()); }
 )
 ;
 finally {
@@ -2138,15 +2099,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Level__NameAssignment_1
+rule__Level__RatingAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getLevelAccess().getNameAlternatives_1_0()); }
-		(rule__Level__NameAlternatives_1_0)
-		{ after(grammarAccess.getLevelAccess().getNameAlternatives_1_0()); }
+		{ before(grammarAccess.getLevelAccess().getRatingRATINGTerminalRuleCall_1_0()); }
+		RULE_RATING
+		{ after(grammarAccess.getLevelAccess().getRatingRATINGTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -2363,6 +2324,8 @@ rule__Step__Ing2Assignment_5_1
 finally {
 	restoreStackSize(stackSize);
 }
+
+RULE_RATING : '1'..'5';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

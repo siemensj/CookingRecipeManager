@@ -335,7 +335,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLevel_Name()
+  public EAttribute getLevel_Rating()
   {
     return (EAttribute)levelEClass.getEStructuralFeatures().get(0);
   }
@@ -589,7 +589,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
     createEReference(recipeEClass, RECIPE__COOKING);
 
     levelEClass = createEClass(LEVEL);
-    createEAttribute(levelEClass, LEVEL__NAME);
+    createEAttribute(levelEClass, LEVEL__RATING);
 
     ingredientEClass = createEClass(INGREDIENT);
     createEAttribute(ingredientEClass, INGREDIENT__NAME);
@@ -670,7 +670,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
     initEReference(getRecipe_Cooking(), this.getCooking(), null, "cooking", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(levelEClass, Level.class, "Level", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLevel_Name(), ecorePackage.getEString(), "name", null, 0, 1, Level.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLevel_Rating(), ecorePackage.getEString(), "rating", null, 0, 1, Level.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ingredientEClass, Ingredient.class, "Ingredient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIngredient_Name(), ecorePackage.getEString(), "name", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

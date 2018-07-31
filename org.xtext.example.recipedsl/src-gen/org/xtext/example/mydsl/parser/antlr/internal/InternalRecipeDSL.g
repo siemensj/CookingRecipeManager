@@ -378,62 +378,20 @@ ruleLevel returns [EObject current=null]
 		}
 		(
 			(
-				(
-					lv_name_1_1='1'
-					{
-						newLeafNode(lv_name_1_1, grammarAccess.getLevelAccess().getName1Keyword_1_0_0());
+				lv_rating_1_0=RULE_RATING
+				{
+					newLeafNode(lv_rating_1_0, grammarAccess.getLevelAccess().getRatingRATINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLevelRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getLevelRule());
-						}
-						setWithLastConsumed($current, "name", lv_name_1_1, null);
-					}
-					    |
-					lv_name_1_2='2'
-					{
-						newLeafNode(lv_name_1_2, grammarAccess.getLevelAccess().getName2Keyword_1_0_1());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getLevelRule());
-						}
-						setWithLastConsumed($current, "name", lv_name_1_2, null);
-					}
-					    |
-					lv_name_1_3='3'
-					{
-						newLeafNode(lv_name_1_3, grammarAccess.getLevelAccess().getName3Keyword_1_0_2());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getLevelRule());
-						}
-						setWithLastConsumed($current, "name", lv_name_1_3, null);
-					}
-					    |
-					lv_name_1_4='4'
-					{
-						newLeafNode(lv_name_1_4, grammarAccess.getLevelAccess().getName4Keyword_1_0_3());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getLevelRule());
-						}
-						setWithLastConsumed($current, "name", lv_name_1_4, null);
-					}
-					    |
-					lv_name_1_5='5'
-					{
-						newLeafNode(lv_name_1_5, grammarAccess.getLevelAccess().getName5Keyword_1_0_4());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getLevelRule());
-						}
-						setWithLastConsumed($current, "name", lv_name_1_5, null);
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"rating",
+						lv_rating_1_0,
+						"org.xtext.example.mydsl.RecipeDSL.RATING");
+				}
 			)
 		)
 	)
@@ -968,6 +926,8 @@ ruleEFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 		)?
 	)
 ;
+
+RULE_RATING : '1'..'5';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

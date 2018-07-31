@@ -25,7 +25,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RecipeDSL.ecore#//Recipe/cooking"/>
     </genClasses>
     <genClasses ecoreClass="RecipeDSL.ecore#//Level">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Level/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Level/rating"/>
     </genClasses>
     <genClasses ecoreClass="RecipeDSL.ecore#//Ingredient">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Ingredient/name"/>
