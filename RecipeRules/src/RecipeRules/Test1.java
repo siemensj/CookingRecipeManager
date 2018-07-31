@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.util.URI;
 import org.junit.Test;
 
+import RecipeLanguage.Cooking;
 import RecipeLanguage.Ingredient;
 import RecipeRules.api.matches.OneCookingMatch;
 import RecipeRules.api.matches.OneIngredientMatch;
@@ -141,14 +142,12 @@ public class Test1 extends Testing {
 	
 	@Test
 	public void noDoubleWeightOrCount() {
-		assertTrue("There must be at least one Cooking for a Device",IngeredientDoubleWeightOrCount());
+		assertTrue("You have specification in WeightinGramms and Count",IngeredientDoubleWeightOrCount());
 	}
 		
 	
 	public boolean IngeredientDoubleWeightOrCount() {
 		Collection<OneRecipeMatch> m = api.oneRecipe().findMatches();
-		
-		
 		for (OneRecipeMatch x : m) {
 			for (Ingredient i:x.getR().getIngredients()) {
 				if( (i.getWeightInGramms() == 0.0 && i.getCount()==0.0) || (i.getWeightInGramms() != 0.0 && i.getCount()!=0.0)) {
@@ -158,9 +157,34 @@ public class Test1 extends Testing {
 		}
 		return true;
 	}
-	
-	
+
+	@Test
+	public void atleastOneCookingStep() {
+		assertTrue("You have no first CookingStep", CookingwithfirstStep());
+	}
+
+	public boolean CookingwithfirstStep() {
+		Collection<OneRecipeMatch> m = api.oneRecipe().findMatches();
+		boolean e = false;
+		
+		for (OneRecipeMatch x : m) {
+			e=false;
+			for (Cooking c:x.getR().getCookings()) {
+				if( c.getStep()==1) {
+						e=true;
+				}
+			}
+			if (e==false) {
+				return false;
+			}
+		}
+		return e;
+	}
 	
 	// Test von Patterns
-	
+
+	@Test
+	public void noDoubleCookingStep() {
+		assertFalse("There should not be duplicate CookingStep",api.doubleCookingStep().hasMatches());	
+	}
 }

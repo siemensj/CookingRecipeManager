@@ -22,12 +22,24 @@
         Name="Schale"/>
     <ingredients
         Name="je"
-        WeightInGramms="1.0"
-        Count="1.0"/>
+        WeightInGramms="1.0"/>
+    <cookings
+        Time="10.0"
+        uses="//@recipes.1/@ingredients.0"
+        Description="d"
+        use_device="//@recipes.1/@devices.0"
+        Step="1"/>
     <cookings
         Time="1.0"
         uses="//@recipes.1/@ingredients.0"
-        Description="d"
-        use_device="//@recipes.1/@devices.0"/>
+        Description="jas"
+        use_device="//@recipes.1/@devices.0"
+        Step="2"/>
+    <cookings
+        Time="5.0"
+        uses="//@recipes.1/@ingredients.0"
+        Description="poh"
+        use_device="//@recipes.1/@devices.0"
+        Step="3"/>
   </recipes>
 </RecipeLanguage:Manager>

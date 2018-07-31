@@ -98,3 +98,19 @@ pattern doubleIngredient{
 		.Name == i.Name
 	}
 }
+
+pattern doubleCookingStep{
+	r: Recipe{
+		-cookings -> c
+		-cookings -> cc
+	}
+	
+	c: Cooking{
+		.Step == cc.Step
+	}
+	
+	cc:Cooking{
+		.Step == c.Step
+	}
+	
+}
