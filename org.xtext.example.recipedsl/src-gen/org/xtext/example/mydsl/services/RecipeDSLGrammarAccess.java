@@ -176,44 +176,24 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.Level");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLevelKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
-		private final Keyword cName1Keyword_1_0_0 = (Keyword)cNameAlternatives_1_0.eContents().get(0);
-		private final Keyword cName2Keyword_1_0_1 = (Keyword)cNameAlternatives_1_0.eContents().get(1);
-		private final Keyword cName3Keyword_1_0_2 = (Keyword)cNameAlternatives_1_0.eContents().get(2);
-		private final Keyword cName4Keyword_1_0_3 = (Keyword)cNameAlternatives_1_0.eContents().get(3);
-		private final Keyword cName5Keyword_1_0_4 = (Keyword)cNameAlternatives_1_0.eContents().get(4);
+		private final Assignment cRatingAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRatingRATINGTerminalRuleCall_1_0 = (RuleCall)cRatingAssignment_1.eContents().get(0);
 		
 		//Level:
-		//	"Level" name=("1" | "2" | "3" | "4" | "5");
+		//	"Level" rating=RATING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Level" name=("1" | "2" | "3" | "4" | "5")
+		//"Level" rating=RATING
 		public Group getGroup() { return cGroup; }
 		
 		//"Level"
 		public Keyword getLevelKeyword_0() { return cLevelKeyword_0; }
 		
-		//name=("1" | "2" | "3" | "4" | "5")
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//rating=RATING
+		public Assignment getRatingAssignment_1() { return cRatingAssignment_1; }
 		
-		//("1" | "2" | "3" | "4" | "5")
-		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
-		
-		//"1"
-		public Keyword getName1Keyword_1_0_0() { return cName1Keyword_1_0_0; }
-		
-		//"2"
-		public Keyword getName2Keyword_1_0_1() { return cName2Keyword_1_0_1; }
-		
-		//"3"
-		public Keyword getName3Keyword_1_0_2() { return cName3Keyword_1_0_2; }
-		
-		//"4"
-		public Keyword getName4Keyword_1_0_3() { return cName4Keyword_1_0_3; }
-		
-		//"5"
-		public Keyword getName5Keyword_1_0_4() { return cName5Keyword_1_0_4; }
+		//RATING
+		public RuleCall getRatingRATINGTerminalRuleCall_1_0() { return cRatingRATINGTerminalRuleCall_1_0; }
 	}
 	public class IngredientElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.Ingredient");
@@ -612,6 +592,7 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final UserElements pUser;
 	private final RecipeElements pRecipe;
 	private final LevelElements pLevel;
+	private final TerminalRule tRATING;
 	private final IngredientElements pIngredient;
 	private final WeightElements pWeight;
 	private final CountElements pCount;
@@ -637,6 +618,7 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pUser = new UserElements();
 		this.pRecipe = new RecipeElements();
 		this.pLevel = new LevelElements();
+		this.tRATING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING");
 		this.pIngredient = new IngredientElements();
 		this.pWeight = new WeightElements();
 		this.pCount = new CountElements();
@@ -722,13 +704,19 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Level:
-	//	"Level" name=("1" | "2" | "3" | "4" | "5");
+	//	"Level" rating=RATING;
 	public LevelElements getLevelAccess() {
 		return pLevel;
 	}
 	
 	public ParserRule getLevelRule() {
 		return getLevelAccess().getRule();
+	}
+	
+	//terminal RATING:
+	//	'1'..'5';
+	public TerminalRule getRATINGRule() {
+		return tRATING;
 	}
 	
 	//Ingredient:
