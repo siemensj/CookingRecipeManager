@@ -27,7 +27,7 @@ public interface Weight extends EObject
 {
   /**
    * Returns the value of the '<em><b>Weight</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.Float}.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Weight</em>' attribute list isn't clear,
@@ -39,6 +39,6 @@ public interface Weight extends EObject
    * @model unique="false"
    * @generated
    */
-  EList<Float> getWeight();
+  EList<String> getWeight();
 
 } // Weight

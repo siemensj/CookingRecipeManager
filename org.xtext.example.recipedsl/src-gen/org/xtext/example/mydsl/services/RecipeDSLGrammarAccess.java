@@ -177,72 +177,147 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLevelKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cRatingAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cRatingRATINGTerminalRuleCall_1_0 = (RuleCall)cRatingAssignment_1.eContents().get(0);
+		private final Alternatives cRatingAlternatives_1_0 = (Alternatives)cRatingAssignment_1.eContents().get(0);
+		private final Keyword cRatingAsteriskKeyword_1_0_0 = (Keyword)cRatingAlternatives_1_0.eContents().get(0);
+		private final Keyword cRatingAsteriskAsteriskKeyword_1_0_1 = (Keyword)cRatingAlternatives_1_0.eContents().get(1);
+		private final Keyword cRatingAsteriskAsteriskAsteriskKeyword_1_0_2 = (Keyword)cRatingAlternatives_1_0.eContents().get(2);
+		private final Keyword cRatingAsteriskAsteriskAsteriskAsteriskKeyword_1_0_3 = (Keyword)cRatingAlternatives_1_0.eContents().get(3);
+		private final Keyword cRatingAsteriskAsteriskAsteriskAsteriskAsteriskKeyword_1_0_4 = (Keyword)cRatingAlternatives_1_0.eContents().get(4);
 		
 		//Level:
-		//	"Level" rating=RATING;
+		//	"Level" rating+=('*' | '**' | '***' | '****' | '*****');
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Level" rating=RATING
+		//"Level" rating+=('*' | '**' | '***' | '****' | '*****')
 		public Group getGroup() { return cGroup; }
 		
 		//"Level"
 		public Keyword getLevelKeyword_0() { return cLevelKeyword_0; }
 		
-		//rating=RATING
+		//rating+=('*' | '**' | '***' | '****' | '*****')
 		public Assignment getRatingAssignment_1() { return cRatingAssignment_1; }
 		
-		//RATING
-		public RuleCall getRatingRATINGTerminalRuleCall_1_0() { return cRatingRATINGTerminalRuleCall_1_0; }
+		//('*' | '**' | '***' | '****' | '*****')
+		public Alternatives getRatingAlternatives_1_0() { return cRatingAlternatives_1_0; }
+		
+		//'*'
+		public Keyword getRatingAsteriskKeyword_1_0_0() { return cRatingAsteriskKeyword_1_0_0; }
+		
+		//'**'
+		public Keyword getRatingAsteriskAsteriskKeyword_1_0_1() { return cRatingAsteriskAsteriskKeyword_1_0_1; }
+		
+		//'***'
+		public Keyword getRatingAsteriskAsteriskAsteriskKeyword_1_0_2() { return cRatingAsteriskAsteriskAsteriskKeyword_1_0_2; }
+		
+		//'****'
+		public Keyword getRatingAsteriskAsteriskAsteriskAsteriskKeyword_1_0_3() { return cRatingAsteriskAsteriskAsteriskAsteriskKeyword_1_0_3; }
+		
+		//'*****'
+		public Keyword getRatingAsteriskAsteriskAsteriskAsteriskAsteriskKeyword_1_0_4() { return cRatingAsteriskAsteriskAsteriskAsteriskAsteriskKeyword_1_0_4; }
+	}
+	public class RATING1Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING1");
+		private final Keyword cAsteriskKeyword = (Keyword)rule.eContents().get(1);
+		
+		//RATING1:
+		//	'*';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'*'
+		public Keyword getAsteriskKeyword() { return cAsteriskKeyword; }
+	}
+	public class RATING2Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING2");
+		private final Keyword cAsteriskAsteriskKeyword = (Keyword)rule.eContents().get(1);
+		
+		//RATING2:
+		//	'**';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'**'
+		public Keyword getAsteriskAsteriskKeyword() { return cAsteriskAsteriskKeyword; }
+	}
+	public class RATING3Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING3");
+		private final Keyword cAsteriskAsteriskAsteriskKeyword = (Keyword)rule.eContents().get(1);
+		
+		//RATING3:
+		//	'***';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'***'
+		public Keyword getAsteriskAsteriskAsteriskKeyword() { return cAsteriskAsteriskAsteriskKeyword; }
+	}
+	public class RATING4Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING4");
+		private final Keyword cAsteriskAsteriskAsteriskAsteriskKeyword = (Keyword)rule.eContents().get(1);
+		
+		//RATING4:
+		//	'****';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'****'
+		public Keyword getAsteriskAsteriskAsteriskAsteriskKeyword() { return cAsteriskAsteriskAsteriskAsteriskKeyword; }
+	}
+	public class RATING5Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING5");
+		private final Keyword cAsteriskAsteriskAsteriskAsteriskAsteriskKeyword = (Keyword)rule.eContents().get(1);
+		
+		//RATING5:
+		//	'*****';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'*****'
+		public Keyword getAsteriskAsteriskAsteriskAsteriskAsteriskKeyword() { return cAsteriskAsteriskAsteriskAsteriskAsteriskKeyword; }
 	}
 	public class IngredientElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.Ingredient");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cIngredientKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
-		private final Keyword cAmountKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Assignment cMeasureAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
-		private final RuleCall cMeasureWeightParserRuleCall_0_3_0 = (RuleCall)cMeasureAssignment_0_3.eContents().get(0);
-		private final RuleCall cCountParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIngredientKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cAmountKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMeasureAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Alternatives cMeasureAlternatives_3_0 = (Alternatives)cMeasureAssignment_3.eContents().get(0);
+		private final RuleCall cMeasureWeightParserRuleCall_3_0_0 = (RuleCall)cMeasureAlternatives_3_0.eContents().get(0);
+		private final RuleCall cMeasureCountParserRuleCall_3_0_1 = (RuleCall)cMeasureAlternatives_3_0.eContents().get(1);
 		
 		//Ingredient:
-		//	'Ingredient' name=ID "amount" measure+=Weight | Count;
+		//	'Ingredient' name=ID "amount" measure+=(Weight | Count);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Ingredient' name=ID "amount" measure+=Weight | Count
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'Ingredient' name=ID "amount" measure+=Weight
-		public Group getGroup_0() { return cGroup_0; }
+		//'Ingredient' name=ID "amount" measure+=(Weight | Count)
+		public Group getGroup() { return cGroup; }
 		
 		//'Ingredient'
-		public Keyword getIngredientKeyword_0_0() { return cIngredientKeyword_0_0; }
+		public Keyword getIngredientKeyword_0() { return cIngredientKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//"amount"
-		public Keyword getAmountKeyword_0_2() { return cAmountKeyword_0_2; }
+		public Keyword getAmountKeyword_2() { return cAmountKeyword_2; }
 		
-		//measure+=Weight
-		public Assignment getMeasureAssignment_0_3() { return cMeasureAssignment_0_3; }
+		//measure+=(Weight | Count)
+		public Assignment getMeasureAssignment_3() { return cMeasureAssignment_3; }
+		
+		//(Weight | Count)
+		public Alternatives getMeasureAlternatives_3_0() { return cMeasureAlternatives_3_0; }
 		
 		//Weight
-		public RuleCall getMeasureWeightParserRuleCall_0_3_0() { return cMeasureWeightParserRuleCall_0_3_0; }
+		public RuleCall getMeasureWeightParserRuleCall_3_0_0() { return cMeasureWeightParserRuleCall_3_0_0; }
 		
 		//Count
-		public RuleCall getCountParserRuleCall_1() { return cCountParserRuleCall_1; }
+		public RuleCall getMeasureCountParserRuleCall_3_0_1() { return cMeasureCountParserRuleCall_3_0_1; }
 	}
 	public class WeightElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.Weight");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cWeightAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cWeightEFloatParserRuleCall_0_0 = (RuleCall)cWeightAssignment_0.eContents().get(0);
+		private final RuleCall cWeightEFloatTerminalRuleCall_0_0 = (RuleCall)cWeightAssignment_0.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Keyword cMgKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final Keyword cGKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
@@ -260,7 +335,7 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		public Assignment getWeightAssignment_0() { return cWeightAssignment_0; }
 		
 		//EFloat
-		public RuleCall getWeightEFloatParserRuleCall_0_0() { return cWeightEFloatParserRuleCall_0_0; }
+		public RuleCall getWeightEFloatTerminalRuleCall_0_0() { return cWeightEFloatTerminalRuleCall_0_0; }
 		
 		//"mg" | "g" | "kg" | "t"
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
@@ -280,22 +355,22 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class CountElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.Count");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cCAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cCINTTerminalRuleCall_0_0 = (RuleCall)cCAssignment_0.eContents().get(0);
+		private final Assignment cCountAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCountINTTerminalRuleCall_0_0 = (RuleCall)cCountAssignment_0.eContents().get(0);
 		private final Keyword cPiecesKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//Count:
-		//	c=INT "pieces";
+		//	count+=INT "pieces";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//c=INT "pieces"
+		//count+=INT "pieces"
 		public Group getGroup() { return cGroup; }
 		
-		//c=INT
-		public Assignment getCAssignment_0() { return cCAssignment_0; }
+		//count+=INT
+		public Assignment getCountAssignment_0() { return cCountAssignment_0; }
 		
 		//INT
-		public RuleCall getCINTTerminalRuleCall_0_0() { return cCINTTerminalRuleCall_0_0; }
+		public RuleCall getCountINTTerminalRuleCall_0_0() { return cCountINTTerminalRuleCall_0_0; }
 		
 		//"pieces"
 		public Keyword getPiecesKeyword_1() { return cPiecesKeyword_1; }
@@ -332,15 +407,15 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cTimeAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
 		private final RuleCall cTimeTimeParserRuleCall_2_0_0 = (RuleCall)cTimeAssignment_2_0.eContents().get(0);
-		private final Keyword cCommaKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Assignment cStepAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
 		private final RuleCall cStepStepParserRuleCall_2_2_0 = (RuleCall)cStepAssignment_2_2.eContents().get(0);
 		
 		//Cooking:
-		//	"Step" s+=INT (time+=Time "," step+=Step);
+		//	"Step" s+=INT (time+=Time ":" step+=Step);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Step" s+=INT (time+=Time "," step+=Step)
+		//"Step" s+=INT (time+=Time ":" step+=Step)
 		public Group getGroup() { return cGroup; }
 		
 		//"Step"
@@ -352,7 +427,7 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getSINTTerminalRuleCall_1_0() { return cSINTTerminalRuleCall_1_0; }
 		
-		//time+=Time "," step+=Step
+		//time+=Time ":" step+=Step
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//time+=Time
@@ -361,8 +436,8 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//Time
 		public RuleCall getTimeTimeParserRuleCall_2_0_0() { return cTimeTimeParserRuleCall_2_0_0; }
 		
-		//","
-		public Keyword getCommaKeyword_2_1() { return cCommaKeyword_2_1; }
+		//":"
+		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
 		
 		//step+=Step
 		public Assignment getStepAssignment_2_2() { return cStepAssignment_2_2; }
@@ -534,57 +609,6 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
 	}
-	public class EFloatElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.EFloat");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cINTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Alternatives cAlternatives_4_0 = (Alternatives)cGroup_4.eContents().get(0);
-		private final Keyword cEKeyword_4_0_0 = (Keyword)cAlternatives_4_0.eContents().get(0);
-		private final Keyword cEKeyword_4_0_1 = (Keyword)cAlternatives_4_0.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_4_2 = (RuleCall)cGroup_4.eContents().get(2);
-		
-		//EFloat ecore::EFloat:
-		//	'-'? INT? '.' INT (('E' | 'e') '-'? INT)?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'-'? INT? '.' INT (('E' | 'e') '-'? INT)?
-		public Group getGroup() { return cGroup; }
-		
-		//'-'?
-		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
-		
-		//INT?
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
-		
-		//'.'
-		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_3() { return cINTTerminalRuleCall_3; }
-		
-		//(('E' | 'e') '-'? INT)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'E' | 'e'
-		public Alternatives getAlternatives_4_0() { return cAlternatives_4_0; }
-		
-		//'E'
-		public Keyword getEKeyword_4_0_0() { return cEKeyword_4_0_0; }
-		
-		//'e'
-		public Keyword getEKeyword_4_0_1() { return cEKeyword_4_0_1; }
-		
-		//'-'?
-		public Keyword getHyphenMinusKeyword_4_1() { return cHyphenMinusKeyword_4_1; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_4_2() { return cINTTerminalRuleCall_4_2; }
-	}
 	
 	
 	private final ModelElements pModel;
@@ -592,9 +616,14 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final UserElements pUser;
 	private final RecipeElements pRecipe;
 	private final LevelElements pLevel;
-	private final TerminalRule tRATING;
+	private final RATING1Elements pRATING1;
+	private final RATING2Elements pRATING2;
+	private final RATING3Elements pRATING3;
+	private final RATING4Elements pRATING4;
+	private final RATING5Elements pRATING5;
 	private final IngredientElements pIngredient;
 	private final WeightElements pWeight;
+	private final TerminalRule tEFloat;
 	private final CountElements pCount;
 	private final DeviceElements pDevice;
 	private final CookingElements pCooking;
@@ -602,7 +631,6 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final StepElements pStep;
 	private final EStringElements pEString;
 	private final EIntElements pEInt;
-	private final EFloatElements pEFloat;
 	
 	private final Grammar grammar;
 	
@@ -618,9 +646,14 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pUser = new UserElements();
 		this.pRecipe = new RecipeElements();
 		this.pLevel = new LevelElements();
-		this.tRATING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING");
+		this.pRATING1 = new RATING1Elements();
+		this.pRATING2 = new RATING2Elements();
+		this.pRATING3 = new RATING3Elements();
+		this.pRATING4 = new RATING4Elements();
+		this.pRATING5 = new RATING5Elements();
 		this.pIngredient = new IngredientElements();
 		this.pWeight = new WeightElements();
+		this.tEFloat = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.EFloat");
 		this.pCount = new CountElements();
 		this.pDevice = new DeviceElements();
 		this.pCooking = new CookingElements();
@@ -628,7 +661,6 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pStep = new StepElements();
 		this.pEString = new EStringElements();
 		this.pEInt = new EIntElements();
-		this.pEFloat = new EFloatElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -704,7 +736,7 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Level:
-	//	"Level" rating=RATING;
+	//	"Level" rating+=('*' | '**' | '***' | '****' | '*****');
 	public LevelElements getLevelAccess() {
 		return pLevel;
 	}
@@ -713,14 +745,58 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getLevelAccess().getRule();
 	}
 	
-	//terminal RATING:
-	//	'1'..'5';
-	public TerminalRule getRATINGRule() {
-		return tRATING;
+	//RATING1:
+	//	'*';
+	public RATING1Elements getRATING1Access() {
+		return pRATING1;
+	}
+	
+	public ParserRule getRATING1Rule() {
+		return getRATING1Access().getRule();
+	}
+	
+	//RATING2:
+	//	'**';
+	public RATING2Elements getRATING2Access() {
+		return pRATING2;
+	}
+	
+	public ParserRule getRATING2Rule() {
+		return getRATING2Access().getRule();
+	}
+	
+	//RATING3:
+	//	'***';
+	public RATING3Elements getRATING3Access() {
+		return pRATING3;
+	}
+	
+	public ParserRule getRATING3Rule() {
+		return getRATING3Access().getRule();
+	}
+	
+	//RATING4:
+	//	'****';
+	public RATING4Elements getRATING4Access() {
+		return pRATING4;
+	}
+	
+	public ParserRule getRATING4Rule() {
+		return getRATING4Access().getRule();
+	}
+	
+	//RATING5:
+	//	'*****';
+	public RATING5Elements getRATING5Access() {
+		return pRATING5;
+	}
+	
+	public ParserRule getRATING5Rule() {
+		return getRATING5Access().getRule();
 	}
 	
 	//Ingredient:
-	//	'Ingredient' name=ID "amount" measure+=Weight | Count;
+	//	'Ingredient' name=ID "amount" measure+=(Weight | Count);
 	public IngredientElements getIngredientAccess() {
 		return pIngredient;
 	}
@@ -739,8 +815,14 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getWeightAccess().getRule();
 	}
 	
+	//terminal EFloat:
+	//	INT? '.' INT;
+	public TerminalRule getEFloatRule() {
+		return tEFloat;
+	}
+	
 	//Count:
-	//	c=INT "pieces";
+	//	count+=INT "pieces";
 	public CountElements getCountAccess() {
 		return pCount;
 	}
@@ -760,7 +842,7 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Cooking:
-	//	"Step" s+=INT (time+=Time "," step+=Step);
+	//	"Step" s+=INT (time+=Time ":" step+=Step);
 	public CookingElements getCookingAccess() {
 		return pCooking;
 	}
@@ -807,16 +889,6 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEIntRule() {
 		return getEIntAccess().getRule();
-	}
-	
-	//EFloat ecore::EFloat:
-	//	'-'? INT? '.' INT (('E' | 'e') '-'? INT)?;
-	public EFloatElements getEFloatAccess() {
-		return pEFloat;
-	}
-	
-	public ParserRule getEFloatRule() {
-		return getEFloatAccess().getRule();
 	}
 	
 	//terminal ID:

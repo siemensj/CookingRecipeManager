@@ -126,7 +126,6 @@ public class RecipeDSLSwitch<T> extends Switch<T>
       {
         Count count = (Count)theEObject;
         T result = caseCount(count);
-        if (result == null) result = caseIngredient(count);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

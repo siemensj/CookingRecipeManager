@@ -98,20 +98,13 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
-	 *     Ingredient returns Count
 	 *     Count returns Count
 	 *
 	 * Constraint:
-	 *     c=INT
+	 *     count+=INT
 	 */
 	protected void sequence_Count(ISerializationContext context, Count semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.COUNT__C) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.COUNT__C));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCountAccess().getCINTTerminalRuleCall_0_0(), semanticObject.getC());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -138,7 +131,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Ingredient returns Ingredient
 	 *
 	 * Constraint:
-	 *     (name=ID measure+=Weight)
+	 *     (name=ID (measure+=Weight | measure+=Count))
 	 */
 	protected void sequence_Ingredient(ISerializationContext context, Ingredient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -150,16 +143,10 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Level returns Level
 	 *
 	 * Constraint:
-	 *     rating=RATING
+	 *     (rating+='*' | rating+='**' | rating+='***' | rating+='****' | rating+='*****')
 	 */
 	protected void sequence_Level(ISerializationContext context, Level semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RecipeDSLPackage.Literals.LEVEL__RATING) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RecipeDSLPackage.Literals.LEVEL__RATING));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLevelAccess().getRatingRATINGTerminalRuleCall_1_0(), semanticObject.getRating());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

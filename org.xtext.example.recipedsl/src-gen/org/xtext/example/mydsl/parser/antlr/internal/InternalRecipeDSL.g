@@ -378,20 +378,62 @@ ruleLevel returns [EObject current=null]
 		}
 		(
 			(
-				lv_rating_1_0=RULE_RATING
-				{
-					newLeafNode(lv_rating_1_0, grammarAccess.getLevelAccess().getRatingRATINGTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLevelRule());
+				(
+					lv_rating_1_1='*'
+					{
+						newLeafNode(lv_rating_1_1, grammarAccess.getLevelAccess().getRatingAsteriskKeyword_1_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"rating",
-						lv_rating_1_0,
-						"org.xtext.example.mydsl.RecipeDSL.RATING");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLevelRule());
+						}
+						addWithLastConsumed($current, "rating", lv_rating_1_1, null);
+					}
+					    |
+					lv_rating_1_2='**'
+					{
+						newLeafNode(lv_rating_1_2, grammarAccess.getLevelAccess().getRatingAsteriskAsteriskKeyword_1_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLevelRule());
+						}
+						addWithLastConsumed($current, "rating", lv_rating_1_2, null);
+					}
+					    |
+					lv_rating_1_3='***'
+					{
+						newLeafNode(lv_rating_1_3, grammarAccess.getLevelAccess().getRatingAsteriskAsteriskAsteriskKeyword_1_0_2());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLevelRule());
+						}
+						addWithLastConsumed($current, "rating", lv_rating_1_3, null);
+					}
+					    |
+					lv_rating_1_4='****'
+					{
+						newLeafNode(lv_rating_1_4, grammarAccess.getLevelAccess().getRatingAsteriskAsteriskAsteriskAsteriskKeyword_1_0_3());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLevelRule());
+						}
+						addWithLastConsumed($current, "rating", lv_rating_1_4, null);
+					}
+					    |
+					lv_rating_1_5='*****'
+					{
+						newLeafNode(lv_rating_1_5, grammarAccess.getLevelAccess().getRatingAsteriskAsteriskAsteriskAsteriskAsteriskKeyword_1_0_4());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLevelRule());
+						}
+						addWithLastConsumed($current, "rating", lv_rating_1_5, null);
+					}
+				)
 			)
 		)
 	)
@@ -413,39 +455,39 @@ ruleIngredient returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='Ingredient'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getIngredientAccess().getIngredientKeyword_0());
+		}
 		(
-			otherlv_0='Ingredient'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getIngredientAccess().getIngredientKeyword_0_0());
-			}
 			(
-				(
-					lv_name_1_0=RULE_ID
-					{
-						newLeafNode(lv_name_1_0, grammarAccess.getIngredientAccess().getNameIDTerminalRuleCall_0_1_0());
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getIngredientAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getIngredientRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getIngredientRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"name",
-							lv_name_1_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
 			)
-			otherlv_2='amount'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getIngredientAccess().getAmountKeyword_0_2());
-			}
+		)
+		otherlv_2='amount'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getIngredientAccess().getAmountKeyword_2());
+		}
+		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIngredientAccess().getMeasureWeightParserRuleCall_0_3_0());
+						newCompositeNode(grammarAccess.getIngredientAccess().getMeasureWeightParserRuleCall_3_0_0());
 					}
-					lv_measure_3_0=ruleWeight
+					lv_measure_3_1=ruleWeight
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getIngredientRule());
@@ -453,22 +495,29 @@ ruleIngredient returns [EObject current=null]
 						add(
 							$current,
 							"measure",
-							lv_measure_3_0,
+							lv_measure_3_1,
 							"org.xtext.example.mydsl.RecipeDSL.Weight");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getIngredientAccess().getMeasureCountParserRuleCall_3_0_1());
+					}
+					lv_measure_3_2=ruleCount
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIngredientRule());
+						}
+						add(
+							$current,
+							"measure",
+							lv_measure_3_2,
+							"org.xtext.example.mydsl.RecipeDSL.Count");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)
-		    |
-		{
-			newCompositeNode(grammarAccess.getIngredientAccess().getCountParserRuleCall_1());
-		}
-		this_Count_4=ruleCount
-		{
-			$current = $this_Count_4.current;
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
@@ -490,20 +539,19 @@ ruleWeight returns [EObject current=null]
 	(
 		(
 			(
+				lv_weight_0_0=RULE_EFLOAT
 				{
-					newCompositeNode(grammarAccess.getWeightAccess().getWeightEFloatParserRuleCall_0_0());
+					newLeafNode(lv_weight_0_0, grammarAccess.getWeightAccess().getWeightEFloatTerminalRuleCall_0_0());
 				}
-				lv_weight_0_0=ruleEFloat
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getWeightRule());
+						$current = createModelElement(grammarAccess.getWeightRule());
 					}
-					add(
+					addWithLastConsumed(
 						$current,
 						"weight",
 						lv_weight_0_0,
 						"org.xtext.example.mydsl.RecipeDSL.EFloat");
-					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -549,18 +597,18 @@ ruleCount returns [EObject current=null]
 	(
 		(
 			(
-				lv_c_0_0=RULE_INT
+				lv_count_0_0=RULE_INT
 				{
-					newLeafNode(lv_c_0_0, grammarAccess.getCountAccess().getCINTTerminalRuleCall_0_0());
+					newLeafNode(lv_count_0_0, grammarAccess.getCountAccess().getCountINTTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getCountRule());
 					}
-					setWithLastConsumed(
+					addWithLastConsumed(
 						$current,
-						"c",
-						lv_c_0_0,
+						"count",
+						lv_count_0_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -671,9 +719,9 @@ ruleCooking returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_3=','
+			otherlv_3=':'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getCookingAccess().getCommaKeyword_2_1());
+				newLeafNode(otherlv_3, grammarAccess.getCookingAccess().getColonKeyword_2_1());
 			}
 			(
 				(
@@ -851,83 +899,7 @@ ruleStep returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleEFloat
-entryRuleEFloat returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEFloatRule()); }
-	iv_ruleEFloat=ruleEFloat
-	{ $current=$iv_ruleEFloat.current.getText(); }
-	EOF;
-
-// Rule EFloat
-ruleEFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			kw='-'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getEFloatAccess().getHyphenMinusKeyword_0());
-			}
-		)?
-		(
-			this_INT_1=RULE_INT
-			{
-				$current.merge(this_INT_1);
-			}
-			{
-				newLeafNode(this_INT_1, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_1());
-			}
-		)?
-		kw='.'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEFloatAccess().getFullStopKeyword_2());
-		}
-		this_INT_3=RULE_INT
-		{
-			$current.merge(this_INT_3);
-		}
-		{
-			newLeafNode(this_INT_3, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_3());
-		}
-		(
-			(
-				kw='E'
-				{
-					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getEFloatAccess().getEKeyword_4_0_0());
-				}
-				    |
-				kw='e'
-				{
-					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getEFloatAccess().getEKeyword_4_0_1());
-				}
-			)
-			(
-				kw='-'
-				{
-					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getEFloatAccess().getHyphenMinusKeyword_4_1());
-				}
-			)?
-			this_INT_7=RULE_INT
-			{
-				$current.merge(this_INT_7);
-			}
-			{
-				newLeafNode(this_INT_7, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_4_2());
-			}
-		)?
-	)
-;
-
-RULE_RATING : '1'..'5';
+RULE_EFLOAT : RULE_INT? '.' RULE_INT;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

@@ -3,6 +3,9 @@
  */
 package org.xtext.example.mydsl.recipeDSL;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,39 +16,29 @@ package org.xtext.example.mydsl.recipeDSL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.Count#getC <em>C</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.Count#getCount <em>Count</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getCount()
  * @model
  * @generated
  */
-public interface Count extends Ingredient
+public interface Count extends EObject
 {
   /**
-   * Returns the value of the '<em><b>C</b></em>' attribute.
+   * Returns the value of the '<em><b>Count</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.Integer}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>C</em>' attribute isn't clear,
+   * If the meaning of the '<em>Count</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>C</em>' attribute.
-   * @see #setC(int)
-   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getCount_C()
-   * @model
+   * @return the value of the '<em>Count</em>' attribute list.
+   * @see org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage#getCount_Count()
+   * @model unique="false"
    * @generated
    */
-  int getC();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.recipeDSL.Count#getC <em>C</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>C</em>' attribute.
-   * @see #getC()
-   * @generated
-   */
-  void setC(int value);
+  EList<Integer> getCount();
 
 } // Count

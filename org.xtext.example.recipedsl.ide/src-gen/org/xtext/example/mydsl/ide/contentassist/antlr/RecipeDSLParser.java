@@ -31,16 +31,16 @@ public class RecipeDSLParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getIngredientAccess().getAlternatives(), "rule__Ingredient__Alternatives");
+					put(grammarAccess.getLevelAccess().getRatingAlternatives_1_0(), "rule__Level__RatingAlternatives_1_0");
+					put(grammarAccess.getIngredientAccess().getMeasureAlternatives_3_0(), "rule__Ingredient__MeasureAlternatives_3_0");
 					put(grammarAccess.getWeightAccess().getAlternatives_1(), "rule__Weight__Alternatives_1");
 					put(grammarAccess.getTimeAccess().getAlternatives_2(), "rule__Time__Alternatives_2");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-					put(grammarAccess.getEFloatAccess().getAlternatives_4_0(), "rule__EFloat__Alternatives_4_0");
 					put(grammarAccess.getManagerAccess().getGroup(), "rule__Manager__Group__0");
 					put(grammarAccess.getManagerAccess().getGroup_4(), "rule__Manager__Group_4__0");
 					put(grammarAccess.getRecipeAccess().getGroup(), "rule__Recipe__Group__0");
 					put(grammarAccess.getLevelAccess().getGroup(), "rule__Level__Group__0");
-					put(grammarAccess.getIngredientAccess().getGroup_0(), "rule__Ingredient__Group_0__0");
+					put(grammarAccess.getIngredientAccess().getGroup(), "rule__Ingredient__Group__0");
 					put(grammarAccess.getWeightAccess().getGroup(), "rule__Weight__Group__0");
 					put(grammarAccess.getCountAccess().getGroup(), "rule__Count__Group__0");
 					put(grammarAccess.getDeviceAccess().getGroup(), "rule__Device__Group__0");
@@ -51,8 +51,6 @@ public class RecipeDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStepAccess().getGroup_2(), "rule__Step__Group_2__0");
 					put(grammarAccess.getStepAccess().getGroup_5(), "rule__Step__Group_5__0");
 					put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
-					put(grammarAccess.getEFloatAccess().getGroup(), "rule__EFloat__Group__0");
-					put(grammarAccess.getEFloatAccess().getGroup_4(), "rule__EFloat__Group_4__0");
 					put(grammarAccess.getModelAccess().getMgrAssignment(), "rule__Model__MgrAssignment");
 					put(grammarAccess.getManagerAccess().getNameAssignment_1(), "rule__Manager__NameAssignment_1");
 					put(grammarAccess.getManagerAccess().getUserAssignment_3(), "rule__Manager__UserAssignment_3");
@@ -65,10 +63,10 @@ public class RecipeDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRecipeAccess().getDeviceAssignment_4(), "rule__Recipe__DeviceAssignment_4");
 					put(grammarAccess.getRecipeAccess().getCookingAssignment_5(), "rule__Recipe__CookingAssignment_5");
 					put(grammarAccess.getLevelAccess().getRatingAssignment_1(), "rule__Level__RatingAssignment_1");
-					put(grammarAccess.getIngredientAccess().getNameAssignment_0_1(), "rule__Ingredient__NameAssignment_0_1");
-					put(grammarAccess.getIngredientAccess().getMeasureAssignment_0_3(), "rule__Ingredient__MeasureAssignment_0_3");
+					put(grammarAccess.getIngredientAccess().getNameAssignment_1(), "rule__Ingredient__NameAssignment_1");
+					put(grammarAccess.getIngredientAccess().getMeasureAssignment_3(), "rule__Ingredient__MeasureAssignment_3");
 					put(grammarAccess.getWeightAccess().getWeightAssignment_0(), "rule__Weight__WeightAssignment_0");
-					put(grammarAccess.getCountAccess().getCAssignment_0(), "rule__Count__CAssignment_0");
+					put(grammarAccess.getCountAccess().getCountAssignment_0(), "rule__Count__CountAssignment_0");
 					put(grammarAccess.getDeviceAccess().getNameAssignment_1(), "rule__Device__NameAssignment_1");
 					put(grammarAccess.getCookingAccess().getSAssignment_1(), "rule__Cooking__SAssignment_1");
 					put(grammarAccess.getCookingAccess().getTimeAssignment_2_0(), "rule__Cooking__TimeAssignment_2_0");

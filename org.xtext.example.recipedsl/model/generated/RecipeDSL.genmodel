@@ -35,7 +35,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Weight/weight"/>
     </genClasses>
     <genClasses ecoreClass="RecipeDSL.ecore#//Count">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Count/c"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Count/count"/>
     </genClasses>
     <genClasses ecoreClass="RecipeDSL.ecore#//Device">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RecipeDSL.ecore#//Device/name"/>

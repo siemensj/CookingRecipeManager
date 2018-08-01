@@ -10,11 +10,16 @@
         Name="nuss"
         Count="2.0"/>
     <cookings
-        Time="10.0"
+        Time="1.0E-6"
         uses="//@recipes.0/@ingredients.0"
         Description="do this"
         use_device="//@recipes.0/@devices.0"
         Step="1"/>
+    <cookings
+        Time="1.0"
+        uses="//@recipes.0/@ingredients.0"
+        Description="bla"
+        use_device="//@recipes.0/@devices.0"/>
     <has/>
   </recipes>
   <recipes Name="Test">
@@ -24,13 +29,13 @@
         Name="je"
         WeightInGramms="1.0"/>
     <cookings
-        Time="10.0"
+        Time="0.1"
         uses="//@recipes.1/@ingredients.0"
         Description="d"
         use_device="//@recipes.1/@devices.0"
         Step="1"/>
     <cookings
-        Time="1.0"
+        Time="0.01"
         uses="//@recipes.1/@ingredients.0"
         Description="jas"
         use_device="//@recipes.1/@devices.0"

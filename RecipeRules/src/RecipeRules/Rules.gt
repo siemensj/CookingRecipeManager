@@ -24,7 +24,7 @@ pattern cookingWithoutName{
 
 pattern cookingWithoutTime {
 	c:Cooking{
-		.Time <0.00000001 // mit Time <0 funktioniert es nicht muss sehr kleiner Wert sein
+		.Time <=0 // mit Time <0 funktioniert es nicht muss sehr kleiner Wert sein
 	}	
 }
 

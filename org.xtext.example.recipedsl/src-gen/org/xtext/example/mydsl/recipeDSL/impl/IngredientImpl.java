@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -21,7 +22,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.recipeDSL.Ingredient;
 import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
-import org.xtext.example.mydsl.recipeDSL.Weight;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
    * @generated
    * @ordered
    */
-  protected EList<Weight> measure;
+  protected EList<EObject> measure;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,11 +118,11 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Weight> getMeasure()
+  public EList<EObject> getMeasure()
   {
     if (measure == null)
     {
-      measure = new EObjectContainmentEList<Weight>(Weight.class, this, RecipeDSLPackage.INGREDIENT__MEASURE);
+      measure = new EObjectContainmentEList<EObject>(EObject.class, this, RecipeDSLPackage.INGREDIENT__MEASURE);
     }
     return measure;
   }
@@ -177,7 +177,7 @@ public class IngredientImpl extends MinimalEObjectImpl.Container implements Ingr
         return;
       case RecipeDSLPackage.INGREDIENT__MEASURE:
         getMeasure().clear();
-        getMeasure().addAll((Collection<? extends Weight>)newValue);
+        getMeasure().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

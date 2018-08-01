@@ -54,7 +54,7 @@ public interface Ingredient extends EObject
 
   /**
    * Returns the value of the '<em><b>Measure</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.recipeDSL.Weight}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Measure</em>' containment reference list isn't clear,
@@ -66,6 +66,6 @@ public interface Ingredient extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Weight> getMeasure();
+  EList<EObject> getMeasure();
 
 } // Ingredient

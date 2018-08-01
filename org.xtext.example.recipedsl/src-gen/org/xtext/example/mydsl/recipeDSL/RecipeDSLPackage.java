@@ -234,7 +234,7 @@ public interface RecipeDSLPackage extends EPackage
   int LEVEL = 4;
 
   /**
-   * The feature id for the '<em><b>Rating</b></em>' attribute.
+   * The feature id for the '<em><b>Rating</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -327,31 +327,13 @@ public interface RecipeDSLPackage extends EPackage
   int COUNT = 7;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Count</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COUNT__NAME = INGREDIENT__NAME;
-
-  /**
-   * The feature id for the '<em><b>Measure</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COUNT__MEASURE = INGREDIENT__MEASURE;
-
-  /**
-   * The feature id for the '<em><b>C</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COUNT__C = INGREDIENT_FEATURE_COUNT + 0;
+  int COUNT__COUNT = 0;
 
   /**
    * The number of structural features of the '<em>Count</em>' class.
@@ -360,7 +342,7 @@ public interface RecipeDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COUNT_FEATURE_COUNT = INGREDIENT_FEATURE_COUNT + 1;
+  int COUNT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.recipeDSL.impl.DeviceImpl <em>Device</em>}' class.
@@ -681,10 +663,10 @@ public interface RecipeDSLPackage extends EPackage
   EClass getLevel();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.Level#getRating <em>Rating</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl.recipeDSL.Level#getRating <em>Rating</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Rating</em>'.
+   * @return the meta object for the attribute list '<em>Rating</em>'.
    * @see org.xtext.example.mydsl.recipeDSL.Level#getRating()
    * @see #getLevel()
    * @generated
@@ -755,15 +737,15 @@ public interface RecipeDSLPackage extends EPackage
   EClass getCount();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.recipeDSL.Count#getC <em>C</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl.recipeDSL.Count#getCount <em>Count</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>C</em>'.
-   * @see org.xtext.example.mydsl.recipeDSL.Count#getC()
+   * @return the meta object for the attribute list '<em>Count</em>'.
+   * @see org.xtext.example.mydsl.recipeDSL.Count#getCount()
    * @see #getCount()
    * @generated
    */
-  EAttribute getCount_C();
+  EAttribute getCount_Count();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.recipeDSL.Device <em>Device</em>}'.
@@ -1058,7 +1040,7 @@ public interface RecipeDSLPackage extends EPackage
     EClass LEVEL = eINSTANCE.getLevel();
 
     /**
-     * The meta object literal for the '<em><b>Rating</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Rating</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1120,12 +1102,12 @@ public interface RecipeDSLPackage extends EPackage
     EClass COUNT = eINSTANCE.getCount();
 
     /**
-     * The meta object literal for the '<em><b>C</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Count</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COUNT__C = eINSTANCE.getCount_C();
+    EAttribute COUNT__COUNT = eINSTANCE.getCount_Count();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.recipeDSL.impl.DeviceImpl <em>Device</em>}' class.

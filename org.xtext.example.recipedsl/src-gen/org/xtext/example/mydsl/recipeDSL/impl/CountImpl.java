@@ -3,11 +3,15 @@
  */
 package org.xtext.example.mydsl.recipeDSL.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import org.xtext.example.mydsl.recipeDSL.Count;
 import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
@@ -20,32 +24,22 @@ import org.xtext.example.mydsl.recipeDSL.RecipeDSLPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.CountImpl#getC <em>C</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.recipeDSL.impl.CountImpl#getCount <em>Count</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CountImpl extends IngredientImpl implements Count
+public class CountImpl extends MinimalEObjectImpl.Container implements Count
 {
   /**
-   * The default value of the '{@link #getC() <em>C</em>}' attribute.
+   * The cached value of the '{@link #getCount() <em>Count</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getC()
+   * @see #getCount()
    * @generated
    * @ordered
    */
-  protected static final int C_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getC() <em>C</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getC()
-   * @generated
-   * @ordered
-   */
-  protected int c = C_EDEFAULT;
+  protected EList<Integer> count;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,22 +67,13 @@ public class CountImpl extends IngredientImpl implements Count
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getC()
+  public EList<Integer> getCount()
   {
-    return c;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setC(int newC)
-  {
-    int oldC = c;
-    c = newC;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RecipeDSLPackage.COUNT__C, oldC, c));
+    if (count == null)
+    {
+      count = new EDataTypeEList<Integer>(Integer.class, this, RecipeDSLPackage.COUNT__COUNT);
+    }
+    return count;
   }
 
   /**
@@ -101,8 +86,8 @@ public class CountImpl extends IngredientImpl implements Count
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COUNT__C:
-        return getC();
+      case RecipeDSLPackage.COUNT__COUNT:
+        return getCount();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -112,13 +97,15 @@ public class CountImpl extends IngredientImpl implements Count
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COUNT__C:
-        setC((Integer)newValue);
+      case RecipeDSLPackage.COUNT__COUNT:
+        getCount().clear();
+        getCount().addAll((Collection<? extends Integer>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +121,8 @@ public class CountImpl extends IngredientImpl implements Count
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COUNT__C:
-        setC(C_EDEFAULT);
+      case RecipeDSLPackage.COUNT__COUNT:
+        getCount().clear();
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +138,8 @@ public class CountImpl extends IngredientImpl implements Count
   {
     switch (featureID)
     {
-      case RecipeDSLPackage.COUNT__C:
-        return c != C_EDEFAULT;
+      case RecipeDSLPackage.COUNT__COUNT:
+        return count != null && !count.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +155,8 @@ public class CountImpl extends IngredientImpl implements Count
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (c: ");
-    result.append(c);
+    result.append(" (count: ");
+    result.append(count);
     result.append(')');
     return result.toString();
   }

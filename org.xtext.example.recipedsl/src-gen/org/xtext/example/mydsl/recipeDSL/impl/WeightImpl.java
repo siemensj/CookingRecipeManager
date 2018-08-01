@@ -39,7 +39,7 @@ public class WeightImpl extends MinimalEObjectImpl.Container implements Weight
    * @generated
    * @ordered
    */
-  protected EList<Float> weight;
+  protected EList<String> weight;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,11 +67,11 @@ public class WeightImpl extends MinimalEObjectImpl.Container implements Weight
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Float> getWeight()
+  public EList<String> getWeight()
   {
     if (weight == null)
     {
-      weight = new EDataTypeEList<Float>(Float.class, this, RecipeDSLPackage.WEIGHT__WEIGHT);
+      weight = new EDataTypeEList<String>(String.class, this, RecipeDSLPackage.WEIGHT__WEIGHT);
     }
     return weight;
   }
@@ -105,7 +105,7 @@ public class WeightImpl extends MinimalEObjectImpl.Container implements Weight
     {
       case RecipeDSLPackage.WEIGHT__WEIGHT:
         getWeight().clear();
-        getWeight().addAll((Collection<? extends Float>)newValue);
+        getWeight().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

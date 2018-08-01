@@ -166,7 +166,6 @@ public class Test1 extends Testing {
 	public boolean CookingwithfirstStep() {
 		Collection<OneRecipeMatch> m = api.oneRecipe().findMatches();
 		boolean e = false;
-		
 		for (OneRecipeMatch x : m) {
 			e=false;
 			for (Cooking c:x.getR().getCookings()) {

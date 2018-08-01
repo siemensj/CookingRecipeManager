@@ -405,7 +405,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCount_C()
+  public EAttribute getCount_Count()
   {
     return (EAttribute)countEClass.getEStructuralFeatures().get(0);
   }
@@ -599,7 +599,7 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
     createEAttribute(weightEClass, WEIGHT__WEIGHT);
 
     countEClass = createEClass(COUNT);
-    createEAttribute(countEClass, COUNT__C);
+    createEAttribute(countEClass, COUNT__COUNT);
 
     deviceEClass = createEClass(DEVICE);
     createEAttribute(deviceEClass, DEVICE__NAME);
@@ -648,7 +648,6 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    countEClass.getESuperTypes().add(this.getIngredient());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -670,17 +669,17 @@ public class RecipeDSLPackageImpl extends EPackageImpl implements RecipeDSLPacka
     initEReference(getRecipe_Cooking(), this.getCooking(), null, "cooking", null, 0, -1, Recipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(levelEClass, Level.class, "Level", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLevel_Rating(), ecorePackage.getEString(), "rating", null, 0, 1, Level.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLevel_Rating(), ecorePackage.getEString(), "rating", null, 0, -1, Level.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ingredientEClass, Ingredient.class, "Ingredient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIngredient_Name(), ecorePackage.getEString(), "name", null, 0, 1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getIngredient_Measure(), this.getWeight(), null, "measure", null, 0, -1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIngredient_Measure(), ecorePackage.getEObject(), null, "measure", null, 0, -1, Ingredient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(weightEClass, Weight.class, "Weight", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWeight_Weight(), ecorePackage.getEFloat(), "weight", null, 0, -1, Weight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWeight_Weight(), ecorePackage.getEString(), "weight", null, 0, -1, Weight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(countEClass, Count.class, "Count", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCount_C(), ecorePackage.getEInt(), "c", null, 0, 1, Count.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCount_Count(), ecorePackage.getEInt(), "count", null, 0, -1, Count.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDevice_Name(), ecorePackage.getEString(), "name", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
