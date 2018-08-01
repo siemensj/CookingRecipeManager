@@ -131,7 +131,8 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Recipe:
 		//	"Recipe" name=ID
-		//	level+=Level ingredient+=Ingredient+
+		//	level+=Level
+		//	ingredient+=Ingredient+
 		//	device+=Device+
 		//	cooking+=Cooking+;
 		@Override public ParserRule getRule() { return rule; }
@@ -215,61 +216,6 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'*****'
 		public Keyword getRatingAsteriskAsteriskAsteriskAsteriskAsteriskKeyword_1_0_4() { return cRatingAsteriskAsteriskAsteriskAsteriskAsteriskKeyword_1_0_4; }
 	}
-	public class RATING1Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING1");
-		private final Keyword cAsteriskKeyword = (Keyword)rule.eContents().get(1);
-		
-		//RATING1:
-		//	'*';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'*'
-		public Keyword getAsteriskKeyword() { return cAsteriskKeyword; }
-	}
-	public class RATING2Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING2");
-		private final Keyword cAsteriskAsteriskKeyword = (Keyword)rule.eContents().get(1);
-		
-		//RATING2:
-		//	'**';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'**'
-		public Keyword getAsteriskAsteriskKeyword() { return cAsteriskAsteriskKeyword; }
-	}
-	public class RATING3Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING3");
-		private final Keyword cAsteriskAsteriskAsteriskKeyword = (Keyword)rule.eContents().get(1);
-		
-		//RATING3:
-		//	'***';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'***'
-		public Keyword getAsteriskAsteriskAsteriskKeyword() { return cAsteriskAsteriskAsteriskKeyword; }
-	}
-	public class RATING4Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING4");
-		private final Keyword cAsteriskAsteriskAsteriskAsteriskKeyword = (Keyword)rule.eContents().get(1);
-		
-		//RATING4:
-		//	'****';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'****'
-		public Keyword getAsteriskAsteriskAsteriskAsteriskKeyword() { return cAsteriskAsteriskAsteriskAsteriskKeyword; }
-	}
-	public class RATING5Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.RATING5");
-		private final Keyword cAsteriskAsteriskAsteriskAsteriskAsteriskKeyword = (Keyword)rule.eContents().get(1);
-		
-		//RATING5:
-		//	'*****';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'*****'
-		public Keyword getAsteriskAsteriskAsteriskAsteriskAsteriskKeyword() { return cAsteriskAsteriskAsteriskAsteriskAsteriskKeyword; }
-	}
 	public class IngredientElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.Ingredient");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -317,7 +263,7 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.Weight");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cWeightAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cWeightEFloatTerminalRuleCall_0_0 = (RuleCall)cWeightAssignment_0.eContents().get(0);
+		private final RuleCall cWeightEFLOATTerminalRuleCall_0_0 = (RuleCall)cWeightAssignment_0.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Keyword cMgKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
 		private final Keyword cGKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
@@ -325,17 +271,17 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTKeyword_1_3 = (Keyword)cAlternatives_1.eContents().get(3);
 		
 		//Weight:
-		//	weight+=EFloat ("mg" | "g" | "kg" | "t");
+		//	weight+=EFLOAT ("mg" | "g" | "kg" | "t");
 		@Override public ParserRule getRule() { return rule; }
 		
-		//weight+=EFloat ("mg" | "g" | "kg" | "t")
+		//weight+=EFLOAT ("mg" | "g" | "kg" | "t")
 		public Group getGroup() { return cGroup; }
 		
-		//weight+=EFloat
+		//weight+=EFLOAT
 		public Assignment getWeightAssignment_0() { return cWeightAssignment_0; }
 		
-		//EFloat
-		public RuleCall getWeightEFloatTerminalRuleCall_0_0() { return cWeightEFloatTerminalRuleCall_0_0; }
+		//EFLOAT
+		public RuleCall getWeightEFLOATTerminalRuleCall_0_0() { return cWeightEFLOATTerminalRuleCall_0_0; }
 		
 		//"mg" | "g" | "kg" | "t"
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
@@ -616,14 +562,9 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final UserElements pUser;
 	private final RecipeElements pRecipe;
 	private final LevelElements pLevel;
-	private final RATING1Elements pRATING1;
-	private final RATING2Elements pRATING2;
-	private final RATING3Elements pRATING3;
-	private final RATING4Elements pRATING4;
-	private final RATING5Elements pRATING5;
 	private final IngredientElements pIngredient;
 	private final WeightElements pWeight;
-	private final TerminalRule tEFloat;
+	private final TerminalRule tEFLOAT;
 	private final CountElements pCount;
 	private final DeviceElements pDevice;
 	private final CookingElements pCooking;
@@ -646,14 +587,9 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pUser = new UserElements();
 		this.pRecipe = new RecipeElements();
 		this.pLevel = new LevelElements();
-		this.pRATING1 = new RATING1Elements();
-		this.pRATING2 = new RATING2Elements();
-		this.pRATING3 = new RATING3Elements();
-		this.pRATING4 = new RATING4Elements();
-		this.pRATING5 = new RATING5Elements();
 		this.pIngredient = new IngredientElements();
 		this.pWeight = new WeightElements();
-		this.tEFloat = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.EFloat");
+		this.tEFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.RecipeDSL.EFLOAT");
 		this.pCount = new CountElements();
 		this.pDevice = new DeviceElements();
 		this.pCooking = new CookingElements();
@@ -724,7 +660,8 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Recipe:
 	//	"Recipe" name=ID
-	//	level+=Level ingredient+=Ingredient+
+	//	level+=Level
+	//	ingredient+=Ingredient+
 	//	device+=Device+
 	//	cooking+=Cooking+;
 	public RecipeElements getRecipeAccess() {
@@ -745,56 +682,6 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getLevelAccess().getRule();
 	}
 	
-	//RATING1:
-	//	'*';
-	public RATING1Elements getRATING1Access() {
-		return pRATING1;
-	}
-	
-	public ParserRule getRATING1Rule() {
-		return getRATING1Access().getRule();
-	}
-	
-	//RATING2:
-	//	'**';
-	public RATING2Elements getRATING2Access() {
-		return pRATING2;
-	}
-	
-	public ParserRule getRATING2Rule() {
-		return getRATING2Access().getRule();
-	}
-	
-	//RATING3:
-	//	'***';
-	public RATING3Elements getRATING3Access() {
-		return pRATING3;
-	}
-	
-	public ParserRule getRATING3Rule() {
-		return getRATING3Access().getRule();
-	}
-	
-	//RATING4:
-	//	'****';
-	public RATING4Elements getRATING4Access() {
-		return pRATING4;
-	}
-	
-	public ParserRule getRATING4Rule() {
-		return getRATING4Access().getRule();
-	}
-	
-	//RATING5:
-	//	'*****';
-	public RATING5Elements getRATING5Access() {
-		return pRATING5;
-	}
-	
-	public ParserRule getRATING5Rule() {
-		return getRATING5Access().getRule();
-	}
-	
 	//Ingredient:
 	//	'Ingredient' name=ID "amount" measure+=(Weight | Count);
 	public IngredientElements getIngredientAccess() {
@@ -806,7 +693,7 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Weight:
-	//	weight+=EFloat ("mg" | "g" | "kg" | "t");
+	//	weight+=EFLOAT ("mg" | "g" | "kg" | "t");
 	public WeightElements getWeightAccess() {
 		return pWeight;
 	}
@@ -815,10 +702,10 @@ public class RecipeDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getWeightAccess().getRule();
 	}
 	
-	//terminal EFloat:
+	//terminal EFLOAT:
 	//	INT? '.' INT;
-	public TerminalRule getEFloatRule() {
-		return tEFloat;
+	public TerminalRule getEFLOATRule() {
+		return tEFLOAT;
 	}
 	
 	//Count:

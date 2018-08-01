@@ -541,7 +541,7 @@ ruleWeight returns [EObject current=null]
 			(
 				lv_weight_0_0=RULE_EFLOAT
 				{
-					newLeafNode(lv_weight_0_0, grammarAccess.getWeightAccess().getWeightEFloatTerminalRuleCall_0_0());
+					newLeafNode(lv_weight_0_0, grammarAccess.getWeightAccess().getWeightEFLOATTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
@@ -551,7 +551,7 @@ ruleWeight returns [EObject current=null]
 						$current,
 						"weight",
 						lv_weight_0_0,
-						"org.xtext.example.mydsl.RecipeDSL.EFloat");
+						"org.xtext.example.mydsl.RecipeDSL.EFLOAT");
 				}
 			)
 		)

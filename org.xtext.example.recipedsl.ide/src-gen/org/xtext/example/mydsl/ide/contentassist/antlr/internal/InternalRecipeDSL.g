@@ -1927,9 +1927,9 @@ rule__Weight__WeightAssignment_0
 	}
 :
 	(
-		{ before(grammarAccess.getWeightAccess().getWeightEFloatTerminalRuleCall_0_0()); }
+		{ before(grammarAccess.getWeightAccess().getWeightEFLOATTerminalRuleCall_0_0()); }
 		RULE_EFLOAT
-		{ after(grammarAccess.getWeightAccess().getWeightEFloatTerminalRuleCall_0_0()); }
+		{ after(grammarAccess.getWeightAccess().getWeightEFLOATTerminalRuleCall_0_0()); }
 	)
 ;
 finally {

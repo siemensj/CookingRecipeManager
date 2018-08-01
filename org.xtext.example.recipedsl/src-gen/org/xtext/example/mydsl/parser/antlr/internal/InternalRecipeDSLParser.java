@@ -1336,7 +1336,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             {
             lv_weight_0_0=(Token)match(input,RULE_EFLOAT,FOLLOW_15); 
 
-            					newLeafNode(lv_weight_0_0, grammarAccess.getWeightAccess().getWeightEFloatTerminalRuleCall_0_0());
+            					newLeafNode(lv_weight_0_0, grammarAccess.getWeightAccess().getWeightEFLOATTerminalRuleCall_0_0());
             				
 
             					if (current==null) {
@@ -1346,7 +1346,7 @@ public class InternalRecipeDSLParser extends AbstractInternalAntlrParser {
             						current,
             						"weight",
             						lv_weight_0_0,
-            						"org.xtext.example.mydsl.RecipeDSL.EFloat");
+            						"org.xtext.example.mydsl.RecipeDSL.EFLOAT");
             				
 
             }

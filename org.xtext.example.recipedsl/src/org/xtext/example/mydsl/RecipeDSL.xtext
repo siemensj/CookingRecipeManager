@@ -20,7 +20,7 @@ User:
 	
 Recipe:
 	"Recipe" name=ID
-		(level+=Level) 
+		(level+=Level)
 		(ingredient+=Ingredient)+
 		(device+=Device)+
 		(cooking+=Cooking)+

@@ -5843,9 +5843,9 @@ public class InternalRecipeDSLParser extends AbstractInternalContentAssistParser
             // InternalRecipeDSL.g:1929:2: ( RULE_EFLOAT )
             // InternalRecipeDSL.g:1930:3: RULE_EFLOAT
             {
-             before(grammarAccess.getWeightAccess().getWeightEFloatTerminalRuleCall_0_0()); 
+             before(grammarAccess.getWeightAccess().getWeightEFLOATTerminalRuleCall_0_0()); 
             match(input,RULE_EFLOAT,FOLLOW_2); 
-             after(grammarAccess.getWeightAccess().getWeightEFloatTerminalRuleCall_0_0()); 
+             after(grammarAccess.getWeightAccess().getWeightEFLOATTerminalRuleCall_0_0()); 
 
             }
 

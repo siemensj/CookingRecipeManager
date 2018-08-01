@@ -14,12 +14,13 @@
         uses="//@recipes.0/@ingredients.0"
         Description="do this"
         use_device="//@recipes.0/@devices.0"
-        Step="1"/>
+        Step="2"/>
     <cookings
         Time="1.0"
         uses="//@recipes.0/@ingredients.0"
         Description="bla"
-        use_device="//@recipes.0/@devices.0"/>
+        use_device="//@recipes.1/@devices.0"
+        Step="1"/>
     <has/>
   </recipes>
   <recipes Name="Test">

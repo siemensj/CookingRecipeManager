@@ -67,7 +67,7 @@ public class RecipeDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'mg' | 'g' | 'kg' | 't'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     weight+=EFloat (ambiguity) (rule end)
+	 *     weight+=EFLOAT (ambiguity) (rule end)
 	 */
 	protected void emit_Weight_GKeyword_1_1_or_KgKeyword_1_2_or_MgKeyword_1_0_or_TKeyword_1_3(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

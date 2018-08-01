@@ -245,7 +245,7 @@ public class RecipeDSLSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Weight returns Weight
 	 *
 	 * Constraint:
-	 *     weight+=EFloat
+	 *     weight+=EFLOAT
 	 */
 	protected void sequence_Weight(ISerializationContext context, Weight semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
